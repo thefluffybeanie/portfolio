@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <title>The Fluffy Beanie | Digital Marketing Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -26,81 +26,106 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Animation duration dropped down to 8s for a much faster, high-energy scroll pace */
+        /* Hardware accelerated marquee track */
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
         .animate-marquee-fast {
-            animation: marquee 8s linear infinite;
+            animation: marquee 12s linear infinite;
+        }
+        @media (min-width: 768px) {
+            .animate-marquee-fast {
+                animation-duration: 16s;
+            }
+        }
+        /* Custom scrollbar elimination for mobile iframe structures */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
-<body class="bg-brand-dark text-brand-white font-sans antialiased selection:bg-brand-brown selection:text-white">
+<body class="bg-brand-dark text-brand-white font-sans antialiased selection:bg-brand-brown selection:text-white overflow-x-hidden w-full">
 
-    <nav class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-gray/20 py-4 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#home" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-full bg-brand-brown overflow-hidden border border-brand-gray/40 flex items-center justify-center">
+    <nav class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-gray/20 py-4 px-4 sm:px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center relative">
+            <a href="#home" class="flex items-center gap-2 sm:gap-3 group">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-brand-brown overflow-hidden border border-brand-gray/40 flex items-center justify-center flex-shrink-0">
                     <img src="https://i.imgur.com/IFu6dnN.png" alt="The Fluffy Beanie Logo" class="w-full h-full object-cover">
                 </div>
-                <span class="font-bold text-xl tracking-tight group-hover:text-brand-brown transition">The Fluffy Beanie</span>
+                <span class="font-bold text-base sm:text-xl tracking-tight group-hover:text-brand-brown transition truncate max-w-[160px] sm:max-w-none">The Fluffy Beanie</span>
             </a>
-            <div class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide text-brand-white/80">
+            
+            <div class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-semibold tracking-wide text-brand-white/80">
                 <a href="#about" class="hover:text-brand-brown transition">About</a>
                 <a href="#services" class="hover:text-brand-brown transition">Services</a>
                 <a href="#portfolio" class="hover:text-brand-brown transition">Work Samples</a>
                 <a href="#pricing" class="hover:text-brand-brown transition">Pricing</a>
             </div>
-            <div>
-                <a href="#book" class="bg-brand-brown hover:bg-opacity-90 text-white font-bold py-2.5 px-5 rounded text-sm tracking-wide transition shadow-lg shadow-brand-brown/20">Book a Call</a>
+
+            <div class="flex items-center gap-3">
+                <a href="#book" class="bg-brand-brown hover:bg-opacity-90 text-white font-bold py-2 px-3 sm:py-2.5 sm:px-5 rounded text-xs sm:text-sm tracking-wide transition shadow-lg shadow-brand-brown/20 whitespace-nowrap">Book a Call</a>
+                <button id="menu-toggle" class="md:hidden text-brand-white hover:text-brand-brown p-1 transition" aria-label="Toggle Menu">
+                    <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 mt-4 bg-brand-dark border border-brand-gray/20 rounded-xl p-4 flex flex-col gap-4 text-sm font-semibold shadow-2xl z-50 md:hidden">
+                <a href="#about" class="mobile-link hover:text-brand-brown p-2 rounded transition">About</a>
+                <a href="#services" class="mobile-link hover:text-brand-brown p-2 rounded transition">Services</a>
+                <a href="#portfolio" class="mobile-link hover:text-brand-brown p-2 rounded transition">Work Samples</a>
+                <a href="#pricing" class="mobile-link hover:text-brand-brown p-2 rounded transition">Pricing</a>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="relative min-h-[85vh] flex items-center justify-center px-6 md:px-12 border-b border-brand-gray/10">
-        <div class="max-w-5xl mx-auto text-center space-y-8 py-20">
-            <div class="inline-flex items-center gap-2 bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/70">
-                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> 4+ Years Experienced Virtual Assistant & Digital Specialist
+    <section id="home" class="relative min-h-[80vh] flex items-center justify-center px-4 sm:px-6 md:px-12 border-b border-brand-gray/10">
+        <div class="max-w-5xl mx-auto text-center space-y-6 sm:space-y-8 py-12 sm:py-20">
+            <div class="inline-flex items-center gap-2 bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1 px-3 sm:px-4 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-brand-white/70 max-w-full text-left sm:text-center">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse flex-shrink-0"></span> <span class="truncate">4+ Years Experienced VA & Digital Specialist</span>
             </div>
-            <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight max-w-4xl mx-auto leading-[1.1]">
+            <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight max-w-4xl mx-auto leading-[1.15] sm:leading-[1.1]">
                 Social Media, Email Marketing, & <span class="text-brand-brown">Graphic Design</span> Support
             </h1>
-            <p class="text-lg md:text-xl text-brand-white/60 max-w-2xl mx-auto font-light leading-relaxed">
+            <p class="text-base sm:text-lg md:text-xl text-brand-white/60 max-w-2xl mx-auto font-light leading-relaxed">
                 Hi, I'm Ian. Based in the Philippines, I handle daily digital execution—designing static posts, editing branded videos, creating flyers, drafting blog posts, and setting up your email marketing. 
             </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
-                <a href="#portfolio" class="w-full sm:w-auto bg-brand-brown hover:bg-opacity-90 text-white font-bold py-4 px-8 rounded transition text-center shadow-lg shadow-brand-brown/30">View My Work Samples</a>
-                <a href="#services" class="w-full sm:w-auto bg-brand-gray/20 hover:bg-brand-gray/30 text-white border border-brand-gray/40 font-bold py-4 px-8 rounded transition text-center">See Services & Pricing</a>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-2 w-full max-w-md mx-auto sm:max-w-none">
+                <a href="#portfolio" class="w-full sm:w-auto bg-brand-brown hover:bg-opacity-90 text-white font-bold py-3.5 px-6 sm:py-4 sm:px-8 rounded transition text-sm text-center shadow-lg shadow-brand-brown/30">View My Work Samples</a>
+                <a href="#services" class="w-full sm:w-auto bg-brand-gray/20 hover:bg-brand-gray/30 text-white border border-brand-gray/40 font-bold py-3.5 px-6 sm:py-4 sm:px-8 rounded transition text-sm text-center">See Services & Pricing</a>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-24 px-6 md:px-12 bg-brand-gray/5 border-b border-brand-gray/10">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+    <section id="about" class="py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-brand-gray/5 border-b border-brand-gray/10">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
             <div class="md:col-span-5 flex justify-center">
-                <div class="relative group max-w-xs md:max-w-full w-full">
+                <div class="relative group max-w-[260px] sm:max-w-xs md:max-w-full w-full">
                     <div class="absolute inset-0 bg-brand-brown rounded-2xl transform rotate-3 scale-105 opacity-20 group-hover:rotate-6 transition duration-300"></div>
-                    <div class="relative bg-brand-dark border-2 border-brand-gray/40 rounded-2xl p-3 aspect-square flex items-center justify-center overflow-hidden">
+                    <div class="relative bg-brand-dark border-2 border-brand-gray/40 rounded-2xl p-2 sm:p-3 aspect-square flex items-center justify-center overflow-hidden">
                         <div class="w-full h-full rounded-xl overflow-hidden border border-brand-brown/20 bg-brand-gray/10">
                             <img src="https://media.licdn.com/dms/image/v2/D4D03AQHGyUcjKCQ26w/profile-displayphoto-scale_400_400/B4DZ3ANQbVGcAk-/0/1777046207796?e=1780531200&v=beta&t=Bs9RJkFJ9cq8fq1WS4IPbDkOYoTdv4yBXsmmRZhAYqE" alt="Ian" class="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition duration-500">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="md:col-span-7 space-y-6">
-                <h2 class="text-3xl md:text-4xl font-bold tracking-tight">The Brain Behind the Beanie</h2>
-                <p class="text-brand-white/70 leading-relaxed text-base md:text-lg">
+            <div class="md:col-span-7 space-y-4 sm:space-y-6 text-center md:text-left">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">The Brain Behind the Beanie</h2>
+                <p class="text-brand-white/70 leading-relaxed text-sm sm:text-base md:text-lg font-light">
                     I'm Ian, a virtual assistant and digital marketing resource based in the Philippines. For the last 4 years, I've focused on delivering straightforward task execution to help business owners keep their digital assets and marketing channels updated.
                 </p>
-                <p class="text-brand-white/70 leading-relaxed text-base md:text-lg">
+                <p class="text-brand-white/70 leading-relaxed text-sm sm:text-base md:text-lg font-light">
                     I work independently to complete your recurring creative and administrative work. Whether you need an updated social media feed, custom promotional graphics, organized email newsletters, or website updates, I handle the practical setup and content creation directly.
                 </p>
-                <div class="grid grid-cols-2 gap-4 pt-4 text-sm font-semibold tracking-wide uppercase text-brand-white/60">
-                    <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-brown"></i> Social & Video Creation</div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-left text-xs sm:text-sm font-semibold tracking-wide uppercase text-brand-white/60 max-w-md mx-auto md:max-w-none">
+                    <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-brown flex-shrink-0"></i> Social & Video Creation</div>
                     <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-brown"></i> Email & Blog Writing</div>
                     <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-brown"></i> Flyer & Graphic Design</div>
                     <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-brown"></i> Simple Web Support</div>
@@ -109,168 +134,150 @@
         </div>
     </section>
 
-    <section id="services" class="py-24 px-6 md:px-12 border-b border-brand-gray/10">
-        <div class="max-w-6xl mx-auto space-y-16">
-            <div class="text-center space-y-4">
-                <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Core Services</h2>
-                <p class="text-brand-white/60 max-w-xl mx-auto font-light">Done-for-you content creation and marketing setup to keep your digital channels updated.</p>
+    <section id="services" class="py-16 sm:py-24 px-4 sm:px-6 md:px-12 border-b border-brand-gray/10">
+        <div class="max-w-6xl mx-auto space-y-12 sm:space-y-16">
+            <div class="text-center space-y-3 sm:space-y-4">
+                <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight">Core Services</h2>
+                <p class="text-brand-white/60 max-w-xl mx-auto font-light text-sm sm:text-base">Done-for-you content creation and marketing setup to keep your digital channels updated.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
-                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
-                        <i data-lucide="instagram" class="w-6 h-6 text-brand-brown"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-6 sm:p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30 flex-shrink-0">
+                        <i data-lucide="instagram" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-brown"></i>
                     </div>
-                    <h3 class="text-xl font-bold">Social Media Management</h3>
-                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                    <h3 class="text-lg sm:text-xl font-bold">Social Media Management</h3>
+                    <p class="text-brand-white/60 text-xs sm:text-sm leading-relaxed font-light">
                         Consistent scheduling, organization, and management of your social channels. I keep your accounts active with planned posts tailored to your business details.
                     </p>
                 </div>
-                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
-                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
-                        <i data-lucide="image" class="w-6 h-6 text-brand-brown"></i>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-6 sm:p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30 flex-shrink-0">
+                        <i data-lucide="image" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-brown"></i>
                     </div>
-                    <h3 class="text-xl font-bold">Static Posts</h3>
-                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                    <h3 class="text-lg sm:text-xl font-bold">Static Posts</h3>
+                    <p class="text-brand-white/60 text-xs sm:text-sm leading-relaxed font-light">
                         Design and creation of clean static posts and social graphics based on your specific operational needs and brand guidelines.
                     </p>
                 </div>
-                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
-                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
-                        <i data-lucide="video" class="w-6 h-6 text-brand-brown"></i>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-6 sm:p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30 flex-shrink-0">
+                        <i data-lucide="video" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-brown"></i>
                     </div>
-                    <h3 class="text-xl font-bold">Branded Video Assets</h3>
-                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                    <h3 class="text-lg sm:text-xl font-bold">Branded Video Assets</h3>
+                    <p class="text-brand-white/60 text-xs sm:text-sm leading-relaxed font-light">
                         Assembly and editing of branded short-form video content, short clips, and video materials for use across your active social channels.
                     </p>
                 </div>
-                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
-                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
-                        <i data-lucide="mail" class="w-6 h-6 text-brand-brown"></i>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-6 sm:p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30 flex-shrink-0">
+                        <i data-lucide="mail" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-brown"></i>
                     </div>
-                    <h3 class="text-xl font-bold">Email Marketing</h3>
-                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                    <h3 class="text-lg sm:text-xl font-bold">Email Marketing</h3>
+                    <p class="text-brand-white/60 text-xs sm:text-sm leading-relaxed font-light">
                         Technical layout creation, template building, and distribution setup for your business newsletters, product updates, and standard promotional email broadcasts.
                     </p>
                 </div>
-                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
-                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
-                        <i data-lucide="file-text" class="w-6 h-6 text-brand-brown"></i>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-6 sm:p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30 flex-shrink-0">
+                        <i data-lucide="file-text" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-brown"></i>
                     </div>
-                    <h3 class="text-xl font-bold">Blog Post Creation</h3>
-                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                    <h3 class="text-lg sm:text-xl font-bold">Blog Post Creation</h3>
+                    <p class="text-brand-white/60 text-xs sm:text-sm leading-relaxed font-light">
                         Drafting and writing informational blog articles, updates, and online content frameworks tailored around your services or local industry topics.
                     </p>
                 </div>
-                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
-                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
-                        <i data-lucide="palette" class="w-6 h-6 text-brand-brown"></i>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-6 sm:p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30 flex-shrink-0">
+                        <i data-lucide="palette" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-brown"></i>
                     </div>
-                    <h3 class="text-xl font-bold">Graphic Design</h3>
-                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                    <h3 class="text-lg sm:text-xl font-bold">Graphic Design</h3>
+                    <p class="text-brand-white/60 text-xs sm:text-sm leading-relaxed font-light">
                         Creation of custom marketing graphics, business flyers, handouts, and other visual promotional print or digital layout materials.
-                    </p>
-                </div>
-                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
-                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
-                        <i data-lucide="star" class="w-6 h-6 text-brand-brown"></i>
-                    </div>
-                    <h3 class="text-xl font-bold">Reputation Management</h3>
-                    <p class="text-brand-white/60 text-sm leading-relaxed">
-                        Configuration of automatic AI responders for your Google reviews alongside structured cross-posting of verified reviews onto your social accounts.
-                    </p>
-                </div>
-                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
-                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
-                        <i data-lucide="layout" class="w-6 h-6 text-brand-brown"></i>
-                    </div>
-                    <h3 class="text-xl font-bold">Simple Website Design & Basic SEO</h3>
-                    <p class="text-brand-white/60 text-sm leading-relaxed">
-                        Construction of direct, informational single-page static websites built and hosted through HighLevel, including foundational meta-tag optimization.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="py-24 bg-brand-dark border-b border-brand-gray/10 relative w-full overflow-x-hidden">
+    <section id="portfolio" class="py-16 sm:py-24 bg-brand-dark border-b border-brand-gray/10 relative w-full overflow-x-hidden">
         
-        <div class="max-w-6xl mx-auto px-6 md:px-12 space-y-4 mb-16">
-            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Work Samples</h2>
-            <p class="text-brand-white/60 max-w-xl font-light">Practical design execution, short-form video layouts, and digital content formats built for active channels.</p>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 space-y-4 mb-12 sm:mb-16">
+            <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight">Work Samples</h2>
+            <p class="text-brand-white/60 max-w-xl font-light text-sm sm:text-base">Practical design execution, short-form video layouts, and digital content formats built for active channels.</p>
         </div>
 
-        <div class="space-y-16 w-full">
+        <div class="space-y-12 sm:space-y-16 w-full">
             
-            <div class="space-y-4 w-full">
-                <div class="max-w-6xl mx-auto px-6 md:px-12">
-                    <h3 class="text-sm font-bold uppercase tracking-wider text-brand-brown font-mono">/ 01. Social Media Static Posts</h3>
+            <div class="space-y-3 sm:space-y-4 w-full">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
+                    <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-brown font-mono">/ 01. Social Media Static Posts</h3>
                 </div>
-                <div class="w-full overflow-hidden relative bg-brand-gray/5 border-y border-brand-gray/10 py-10 group/window">
+                <div class="w-full overflow-hidden relative bg-brand-gray/5 border-y border-brand-gray/10 py-6 sm:py-10 group/window">
                     <div class="flex w-max flex-row flex-nowrap items-stretch animate-marquee-fast group-hover/window:animation-play-state-paused">
                         
-                        <div class="flex gap-8 px-4 flex-row flex-nowrap">
-                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                        <div class="flex gap-4 sm:gap-8 px-2 sm:px-4 flex-row flex-nowrap">
+                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
                                 <div class="bg-brand-gray/20 aspect-square w-full relative">
-                                    <img src="https://picsum.photos/600/600?random=1" alt="Post Layout" class="w-full h-full object-cover">
-                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Social Proof</span>
+                                    <img src="https://picsum.photos/600/600?random=1" alt="Post Layout" class="w-full h-full object-cover" loading="lazy">
+                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Social Proof</span>
                                 </div>
-                                <div class="p-6 space-y-2">
-                                    <h4 class="font-bold text-base text-white">Verified Feedback Card</h4>
-                                    <p class="text-brand-white/60 text-xs leading-relaxed">Clean customer review grid layout to display social proof and build business trust anchors.</p>
+                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
+                                    <h4 class="font-bold text-sm sm:text-base text-white">Verified Feedback Card</h4>
+                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean customer review grid layout to display social proof and build business trust anchors.</p>
                                 </div>
                             </div>
-                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
                                 <div class="bg-brand-gray/20 aspect-square w-full relative">
-                                    <img src="https://picsum.photos/600/600?random=11" alt="Post Layout" class="w-full h-full object-cover">
-                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Promotional</span>
+                                    <img src="https://picsum.photos/600/600?random=11" alt="Post Layout" class="w-full h-full object-cover" loading="lazy">
+                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Promotional</span>
                                 </div>
-                                <div class="p-6 space-y-2">
-                                    <h4 class="font-bold text-base text-white">Client Offer Campaign</h4>
-                                    <p class="text-brand-white/60 text-xs leading-relaxed">Clean visual hierarchy focusing on service parameters and localized campaign settings.</p>
+                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
+                                    <h4 class="font-bold text-sm sm:text-base text-white">Client Offer Campaign</h4>
+                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean visual hierarchy focusing on service parameters and localized campaign settings.</p>
                                 </div>
                             </div>
-                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
                                 <div class="bg-brand-gray/20 aspect-square w-full relative">
-                                    <img src="https://picsum.photos/600/600?random=12" alt="Post Layout" class="w-full h-full object-cover">
-                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Education</span>
+                                    <img src="https://picsum.photos/600/600?random=12" alt="Post Layout" class="w-full h-full object-cover" loading="lazy">
+                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Education</span>
                                 </div>
-                                <div class="p-6 space-y-2">
-                                    <h4 class="font-bold text-base text-white">Value Carousel Designs</h4>
-                                    <p class="text-brand-white/60 text-xs leading-relaxed">Highly legible multi-slide asset models built to capture core customer info patterns.</p>
+                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
+                                    <h4 class="font-bold text-sm sm:text-base text-white">Value Carousel Designs</h4>
+                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Highly legible multi-slide asset models built to capture core customer info patterns.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="flex gap-8 px-4 flex-row flex-nowrap">
-                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                        <div class="flex gap-4 sm:gap-8 px-2 sm:px-4 flex-row flex-nowrap">
+                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
                                 <div class="bg-brand-gray/20 aspect-square w-full relative">
-                                    <img src="https://picsum.photos/600/600?random=1" alt="Post Layout" class="w-full h-full object-cover">
-                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Social Proof</span>
+                                    <img src="https://picsum.photos/600/600?random=1" alt="Post Layout" class="w-full h-full object-cover" loading="lazy">
+                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Social Proof</span>
                                 </div>
-                                <div class="p-6 space-y-2">
-                                    <h4 class="font-bold text-base text-white">Verified Feedback Card</h4>
-                                    <p class="text-brand-white/60 text-xs leading-relaxed">Clean customer review grid layout to display social proof and build business trust anchors.</p>
+                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
+                                    <h4 class="font-bold text-sm sm:text-base text-white">Verified Feedback Card</h4>
+                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean customer review grid layout to display social proof and build business trust anchors.</p>
                                 </div>
                             </div>
-                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
                                 <div class="bg-brand-gray/20 aspect-square w-full relative">
-                                    <img src="https://picsum.photos/600/600?random=11" alt="Post Layout" class="w-full h-full object-cover">
-                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Promotional</span>
+                                    <img src="https://picsum.photos/600/600?random=11" alt="Post Layout" class="w-full h-full object-cover" loading="lazy">
+                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Promotional</span>
                                 </div>
-                                <div class="p-6 space-y-2">
-                                    <h4 class="font-bold text-base text-white">Client Offer Campaign</h4>
-                                    <p class="text-brand-white/60 text-xs leading-relaxed">Clean visual hierarchy focusing on service parameters and localized campaign settings.</p>
+                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
+                                    <h4 class="font-bold text-sm sm:text-base text-white">Client Offer Campaign</h4>
+                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean visual hierarchy focusing on service parameters and localized campaign settings.</p>
                                 </div>
                             </div>
-                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
                                 <div class="bg-brand-gray/20 aspect-square w-full relative">
-                                    <img src="https://picsum.photos/600/600?random=12" alt="Post Layout" class="w-full h-full object-cover">
-                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Education</span>
+                                    <img src="https://picsum.photos/600/600?random=12" alt="Post Layout" class="w-full h-full object-cover" loading="lazy">
+                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Education</span>
                                 </div>
-                                <div class="p-6 space-y-2">
-                                    <h4 class="font-bold text-base text-white">Value Carousel Designs</h4>
-                                    <p class="text-brand-white/60 text-xs leading-relaxed">Highly legible multi-slide asset models built to capture core customer info patterns.</p>
+                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
+                                    <h4 class="font-bold text-sm sm:text-base text-white">Value Carousel Designs</h4>
+                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Highly legible multi-slide asset models built to capture core customer info patterns.</p>
                                 </div>
                             </div>
                         </div>
@@ -279,55 +286,55 @@
                 </div>
             </div>
 
-            <div class="space-y-4 w-full">
-                <div class="max-w-6xl mx-auto px-6 md:px-12">
-                    <h3 class="text-sm font-bold uppercase tracking-wider text-brand-brown font-mono">/ 02. Branded Video Assets</h3>
+            <div class="space-y-3 sm:space-y-4 w-full">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
+                    <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-brown font-mono">/ 02. Branded Video Assets</h3>
                 </div>
                 <div class="w-full overflow-hidden relative bg-brand-gray/5 border-y border-brand-gray/10 py-10 group/window">
                     <div class="flex w-max flex-row flex-nowrap items-stretch animate-marquee-fast group-hover/window:animation-play-state-paused" style="animation-direction: reverse;">
                         
-                        <div class="flex gap-8 px-4 flex-row flex-nowrap">
-                            <div class="w-[280px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                        <div class="flex gap-4 sm:gap-8 px-2 sm:px-4 flex-row flex-nowrap">
+                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
                                 <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://picsum.photos/450/800?random=2" alt="Video Layout" class="w-full h-full object-cover opacity-80">
-                                    <i data-lucide="play" class="w-10 h-10 text-white absolute bg-brand-brown/90 rounded-full p-2.5"></i>
+                                    <img src="https://picsum.photos/450/800?random=2" alt="Video Layout" class="w-full h-full object-cover opacity-80" loading="lazy">
+                                    <i data-lucide="play" class="w-8 sm:w-10 h-8 sm:h-10 text-white absolute bg-brand-brown/90 rounded-full p-2"></i>
                                 </div>
-                                <div class="p-6 space-y-2">
-                                    <h4 class="font-bold text-base text-white">Kinetic Caption Overlays</h4>
-                                    <p class="text-brand-white/60 text-xs leading-relaxed">Timed text blocks structured cleanly over timelines to capture muted screen scrolls.</p>
+                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
+                                    <h4 class="font-bold text-sm sm:text-base text-white">Kinetic Caption Overlays</h4>
+                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Timed text blocks structured cleanly over timelines to capture muted screen scrolls.</p>
                                 </div>
                             </div>
-                            <div class="w-[280px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
                                 <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://picsum.photos/450/800?random=21" alt="Video Layout" class="w-full h-full object-cover opacity-80">
-                                    <i data-lucide="play" class="w-10 h-10 text-white absolute bg-brand-brown/90 rounded-full p-2.5"></i>
+                                    <img src="https://picsum.photos/450/800?random=21" alt="Video Layout" class="w-full h-full object-cover opacity-80" loading="lazy">
+                                    <i data-lucide="play" class="w-8 sm:w-10 h-8 sm:h-10 text-white absolute bg-brand-brown/90 rounded-full p-2"></i>
                                 </div>
-                                <div class="p-6 space-y-2">
-                                    <h4 class="font-bold text-base text-white">Short-Form B-Roll Cuts</h4>
-                                    <p class="text-brand-white/60 text-xs leading-relaxed">Clip arrangement and tracking cuts executed cleanly using raw corporate footage pieces.</p>
+                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
+                                    <h4 class="font-bold text-sm sm:text-base text-white">Short-Form B-Roll Cuts</h4>
+                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clip arrangement and tracking cuts executed cleanly using raw corporate footage pieces.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="flex gap-8 px-4 flex-row flex-nowrap">
-                            <div class="w-[280px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                        <div class="flex gap-4 sm:gap-8 px-2 sm:px-4 flex-row flex-nowrap">
+                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
                                 <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://picsum.photos/450/800?random=2" alt="Video Layout" class="w-full h-full object-cover opacity-80">
-                                    <i data-lucide="play" class="w-10 h-10 text-white absolute bg-brand-brown/90 rounded-full p-2.5"></i>
+                                    <img src="https://picsum.photos/450/800?random=2" alt="Video Layout" class="w-full h-full object-cover opacity-80" loading="lazy">
+                                    <i data-lucide="play" class="w-8 sm:w-10 h-8 sm:h-10 text-white absolute bg-brand-brown/90 rounded-full p-2"></i>
                                 </div>
-                                <div class="p-6 space-y-2">
-                                    <h4 class="font-bold text-base text-white">Kinetic Caption Overlays</h4>
-                                    <p class="text-brand-white/60 text-xs leading-relaxed">Timed text blocks structured cleanly over timelines to capture muted screen scrolls.</p>
+                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
+                                    <h4 class="font-bold text-sm sm:text-base text-white">Kinetic Caption Overlays</h4>
+                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Timed text blocks structured cleanly over timelines to capture muted screen scrolls.</p>
                                 </div>
                             </div>
-                            <div class="w-[280px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
                                 <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://picsum.photos/450/800?random=21" alt="Video Layout" class="w-full h-full object-cover opacity-80">
-                                    <i data-lucide="play" class="w-10 h-10 text-white absolute bg-brand-brown/90 rounded-full p-2.5"></i>
+                                    <img src="https://picsum.photos/450/800?random=21" alt="Video Layout" class="w-full h-full object-cover opacity-80" loading="lazy">
+                                    <i data-lucide="play" class="w-8 sm:w-10 h-8 sm:h-10 text-white absolute bg-brand-brown/90 rounded-full p-2.5"></i>
                                 </div>
-                                <div class="p-6 space-y-2">
-                                    <h4 class="font-bold text-base text-white">Short-Form B-Roll Cuts</h4>
-                                    <p class="text-brand-white/60 text-xs leading-relaxed">Clip arrangement and tracking cuts executed cleanly using raw corporate footage pieces.</p>
+                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
+                                    <h4 class="font-bold text-sm sm:text-base text-white">Short-Form B-Roll Cuts</h4>
+                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clip arrangement and tracking cuts executed cleanly using raw corporate footage pieces.</p>
                                 </div>
                             </div>
                         </div>
@@ -336,55 +343,55 @@
                 </div>
             </div>
 
-            <div class="space-y-4 w-full">
-                <div class="max-w-6xl mx-auto px-6 md:px-12">
-                    <h3 class="text-sm font-bold uppercase tracking-wider text-brand-brown font-mono">/ 03. Graphic Design</h3>
+            <div class="space-y-3 sm:space-y-4 w-full">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
+                    <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-brown font-mono">/ 03. Graphic Design</h3>
                 </div>
                 <div class="w-full overflow-hidden relative bg-brand-gray/5 border-y border-brand-gray/10 py-10 group/window">
                     <div class="flex w-max flex-row flex-nowrap items-stretch animate-marquee-fast group-hover/window:animation-play-state-paused">
                         
-                        <div class="flex gap-8 px-4 flex-row flex-nowrap">
-                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                        <div class="flex gap-4 sm:gap-8 px-2 sm:px-4 flex-row flex-nowrap">
+                            <div class="w-[220px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
                                 <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://picsum.photos/600/750?random=31" alt="Flyer Layout" class="w-full h-full object-cover">
-                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Flyer Design</span>
+                                    <img src="https://picsum.photos/600/750?random=31" alt="Flyer Layout" class="w-full h-full object-cover" loading="lazy">
+                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Flyer Design</span>
                                 </div>
-                                <div class="p-6 space-y-2">
-                                    <h4 class="font-bold text-base text-white">Promotional Marketing Flyer</h4>
-                                    <p class="text-brand-white/60 text-xs leading-relaxed">Structural layout design formatted to display client updates cleanly for physical printing or messaging.</p>
+                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
+                                    <h4 class="font-bold text-sm sm:text-base text-white">Promotional Flyer</h4>
+                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Structural layout design formatted to display client updates cleanly for printing or messaging.</p>
                                 </div>
                             </div>
-                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                            <div class="w-[220px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
                                 <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://picsum.photos/600/750?random=32" alt="Flyer Layout" class="w-full h-full object-cover">
-                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Print Asset</span>
+                                    <img src="https://picsum.photos/600/750?random=32" alt="Flyer Layout" class="w-full h-full object-cover" loading="lazy">
+                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Print Asset</span>
                                 </div>
-                                <div class="p-6 space-y-2">
-                                    <h4 class="font-bold text-base text-white">Corporate Resource Guide</h4>
-                                    <p class="text-brand-white/60 text-xs leading-relaxed">Clean vector layout architecture highlighting standard business hours and specific location details.</p>
+                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
+                                    <h4 class="font-bold text-sm sm:text-base text-white">Resource Guide</h4>
+                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean vector layout architecture highlighting standard business metrics and specific location details.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="flex gap-8 px-4 flex-row flex-nowrap">
-                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                        <div class="flex gap-4 sm:gap-8 px-2 sm:px-4 flex-row flex-nowrap">
+                            <div class="w-[220px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
                                 <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://picsum.photos/600/750?random=31" alt="Flyer Layout" class="w-full h-full object-cover">
-                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Flyer Design</span>
+                                    <img src="https://picsum.photos/600/750?random=31" alt="Flyer Layout" class="w-full h-full object-cover" loading="lazy">
+                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Flyer Design</span>
                                 </div>
-                                <div class="p-6 space-y-2">
-                                    <h4 class="font-bold text-base text-white">Promotional Marketing Flyer</h4>
-                                    <p class="text-brand-white/60 text-xs leading-relaxed">Structural layout design formatted to display client updates cleanly for physical printing or messaging.</p>
+                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
+                                    <h4 class="font-bold text-sm sm:text-base text-white">Promotional Flyer</h4>
+                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Structural layout design formatted to display client updates cleanly for printing or messaging.</p>
                                 </div>
                             </div>
-                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                            <div class="w-[220px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
                                 <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://picsum.photos/600/750?random=32" alt="Flyer Layout" class="w-full h-full object-cover">
-                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Print Asset</span>
+                                    <img src="https://picsum.photos/600/750?random=32" alt="Flyer Layout" class="w-full h-full object-cover" loading="lazy">
+                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Print Asset</span>
                                 </div>
-                                <div class="p-6 space-y-2">
-                                    <h4 class="font-bold text-base text-white">Corporate Resource Guide</h4>
-                                    <p class="text-brand-white/60 text-xs leading-relaxed">Clean vector layout architecture highlighting standard business hours and specific location details.</p>
+                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
+                                    <h4 class="font-bold text-sm sm:text-base text-white">Resource Guide</h4>
+                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean vector layout architecture highlighting standard business metrics and specific location details.</p>
                                 </div>
                             </div>
                         </div>
@@ -395,10 +402,10 @@
 
         </div>
 
-        <div class="max-w-6xl mx-auto px-6 md:px-12 space-y-12 pt-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 space-y-12 pt-16 sm:pt-24">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 bg-brand-gray/10 p-6 rounded-xl border border-brand-gray/20 space-y-4">
-                    <div class="w-10 h-10 rounded-lg bg-brand-brown/20 flex items-center justify-center border border-brand-brown/40">
+                    <div class="w-10 h-10 rounded-lg bg-brand-brown/20 flex items-center justify-center border border-brand-brown/40 flex-shrink-0">
                         <i data-lucide="cpu" class="w-5 h-5 text-brand-brown"></i>
                     </div>
                     <h3 class="text-xl font-bold">Optimized AI-Powered Writing</h3>
@@ -415,13 +422,13 @@
                         <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-brown"></i> AEO (Answer Engine Optimization)</li>
                     </ul>
                 </div>
-                <div class="md:col-span-7 space-y-4 bg-brand-dark border border-brand-gray/20 rounded-xl p-6">
-                    <span class="text-xs font-mono text-brand-white/40">[Structured Article Layout Draft]</span>
-                    <h4 class="text-lg font-bold text-white border-b border-brand-gray/10 pb-2">Sample Outline: Structural Local Business Maintenance</h4>
-                    <p class="text-xs text-brand-white/50 leading-relaxed italic">
+                <div class="md:col-span-7 space-y-4 bg-brand-dark border border-brand-gray/20 rounded-xl p-4 sm:p-6 overflow-x-auto no-scrollbar">
+                    <span class="text-xs font-mono text-brand-white/40 block min-w-[280px]">[Structured Article Layout Draft]</span>
+                    <h4 class="text-base sm:text-lg font-bold text-white border-b border-brand-gray/10 pb-2 min-w-[280px]">Sample Outline: Structural Local Business Maintenance</h4>
+                    <p class="text-xs text-brand-white/50 leading-relaxed italic min-w-[280px]">
                         "Below is an example of an optimized information framework. Notice the structural inclusion of target service metrics inside standard H2 text blocks to align completely with foundational engine parameters..."
                     </p>
-                    <div class="space-y-3 pt-2 text-xs font-light text-brand-white/70">
+                    <div class="space-y-3 pt-2 text-xs font-light text-brand-white/70 min-w-[280px]">
                         <p class="font-bold text-brand-brown"># H1: Why Local Property Upkeep Saves Long-Term Operational Budget</p>
                         <p>Standard introductory text establishing direct operational context without fluff. This area introduces structural definitions clearly...</p>
                         <p class="font-bold text-brand-brown">## H2: Key Service Tasks Mapped in Your Local Region</p>
@@ -431,9 +438,9 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start pt-6">
-                <div class="md:col-span-7 bg-brand-dark border border-brand-gray/20 rounded-xl p-6 space-y-4 order-2 md:order-1">
-                    <span class="text-xs font-mono text-brand-white/40">[HighLevel Dashboard Markdown Template]</span>
-                    <div class="border border-brand-gray/20 rounded-lg p-4 bg-brand-gray/5 space-y-3 text-xs text-brand-white/70 font-light">
+                <div class="md:col-span-7 bg-brand-dark border border-brand-gray/20 rounded-xl p-4 sm:p-6 order-2 md:order-1 overflow-x-auto no-scrollbar">
+                    <span class="text-xs font-mono text-brand-white/40 block min-w-[280px]">[HighLevel Dashboard Markdown Template]</span>
+                    <div class="border border-brand-gray/20 rounded-lg p-4 bg-brand-gray/5 space-y-3 text-xs text-brand-white/70 font-light min-w-[280px]">
                         <div class="border-b border-brand-gray/20 pb-2 font-mono text-brand-white/40 text-[10px]">
                             Subject: Core Business Operational Update [First Name]
                         </div>
@@ -445,7 +452,7 @@
                     </div>
                 </div>
                 <div class="md:col-span-5 bg-brand-gray/10 p-6 rounded-xl border border-brand-gray/20 space-y-4 order-1 md:order-2">
-                    <div class="w-10 h-10 rounded-lg bg-brand-brown/20 flex items-center justify-center border border-brand-brown/40">
+                    <div class="w-10 h-10 rounded-lg bg-brand-brown/20 flex items-center justify-center border border-brand-brown/40 flex-shrink-0">
                         <i data-lucide="mail" class="w-5 h-5 text-brand-brown"></i>
                     </div>
                     <h3 class="text-xl font-bold">Email Template Structuring</h3>
@@ -460,112 +467,157 @@
         </div>
     </section>
 
-    <section id="pricing" class="py-24 px-6 md:px-12 border-b border-brand-gray/10">
-        <div class="max-w-5xl mx-auto space-y-16">
-            <div class="text-center space-y-4">
-                <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Straightforward Pricing</h2>
-                <p class="text-brand-white/60 max-w-xl mx-auto font-light">Defined monthly packages matching specific workflow requirements.</p>
+    <section id="pricing" class="py-16 sm:py-24 px-4 sm:px-6 md:px-12 border-b border-brand-gray/10">
+        <div class="max-w-5xl mx-auto space-y-12 sm:space-y-16">
+            <div class="text-center space-y-3 sm:space-y-4">
+                <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight">Straightforward Pricing</h2>
+                <p class="text-brand-white/60 max-w-xl mx-auto font-light text-sm sm:text-base">Defined monthly packages matching specific workflow requirements.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-2xl p-8 relative space-y-6 flex flex-col justify-between">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-2xl p-6 sm:p-8 relative space-y-6 flex flex-col justify-between h-full">
                     <div class="space-y-4">
-                        <h3 class="text-xl font-bold">Standard Creative Support</h3>
+                        <h3 class="text-xl font-bold">Standard Support</h3>
                         <p class="text-brand-white/50 text-xs uppercase tracking-wider font-semibold">Core channel updates</p>
-                        <div class="text-3xl font-extrabold text-white">$1,500 <span class="text-sm font-normal text-brand-white/60">/ month</span></div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white">$1,500 <span class="text-sm font-normal text-brand-white/60">/ month</span></div>
                         <hr class="border-brand-gray/20">
-                        <ul class="space-y-3 text-sm text-brand-white/70">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> 3 Static Graphic Posts Per Week</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Flyer Designs & Marketing Graphics</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Email Campaign Template Setup</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Simple Website Design & Basic SEO</li>
+                        <ul class="space-y-3 text-xs sm:text-sm text-brand-white/70 font-light">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown mt-0.5 flex-shrink-0"></i> 3 Static Graphic Posts Per Week</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Flyer Designs & Marketing Graphics</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Email Campaign Template Setup</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Simple Website Design & Basic SEO</li>
                         </ul>
                     </div>
-                    <a href="#book" class="block w-full text-center bg-brand-gray/20 hover:bg-brand-gray/30 border border-brand-gray/40 text-white font-bold py-3 rounded transition text-sm">Select Package</a>
+                    <a href="#book" class="block w-full text-center bg-brand-gray/20 hover:bg-brand-gray/30 border border-brand-gray/40 text-white font-bold py-3 rounded-xl transition text-xs sm:text-sm mt-4">Select Package</a>
                 </div>
 
-                <div class="bg-brand-gray/10 border-2 border-brand-brown rounded-2xl p-8 relative space-y-6 flex flex-col justify-between shadow-xl shadow-brand-brown/5">
+                <div class="bg-brand-gray/10 border-2 border-brand-brown rounded-2xl p-6 sm:p-8 relative space-y-6 flex flex-col justify-between h-full shadow-xl shadow-brand-brown/5">
                     <div class="space-y-4">
-                        <h3 class="text-xl font-bold">Full Creative Support Package</h3>
+                        <h3 class="text-xl font-bold">Full Support Package</h3>
                         <p class="text-brand-white/50 text-xs uppercase tracking-wider font-semibold">Expanded content production</p>
-                        <div class="text-3xl font-extrabold text-white">$2,800 <span class="text-sm font-normal text-brand-white/60">/ month</span></div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white">$2,800 <span class="text-sm font-normal text-brand-white/60">/ month</span></div>
                         <hr class="border-brand-gray/20">
-                        <ul class="space-y-3 text-sm text-brand-white/70">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> All Deliverables from the Standard Package</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> 2 Branded Short Video Edits Per Week</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Monthly Informational Blog Post Writing</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Ongoing Email Newsletter Coordination</li>
+                        <ul class="space-y-3 text-xs sm:text-sm text-brand-white/70 font-light">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> All Deliverables from Standard Package</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> 2 Branded Short Video Edits Per Week</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Monthly Informational Blog Writing</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Ongoing Email Newsletter Coordination</li>
                         </ul>
                     </div>
-                    <a href="#book" class="block w-full text-center bg-brand-brown hover:bg-opacity-90 text-white font-bold py-3 rounded transition text-sm shadow-md">Get Started Now</a>
+                    <a href="#book" class="block w-full text-center bg-brand-brown hover:bg-opacity-90 text-white font-bold py-3 rounded-xl transition text-xs sm:text-sm shadow-md mt-4">Get Started Now</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 md:px-12 bg-brand-gray/5 border-b border-brand-gray/10">
-        <div class="max-w-5xl mx-auto space-y-12">
-            <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-center">Client Feedback</h2>
+    <section class="py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-brand-gray/5 border-b border-brand-gray/10">
+        <div class="max-w-5xl mx-auto space-y-10 sm:space-y-12">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-center">Client Feedback</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-brand-dark p-6 border border-brand-gray/20 rounded-xl space-y-4">
-                    <div class="flex text-yellow-500 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
-                    <p class="text-brand-white/70 text-sm italic leading-relaxed">"Ian builds out our monthly newsletter updates exactly as requested and organizes our list layouts cleanly."</p>
-                    <div class="text-xs font-bold text-brand-white/50">— Local Business Owner, West Coast</div>
+                <div class="bg-brand-dark p-5 sm:p-6 border border-brand-gray/20 rounded-xl space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex text-yellow-500 gap-1"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i></div>
+                        <p class="text-brand-white/70 text-xs sm:text-sm italic leading-relaxed font-light">"Ian builds out our monthly newsletter updates exactly as requested and organizes our list layouts cleanly."</p>
+                    </div>
+                    <div class="text-[11px] font-bold text-brand-white/50 pt-2 border-t border-brand-gray/10">— Local Business Owner, West Coast</div>
                 </div>
-                <div class="bg-brand-dark p-6 border border-brand-gray/20 rounded-xl space-y-4">
-                    <div class="flex text-yellow-500 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
-                    <p class="text-brand-white/70 text-sm italic leading-relaxed">"Our social graphics and promotional flyers look clean, consistent, and match our branding details perfectly every week."</p>
-                    <div class="text-xs font-bold text-brand-white/50">— E-Commerce Founder</div>
+                <div class="bg-brand-dark p-5 sm:p-6 border border-brand-gray/20 rounded-xl space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex text-yellow-500 gap-1"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i></div>
+                        <p class="text-brand-white/70 text-xs sm:text-sm italic leading-relaxed font-light">"Our social graphics and promotional flyers look clean, consistent, and match our branding details perfectly every week."</p>
+                    </div>
+                    <div class="text-[11px] font-bold text-brand-white/50 pt-2 border-t border-brand-gray/10">— E-Commerce Founder</div>
                 </div>
-                <div class="bg-brand-dark p-6 border border-brand-gray/20 rounded-xl space-y-4">
-                    <div class="flex text-yellow-500 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
-                    <p class="text-brand-white/70 text-sm italic leading-relaxed">"The short branded video adjustments and single informational web page layout were structured exactly how we asked."</p>
-                    <div class="text-xs font-bold text-brand-white/50">— Franchise Operator, CA</div>
+                <div class="bg-brand-dark p-5 sm:p-6 border border-brand-gray/20 rounded-xl space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex text-yellow-500 gap-1"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i></div>
+                        <p class="text-brand-white/70 text-xs sm:text-sm italic leading-relaxed font-light">"The short branded video adjustments and single informational web page layout were structured exactly how we asked."</p>
+                    </div>
+                    <div class="text-[11px] font-bold text-brand-white/50 pt-2 border-t border-brand-gray/10">— Franchise Operator, CA</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="book" class="py-24 px-6 md:px-12 max-w-4xl mx-auto space-y-12">
-        <div class="text-center space-y-4">
-            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Let's Connect</h2>
-            <p class="text-brand-white/60 max-w-md mx-auto font-light">Select a time below to schedule an implementation call via Google Calendar.</p>
+    <section id="book" class="py-16 sm:py-24 px-4 sm:px-6 md:px-12 max-w-4xl mx-auto space-y-10 sm:space-y-12">
+        <div class="text-center space-y-3 sm:space-y-4">
+            <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight">Let's Connect</h2>
+            <p class="text-brand-white/60 max-w-md mx-auto font-light text-sm sm:text-base">Select a time below to schedule an implementation call via Google Calendar.</p>
         </div>
 
-        <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-2xl p-4 md:p-8 min-h-[500px] flex flex-col justify-between items-center relative overflow-hidden">
-            <div class="w-full flex justify-between items-center text-xs font-mono text-brand-white/40 pb-4 border-b border-brand-gray/20">
+        <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-2xl p-4 sm:p-8 min-h-[400px] sm:min-h-[500px] flex flex-col justify-between items-center relative overflow-hidden">
+            <div class="w-full flex justify-between items-center text-[10px] font-mono text-brand-white/40 pb-3 border-b border-brand-gray/20">
                 <span>[Google Calendar Embed Window]</span>
-                <span>ID: custom-scheduler-iframe</span>
+                <span class="hidden sm:inline">ID: custom-scheduler-iframe</span>
             </div>
             
-            <div class="my-auto space-y-4 text-center max-w-sm">
-                <i data-lucide="calendar" class="w-12 h-12 text-brand-brown mx-auto opacity-80"></i>
-                <h4 class="font-bold text-lg text-white">Your Calendar Layout Renders Here</h4>
-                <p class="text-xs text-brand-white/50 leading-relaxed">
+            <div class="my-auto space-y-3 text-center max-w-sm py-8">
+                <i data-lucide="calendar" class="w-10 h-10 sm:w-12 sm:h-12 text-brand-brown mx-auto opacity-80"></i>
+                <h4 class="font-bold text-base sm:text-lg text-white">Your Calendar Layout Renders Here</h4>
+                <p class="text-xs text-brand-white/50 leading-relaxed font-light">
                     Once deployed on your HighLevel platform, swap this block out for your responsive booking page link or standard public scheduling iframe code.
                 </p>
             </div>
 
-            <div class="w-full grid grid-cols-7 gap-2 pt-6 border-t border-brand-gray/10 text-[10px] font-mono text-brand-white/30 text-center">
+            <div class="w-full grid grid-cols-7 gap-1 sm:gap-2 pt-4 border-t border-brand-gray/10 text-[9px] font-mono text-brand-white/30 text-center">
                 <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
-                <span class="bg-brand-gray/20 py-2 rounded text-brand-white/50">10:00</span>
-                <span class="bg-brand-gray/20 py-2 rounded text-brand-white/50">11:30</span>
-                <span class="bg-brand-brown text-white py-2 rounded font-bold">14:00</span>
-                <span class="bg-brand-gray/20 py-2 rounded text-brand-white/50">15:30</span>
-                <span class="bg-brand-gray/5 py-2 rounded line-through">--:--</span>
-                <span class="bg-brand-gray/5 py-2 rounded line-through">--:--</span>
-                <span class="bg-brand-gray/5 py-2 rounded line-through">--:--</span>
+                <span class="bg-brand-gray/20 py-1.5 rounded text-brand-white/50">10:00</span>
+                <span class="bg-brand-gray/20 py-1.5 rounded text-brand-white/50">11:30</span>
+                <span class="bg-brand-brown text-white py-1.5 rounded font-bold">14:00</span>
+                <span class="bg-brand-gray/20 py-1.5 rounded text-brand-white/50">15:30</span>
+                <span class="bg-brand-gray/5 py-1.5 rounded line-through opacity-30">--:--</span>
+                <span class="bg-brand-gray/5 py-1.5 rounded line-through opacity-30">--:--</span>
+                <span class="bg-brand-gray/5 py-1.5 rounded line-through opacity-30">--:--</span>
             </div>
         </div>
     </section>
 
-    <footer class="bg-brand-dark border-t border-brand-gray/20 py-8 px-6 md:px-12 text-center text-xs text-brand-white/40 space-y-2">
+    <footer class="bg-brand-dark border-t border-brand-gray/20 py-8 px-4 sm:px-6 md:px-12 text-center text-xs text-brand-white/40 space-y-2">
         <p>&copy; 2026 The Fluffy Beanie. All rights reserved.</p>
         <p class="font-mono text-[10px]">Built Clean. Hosted securely via HighLevel.</p>
     </footer>
 
     <script>
         lucide.createIcons();
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleNavigationMenu() {
+            const isOpened = mobileMenu.classList.contains('hidden');
+            if (isOpened) {
+                mobileMenu.classList.remove('hidden');
+                menuToggle.innerHTML = '<i data-lucide="x" class="w-6 h-6 text-brand-brown"></i>';
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuToggle.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            }
+            lucide.createIcons();
+        }
+
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleNavigationMenu();
+        });
+
+        // Safe auto-collapse setup when clicking anywhere else or selecting links on small viewports
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
+                mobileMenu.classList.add('hidden');
+                menuToggle.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                lucide.createIcons();
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuToggle.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                lucide.createIcons();
+            });
+        });
     </script>
 </body>
 </html>
