@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Portfolio | The Fluffy Beanie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styling & Brand Colors */
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #1a1d20;
+            --text-muted: #5f676d;
+            --accent-color: #212529; /* Deep dark tone matching your main brand */
+            --border-color: #e9ecef;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #1a1d20;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .logo-img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #fff; /* Placeholder if needed */
+        }
+
+        .back-link {
+            color: #ced4da;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+        }
+
+        /* Main Content Container */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Page Intro Section */
+        .intro-section {
+            margin-bottom: 3.5rem;
+            text-align: left;
+        }
+
+        .intro-section h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .intro-section p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 700px;
+        }
+
+        /* Category Filter Tabs (Optional utility) */
+        .filter-container {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1.25rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border-color: var(--accent-color);
+        }
+
+        /* Grid Layout for Static Posts */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Work Sample Cards */
+        .portfolio-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Image Display Box */
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 100%; /* Perfect 1:1 Square Ratio for Social Media Posts */
+            background-color: #eaedf0;
+        }
+
+        .image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Fallback placeholder text style */
+        .image-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a0aec0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Card Text Information */
+        .card-details {
+            padding: 1.5rem;
+        }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 5rem;
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            main {
+                padding: 2rem 1rem;
+            }
+            .intro-section h1 {
+                font-size: 1.8rem;
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="https://thefluffybeanie.github.io/portfolio" class="logo-area">
+                <img src="https://i.imgur.com/IFu6dnN.png" alt="The Fluffy Beanie Logo" class="logo-img">
+                <span>The Fluffy Beanie</span>
+            </a>
+            <a href="https://thefluffybeanie.github.io/portfolio" class="back-link">← Back to Main Portfolio</a>
+        </div>
+    </header>
+
+    <main>
+        
+        <div class="intro-section">
+            <h1>Social Media Static Posts</h1>
+            <p>A gallery of clean visual layouts, promotional graphics, and custom brand designs created for clients across different industries.</p>
+        </div>
+
+        <div class="filter-container">
+            <button class="filter-btn active">All Projects</button>
+            <button class="filter-btn">Promotional</button>
+            <button class="filter-btn">Informational</button>
+            <button class="filter-btn">Brand Identity</button>
+        </div>
+
+        <div class="portfolio-grid">
+
+            <div class="portfolio-card">
+                <div class="image-wrapper">
+                    <img src="" alt="">
+                    <div class="image-placeholder">[Static Post Image Placeholder 1]</div>
+                </div>
+                <div class="card-details">
+                    <span class="card-tag">Promotional Graphic</span>
+                    <h2 class="card-title">Client Offer Campaign</h2>
+                    <p class="card-description">Clean layout focusing on service clarity, structural branding, and direct calls to action.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="image-wrapper">
+                    <img src="" alt="">
+                    <div class="image-placeholder">[Static Post Image Placeholder 2]</div>
+                </div>
+                <div class="card-details">
+                    <span class="card-tag">Informational Tip</span>
+                    <h2 class="card-title">Educational Content Carousel</h2>
+                    <p class="card-description">Highly readable multi-slide structure tailored for straightforward tips and community value.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="image-wrapper">
+                    <img src="" alt="">
+                    <div class="image-placeholder">[Static Post Image Placeholder 3]</div>
+                </div>
+                <div class="card-details">
+                    <span class="card-tag">Review Feature</span>
+                    <h2 class="card-title">Customer Feedback Post</h2>
+                    <p class="card-description">Clean review template maximizing customer trust and social proof using precise text hierarchy.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="image-wrapper">
+                    <img src="" alt="">
+                    <div class="image-placeholder">[Static Post Image Placeholder 4]</div>
+                </div>
+                <div class="card-details">
+                    <span class="card-tag">Brand Announcement</span>
+                    <h2 class="card-title">Holiday Hours Update</h2>
+                    <p class="card-description">Quick operational notification post matching local industry specifics with zero filler elements.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="image-wrapper">
+                    <img src="" alt="">
+                    <div class="image-placeholder">[Static Post Image Placeholder 5]</div>
+                </div>
+                <div class="card-details">
+                    <span class="card-tag">Promotional Graphic</span>
+                    <h2 class="card-title">Seasonal Service Launch</h2>
+                    <p class="card-description">High-contrast visual layout designed to catch eyes on active feeds and drive engagement.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="image-wrapper">
+                    <img src="" alt="">
+                    <div class="image-placeholder">[Static Post Image Placeholder 6]</div>
+                </div>
+                <div class="card-details">
+                    <span class="card-tag">Humor & Culture</span>
+                    <h2 class="card-title">Relatable Niche Meme</h2>
+                    <p class="card-description">Clean community-driven visual content focused on industry-specific human analogies.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 The Fluffy Beanie. All rights reserved. Created for digital execution support.</p>
+    </footer>
+
+</body>
+</html>
