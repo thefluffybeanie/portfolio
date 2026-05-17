@@ -17,7 +17,7 @@
             --accent-color: #212529;
             --border-color: #e9ecef;
             --border-radius: 12px;
-            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
 
         * {
@@ -31,6 +31,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden; /* Prevents horizontal scrollbars from the animation */
         }
 
         /* Navigation Bar */
@@ -81,14 +82,14 @@
 
         /* Main Content Container */
         main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 3rem 0; /* Removed side padding so ticker spans edge-to-edge */
         }
 
         /* Page Intro Section */
         .intro-section {
-            margin-bottom: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto 3.5rem auto;
+            padding: 0 2rem;
             text-align: left;
         }
 
@@ -105,28 +106,51 @@
             max-width: 700px;
         }
 
-        /* Slideshow Container */
-        .slideshow-container {
+        /* Ticker Container Window */
+        .ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+            background-color: transparent;
+            padding: 2rem 0;
             position: relative;
-            max-width: 500px; /* Standard square social post scale */
-            margin: 0 auto 2rem auto;
         }
 
-        /* Hide slides by default */
-        .portfolio-slide {
-            display: none;
+        /* Moving track holding the items */
+        .ticker-track {
+            display: flex;
+            width: max-content;
+            animation: scrollMarquee 35s linear infinite;
+        }
+
+        /* Pause animation on hover */
+        .ticker-wrap:hover .ticker-track {
+            animation-play-state: paused;
+        }
+
+        /* Individual Card Item inside Ticker */
+        .portfolio-card {
+            width: 300px; /* Explicit size for horizontal consistency */
+            margin: 0 1rem; /* Spacing between scrolling items */
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
+            flex-shrink: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Image Display Box */
+        /* Slight pop dynamic when hovering a card */
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Image Setup */
         .image-wrapper {
             position: relative;
             width: 100%;
-            padding-top: 100%; /* Perfect 1:1 Square Ratio */
+            padding-top: 100%; /* Keeps it a strict square */
             background-color: #eaedf0;
         }
 
@@ -141,93 +165,40 @@
 
         /* Card Text Information */
         .card-details {
-            padding: 1.5rem;
-            background: #fff;
+            padding: 1.25rem;
         }
 
         .card-tag {
             display: inline-block;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: var(--text-muted);
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .card-title {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: var(--text-main);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .card-description {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
+            line-height: 1.4;
         }
 
-        /* Next & previous buttons */
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 40%;
-            width: auto;
-            padding: 16px;
-            color: #ffffff;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.3s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-            background-color: rgba(0, 0, 0, 0.4);
-            text-decoration: none;
-            z-index: 10;
-        }
-
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-
-        .prev {
-            left: 0;
-        }
-
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        /* Slide Indicator Dots */
-        .dot-container {
-            text-align: center;
-            margin-top: 1rem;
-        }
-
-        .dot {
-            cursor: pointer;
-            height: 10px;
-            width: 10px;
-            margin: 0 4px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-
-        .active, .dot:hover {
-            background-color: var(--accent-color);
-        }
-
-        /* Smooth Fade Animation */
-        .fade {
-            animation-name: fade;
-            animation-duration: 0.5s;
-        }
-
-        @keyframes fade {
-            from {opacity: .4} 
-            to {opacity: 1}
+        /* KEYFRAME ANIMATION: Moves items left smoothly */
+        @keyframes scrollMarquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* Moves exactly halfway (one full set of duplicates) */
+            }
         }
 
         /* Footer */
@@ -240,13 +211,12 @@
             font-size: 0.9rem;
         }
 
-        @media (max-width: 576px) {
-            main {
-                padding: 2rem 1rem;
+        @media (max-width: 768px) {
+            .intro-section h1 {
+                font-size: 1.8rem;
             }
-            .prev, .next {
-                padding: 12px;
-                font-size: 14px;
+            .ticker-track {
+                animation-duration: 25s; /* Speed up slightly on mobile screens */
             }
         }
     </style>
@@ -270,142 +240,115 @@
         <!-- Intro Header -->
         <div class="intro-section">
             <h1>Social Media Static Posts</h1>
-            <p>An interactive look at clean visual layouts, promotional graphics, and custom brand designs created for clients.</p>
+            <p>A continuous, curated look at clean visual layouts, promotional graphics, and custom brand designs created for clients. Hover over any post to pause.</p>
         </div>
 
-        <!-- Slideshow Parent Wrapper -->
-        <div class="slideshow-container">
+        <!-- Continuous Ticker Window -->
+        <div class="ticker-wrap">
+            <!-- The Track contains TWO identical sets of cards back-to-back to make the loop infinite and seamless -->
+            <div class="ticker-track">
 
-            <!-- Slide 1 -->
-            <div class="portfolio-slide fade">
-                <div class="image-wrapper">
-                    <img src="https://picsum.photos/600/600?random=1" alt="Promotional Strategy Post">
+                <!-- --- SET 1 --- -->
+                <div class="portfolio-card">
+                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=1" alt="Campaign Post"></div>
+                    <div class="card-details">
+                        <span class="card-tag">Promotional Graphic</span>
+                        <h2 class="card-title">Client Offer Campaign</h2>
+                        <p class="card-description">Clean layout focusing on service clarity, structural branding, and direct calls to action.</p>
+                    </div>
                 </div>
-                <div class="card-details">
-                    <span class="card-tag">Promotional Graphic</span>
-                    <h2 class="card-title">Client Offer Campaign</h2>
-                    <p class="card-description">Clean layout focusing on service clarity, structural branding, and direct calls to action.</p>
+
+                <div class="portfolio-card">
+                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=2" alt="Educational Post"></div>
+                    <div class="card-details">
+                        <span class="card-tag">Informational Tip</span>
+                        <h2 class="card-title">Educational Carousel</h2>
+                        <p class="card-description">Highly readable multi-slide structure tailored for straightforward tips and community value.</p>
+                    </div>
                 </div>
+
+                <div class="portfolio-card">
+                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=3" alt="Review Post"></div>
+                    <div class="card-details">
+                        <span class="card-tag">Review Feature</span>
+                        <h2 class="card-title">Customer Feedback Post</h2>
+                        <p class="card-description">Clean review template maximizing customer trust and social proof using precise text hierarchy.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=4" alt="Update Post"></div>
+                    <div class="card-details">
+                        <span class="card-tag">Brand Announcement</span>
+                        <h2 class="card-title">Holiday Hours Update</h2>
+                        <p class="card-description">Quick operational notification post matching local industry specifics with zero filler elements.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=5" alt="Launch Post"></div>
+                    <div class="card-details">
+                        <span class="card-tag">Promotional Graphic</span>
+                        <h2 class="card-title">Seasonal Service Launch</h2>
+                        <p class="card-description">High-contrast visual layout designed to catch eyes on active feeds and drive engagement.</p>
+                    </div>
+                </div>
+
+
+                <!-- --- SET 2 (Exact Duplicate for Seamless Loop) --- -->
+                <div class="portfolio-card">
+                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=1" alt="Campaign Post"></div>
+                    <div class="card-details">
+                        <span class="card-tag">Promotional Graphic</span>
+                        <h2 class="card-title">Client Offer Campaign</h2>
+                        <p class="card-description">Clean layout focusing on service clarity, structural branding, and direct calls to action.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=2" alt="Educational Post"></div>
+                    <div class="card-details">
+                        <span class="card-tag">Informational Tip</span>
+                        <h2 class="card-title">Educational Carousel</h2>
+                        <p class="card-description">Highly readable multi-slide structure tailored for straightforward tips and community value.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=3" alt="Review Post"></div>
+                    <div class="card-details">
+                        <span class="card-tag">Review Feature</span>
+                        <h2 class="card-title">Customer Feedback Post</h2>
+                        <p class="card-description">Clean review template maximizing customer trust and social proof using precise text hierarchy.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=4" alt="Update Post"></div>
+                    <div class="card-details">
+                        <span class="card-tag">Brand Announcement</span>
+                        <h2 class="card-title">Holiday Hours Update</h2>
+                        <p class="card-description">Quick operational notification post matching local industry specifics with zero filler elements.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=5" alt="Launch Post"></div>
+                    <div class="card-details">
+                        <span class="card-tag">Promotional Graphic</span>
+                        <h2 class="card-title">Seasonal Service Launch</h2>
+                        <p class="card-description">High-contrast visual layout designed to catch eyes on active feeds and drive engagement.</p>
+                    </div>
+                </div>
+
             </div>
-
-            <!-- Slide 2 -->
-            <div class="portfolio-slide fade">
-                <div class="image-wrapper">
-                    <img src="https://picsum.photos/600/600?random=2" alt="Educational Content Post">
-                </div>
-                <div class="card-details">
-                    <span class="card-tag">Informational Tip</span>
-                    <h2 class="card-title">Educational Content Carousel</h2>
-                    <p class="card-description">Highly readable multi-slide structure tailored for straightforward tips and community value.</p>
-                </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="portfolio-slide fade">
-                <div class="image-wrapper">
-                    <img src="https://picsum.photos/600/600?random=3" alt="Customer Review Design">
-                </div>
-                <div class="card-details">
-                    <span class="card-tag">Review Feature</span>
-                    <h2 class="card-title">Customer Feedback Post</h2>
-                    <p class="card-description">Clean review template maximizing customer trust and social proof using precise text hierarchy.</p>
-                </div>
-            </div>
-
-            <!-- Slide 4 -->
-            <div class="portfolio-slide fade">
-                <div class="image-wrapper">
-                    <img src="https://picsum.photos/600/600?random=4" alt="Brand Updates Post">
-                </div>
-                <div class="card-details">
-                    <span class="card-tag">Brand Announcement</span>
-                    <h2 class="card-title">Holiday Hours Update</h2>
-                    <p class="card-description">Quick operational notification post matching local industry specifics with zero filler elements.</p>
-                </div>
-            </div>
-
-            <!-- Slide 5 -->
-            <div class="portfolio-slide fade">
-                <div class="image-wrapper">
-                    <img src="https://picsum.photos/600/600?random=5" alt="Seasonal Launch Graphic">
-                </div>
-                <div class="card-details">
-                    <span class="card-tag">Promotional Graphic</span>
-                    <h2 class="card-title">Seasonal Service Launch</h2>
-                    <p class="card-description">High-contrast visual layout designed to catch eyes on active feeds and drive engagement.</p>
-                </div>
-            </div>
-
-            <!-- Navigation Arrows -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-
-        <!-- Pagination Indicator Dots -->
-        <div class="dot-container">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-            <span class="dot" onclick="currentSlide(5)"></span>
-        </div>
-
     </main>
 
     <!-- Footer Area -->
     <footer>
         <p>© 2026 The Fluffy Beanie. All rights reserved. Created for digital execution support.</p>
     </footer>
-
-    <!-- Slideshow Control Logic -->
-    <script>
-        let slideIndex = 1;
-        let slideTimer;
-        showSlides(slideIndex);
-
-        // Next/previous controls
-        function plusSlides(n) {
-            clearInterval(slideTimer); // Reset auto-advance timer on click
-            showSlides(slideIndex += n);
-            startTimer();
-        }
-
-        // Thumbnail image controls
-        function currentSlide(n) {
-            clearInterval(slideTimer); // Reset auto-advance timer on click
-            showSlides(slideIndex = n);
-            startTimer();
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("portfolio-slide");
-            let dots = document.getElementsByClassName("dot");
-            
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
-        }
-
-        // Automatic slide rotation (Every 4 seconds)
-        function startTimer() {
-            slideTimer = setInterval(function() {
-                slideIndex++;
-                showSlides(slideIndex);
-            }, 4000);
-        }
-
-        startTimer();
-    </script>
 
 </body>
 </html>
