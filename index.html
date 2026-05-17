@@ -29,8 +29,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        .creative-ease {
-            transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+        /* Pure CSS infinite marquee track rules matching your reference file */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
         }
     </style>
 </head>
@@ -188,92 +193,190 @@
         </div>
     </section>
 
-    <!-- FULL BLEED CREATIVE CUE SLIDESHOW SHOWCASE -->
-    <section id="portfolio" class="py-24 bg-brand-dark border-b border-brand-gray/10 relative w-full overflow-hidden">
+    <!-- FULL BLEED SEPARATE MARQUEE SHOWCASE TIERS -->
+    <section id="portfolio" class="py-24 bg-brand-dark border-b border-brand-gray/10 relative w-full overflow-x-hidden">
         
-        <!-- Header bounds constrained to match standard design lines -->
         <div class="max-w-6xl mx-auto px-6 md:px-12 space-y-4 mb-16">
             <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Work Samples</h2>
-            <p class="text-brand-white/60 max-w-xl font-light">Practical design execution, video layout editing, and digital content formats built for clients.</p>
+            <p class="text-brand-white/60 max-w-xl font-light">Practical design execution, short-form video layouts, and digital content formats built for active channels.</p>
         </div>
 
-        <!-- Full-bleed interactive theater stage wrapper stretching border-to-border -->
-        <div class="relative h-[650px] md:h-[520px] element-deck w-full bg-brand-gray/5 border-y border-brand-gray/15">
-            <div class="relative w-full h-full slideshow-deck">
-
-                <!-- Slide 1: Social Media Static Posts -->
-                <div class="slide-item absolute inset-0 opacity-0 pointer-events-none w-full h-full flex items-center transition-all duration-[1000ms] creative-ease">
-                    <div class="w-full h-full grid grid-cols-1 md:grid-cols-12 items-center px-6 md:px-24 gap-8 md:gap-16">
-                        <div class="md:col-span-6 order-2 md:order-1 space-y-6 slide-text transform translate-y-12 opacity-0 transition-all duration-[1000ms] creative-ease">
-                            <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">01 / SOCIAL MEDIA STATIC POSTS</span>
-                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Client Offer Campaigns</h1>
-                            <p class="text-brand-white/60 font-light leading-relaxed text-sm md:text-base">
-                                Clean visual alignment balancing structured promotional typography with specific brand details. Rebuilt to prevent feed user eye strain while formatting daily business assets, custom content grids, and profile grids cleanly.
-                            </p>
-                            <div class="inline-block bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1.5 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/80">
-                                Social Grid Design
+        <div class="space-y-16 w-full">
+            
+            <!-- MARQUEE RIBBON 1: Social Media Static Posts -->
+            <div class="space-y-4 w-full">
+                <div class="max-w-6xl mx-auto px-6 md:px-12">
+                    <h3 class="text-lg font-bold uppercase tracking-wider text-brand-brown font-mono">/ 01. Social Media Static Posts</h3>
+                </div>
+                <div class="w-full overflow-hidden relative bg-brand-gray/5 border-y border-brand-gray/10 py-8 group/window">
+                    <div class="flex w-max animate-marquee group-hover/window:animation-play-state-paused">
+                        <!-- Set 1 -->
+                        <div class="flex gap-8 px-4">
+                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-square w-full relative">
+                                    <img src="https://picsum.photos/600/600?random=11" alt="Post Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Promotional</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Client Offer Campaign</h4>
+                                    <p class="text-brand-white/60 text-xs">Clean visual hierarchy focusing on service parameters and localized campaign parameters.</p>
+                                </div>
+                            </div>
+                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-square w-full relative">
+                                    <img src="https://picsum.photos/600/600?random=12" alt="Post Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Education</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Value Carousel Designs</h4>
+                                    <p class="text-brand-white/60 text-xs">Highly legible multi-slide asset models built to capture core customer informational value.</p>
+                                </div>
+                            </div>
+                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-square w-full relative">
+                                    <img src="https://picsum.photos/600/600?random=13" alt="Post Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Social Proof</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Verified Feedback Card</h4>
+                                    <p class="text-brand-white/60 text-xs">Clean customer review grid layout to display social proof and build business trust anchors.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="md:col-span-6 order-1 md:order-2 flex justify-center h-full items-center">
-                            <div class="slide-image w-full max-w-[380px] aspect-square bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl transform translate-y-full transition-transform duration-[1000ms] creative-ease">
-                                <img src="https://picsum.photos/800/800?random=1" alt="Social Post Design" class="w-full h-full object-cover">
+                        <!-- Set 2 (Duplicate for Seamless Loop) -->
+                        <div class="flex gap-8 px-4">
+                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-square w-full relative">
+                                    <img src="https://picsum.photos/600/600?random=11" alt="Post Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Promotional</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Client Offer Campaign</h4>
+                                    <p class="text-brand-white/60 text-xs">Clean visual hierarchy focusing on service parameters and localized campaign parameters.</p>
+                                </div>
+                            </div>
+                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-square w-full relative">
+                                    <img src="https://picsum.photos/600/600?random=12" alt="Post Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Education</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Value Carousel Designs</h4>
+                                    <p class="text-brand-white/60 text-xs">Highly legible multi-slide asset models built to capture core customer informational value.</p>
+                                </div>
+                            </div>
+                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-square w-full relative">
+                                    <img src="https://picsum.photos/600/600?random=13" alt="Post Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Social Proof</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Verified Feedback Card</h4>
+                                    <p class="text-brand-white/60 text-xs">Clean customer review grid layout to display social proof and build business trust anchors.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Slide 2: Branded Video Assets -->
-                <div class="slide-item absolute inset-0 opacity-0 pointer-events-none w-full h-full flex items-center transition-all duration-[1000ms] creative-ease">
-                    <div class="w-full h-full grid grid-cols-1 md:grid-cols-12 items-center px-6 md:px-24 gap-8 md:gap-16">
-                        <div class="md:col-span-6 order-2 md:order-1 space-y-6 slide-text transform translate-y-12 opacity-0 transition-all duration-[1000ms] creative-ease">
-                            <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">02 / BRANDED VIDEO ASSETS</span>
-                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Short-Form Content Layouts</h1>
-                            <p class="text-brand-white/60 font-light leading-relaxed text-sm md:text-base">
-                                Video asset trimming, frame timing configurations, and text layer placement. Arranged cleanly inside a mobile viewing matrix using client media pieces to support structured platform distribution routines.
-                            </p>
-                            <div class="inline-block bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1.5 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/80">
-                                Video Asset Timeline
-                            </div>
-                        </div>
-                        <div class="md:col-span-6 order-1 md:order-2 flex justify-center h-full items-center">
-                            <div class="slide-image w-full max-w-[250px] aspect-[9/16] bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl transform translate-y-full transition-transform duration-[1000ms] creative-ease relative flex items-center justify-center">
-                                <img src="https://picsum.photos/450/800?random=2" alt="Mobile Video Layout" class="w-full h-full object-cover opacity-80">
-                                <i data-lucide="play" class="w-12 h-12 text-white absolute bg-brand-brown/90 rounded-full p-3 shadow-xl"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 3: Graphic Design -->
-                <div class="slide-item absolute inset-0 opacity-0 pointer-events-none w-full h-full flex items-center transition-all duration-[1000ms] creative-ease">
-                    <div class="w-full h-full grid grid-cols-1 md:grid-cols-12 items-center px-6 md:px-24 gap-8 md:gap-16">
-                        <div class="md:col-span-6 order-2 md:order-1 space-y-6 slide-text transform translate-y-12 opacity-0 transition-all duration-[1000ms] creative-ease">
-                            <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">03 / GRAPHIC DESIGN</span>
-                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Promotional Media Flyers</h1>
-                            <p class="text-brand-white/60 font-light leading-relaxed text-sm md:text-base">
-                                Balanced print and digital marketing flyer blueprints drafted to communicate corporate operation schedules cleanly. Text hierarchies are aligned completely to work for fast physical printing or messaging deployment.
-                            </p>
-                            <div class="inline-block bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1.5 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/80">
-                                Custom Flyer Media
-                            </div>
-                        </div>
-                        <div class="md:col-span-6 order-1 md:order-2 flex justify-center h-full items-center">
-                            <div class="slide-image w-full max-w-[320px] aspect-[4/5] bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl transform translate-y-full transition-transform duration-[1000ms] creative-ease relative">
-                                <img src="https://picsum.photos/600/750?random=3" alt="Flyer Blueprint" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- Tracking Dots Track positioned safely relative to the screen width -->
-            <div class="absolute bottom-6 left-6 md:left-24 flex gap-2 z-20">
-                <div class="flex gap-2 dot-indicator-track"></div>
+            <!-- MARQUEE RIBBON 2: Branded Video Assets -->
+            <div class="space-y-4 w-full">
+                <div class="max-w-6xl mx-auto px-6 md:px-12">
+                    <h3 class="text-lg font-bold uppercase tracking-wider text-brand-brown font-mono">/ 02. Branded Video Assets</h3>
+                </div>
+                <div class="w-full overflow-hidden relative bg-brand-gray/5 border-y border-brand-gray/10 py-8 group/window">
+                    <div class="flex w-max animate-marquee group-hover/window:animation-play-state-paused" style="animation-direction: reverse; animation-duration: 35s;">
+                        <!-- Set 1 -->
+                        <div class="flex gap-8 px-4">
+                            <div class="w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
+                                    <img src="https://picsum.photos/450/800?random=21" alt="Video Layout" class="w-full h-full object-cover opacity-80">
+                                    <i data-lucide="play" class="w-10 h-10 text-white absolute bg-brand-brown/90 rounded-full p-2.5"></i>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Short-Form B-Roll Cuts</h4>
+                                    <p class="text-brand-white/60 text-xs">Clip arrangement and tracking cuts executed cleanly using raw corporate asset pieces.</p>
+                                </div>
+                            </div>
+                            <div class="w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
+                                    <img src="https://picsum.photos/450/800?random=22" alt="Video Layout" class="w-full h-full object-cover opacity-80">
+                                    <i data-lucide="play" class="w-10 h-10 text-white absolute bg-brand-brown/90 rounded-full p-2.5"></i>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Kinetic Caption Overlays</h4>
+                                    <p class="text-brand-white/60 text-xs">Timed text blocks structured cleanly over timelines to capture muted screen scrolls.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Set 2 (Duplicate for Seamless Loop) -->
+                        <div class="flex gap-8 px-4">
+                            <div class="w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
+                                    <img src="https://picsum.photos/450/800?random=21" alt="Video Layout" class="w-full h-full object-cover opacity-80">
+                                    <i data-lucide="play" class="w-10 h-10 text-white absolute bg-brand-brown/90 rounded-full p-2.5"></i>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Short-Form B-Roll Cuts</h4>
+                                    <p class="text-brand-white/60 text-xs">Clip arrangement and tracking cuts executed cleanly using raw corporate asset pieces.</p>
+                                </div>
+                            </div>
+                            <div class="w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
+                                    <img src="https://picsum.photos/450/800?random=22" alt="Video Layout" class="w-full h-full object-cover opacity-80">
+                                    <i data-lucide="play" class="w-10 h-10 text-white absolute bg-brand-brown/90 rounded-full p-2.5"></i>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Kinetic Caption Overlays</h4>
+                                    <p class="text-brand-white/60 text-xs">Timed text blocks structured cleanly over timelines to capture muted screen scrolls.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- MARQUEE RIBBON 3: Graphic Design -->
+            <div class="space-y-4 w-full">
+                <div class="max-w-6xl mx-auto px-6 md:px-12">
+                    <h3 class="text-lg font-bold uppercase tracking-wider text-brand-brown font-mono">/ 03. Graphic Design</h3>
+                </div>
+                <div class="w-full overflow-hidden relative bg-brand-gray/5 border-y border-brand-gray/10 py-8 group/window">
+                    <div class="flex w-max animate-marquee group-hover/window:animation-play-state-paused">
+                        <!-- Set 1 -->
+                        <div class="flex gap-8 px-4">
+                            <div class="w-[280px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                    <img src="https://picsum.photos/600/750?random=31" alt="Flyer Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Print Material</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Promotional Media Flyer</h4>
+                                    <p class="text-brand-white/60 text-xs">Structural blueprint design formatted to display client updates for digital or paper distribution.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Set 2 (Duplicate for Seamless Loop) -->
+                        <div class="flex gap-8 px-4">
+                            <div class="w-[280px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                    <img src="https://picsum.photos/600/750?random=31" alt="Flyer Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Print Material</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Promotional Media Flyer</h4>
+                                    <p class="text-brand-white/60 text-xs">Structural blueprint design formatted to display client updates for digital or paper distribution.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <!-- WRITTEN CONTENT MATRIX LAYOUTS: Blogs & Email Templates -->
+        <!-- WRITTEN CAPABILITIES: Blogs & Email Frameworks -->
         <div class="max-w-6xl mx-auto px-6 md:px-12 space-y-12 pt-24">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 bg-brand-gray/10 p-6 rounded-xl border border-brand-gray/20 space-y-4">
@@ -443,103 +546,8 @@
         <p class="font-mono text-[10px]">Built Clean. Hosted securely via HighLevel.</p>
     </footer>
 
-    <!-- INFINITE LOOP SHOWCASE DECK LOGIC -->
     <script>
         lucide.createIcons();
-
-        document.querySelectorAll('.element-deck').forEach((deckContainer) => {
-            const slides = deckContainer.querySelectorAll('.slide-item');
-            const dotTrack = deckContainer.querySelector('.dot-indicator-track');
-            let current = 0;
-
-            function renderTrackMetrics() {
-                dotTrack.innerHTML = '';
-                slides.forEach((_, idx) => {
-                    const step = document.createElement('div');
-                    step.className = `h-1.5 rounded-full creative-ease duration-500 ${idx === current ? 'w-8 bg-brand-brown' : 'w-2 bg-brand-gray/40'}`;
-                    dotTrack.appendChild(step);
-                });
-            }
-
-            function executeDisplayState(nextIndex) {
-                slides.forEach((item, idx) => {
-                    const textBlock = item.querySelector('.slide-text');
-                    const imageBlock = item.querySelector('.slide-image');
-
-                    if (idx === nextIndex) {
-                        item.classList.remove('pointer-events-none');
-                        item.style.zIndex = "20";
-                        
-                        void item.offsetWidth; // Paint trigger
-                        
-                        item.classList.remove('opacity-0');
-                        item.classList.add('opacity-100');
-                        textBlock.classList.remove('translate-y-12', 'opacity-0');
-                        textBlock.classList.add('translate-y-0', 'opacity-100');
-                        imageBlock.classList.remove('translate-y-full');
-                        imageBlock.classList.add('translate-y-0');
-                    } else if (idx === current) {
-                        item.classList.add('pointer-events-none');
-                        item.style.zIndex = "10";
-                        
-                        textBlock.classList.remove('translate-y-0', 'opacity-100');
-                        textBlock.classList.add('translate-y-12', 'opacity-0');
-                    } else {
-                        item.style.zIndex = "0";
-                        item.classList.remove('opacity-100');
-                        item.classList.add('opacity-0', 'pointer-events-none');
-                        textBlock.classList.remove('translate-y-0', 'opacity-100');
-                        textBlock.classList.add('translate-y-12', 'opacity-0');
-                        imageBlock.classList.remove('translate-y-0');
-                        imageBlock.classList.add('translate-y-full');
-                    }
-                });
-
-                setTimeout(() => {
-                    slides.forEach((item, idx) => {
-                        if (idx !== nextIndex) {
-                            const imageBlock = item.querySelector('.slide-image');
-                            if(imageBlock) imageBlock.classList.add('translate-y-full');
-                        }
-                    });
-                }, 1000);
-
-                const dots = dotTrack.children;
-                for (let i = 0; i < dots.length; i++) {
-                    if (i === nextIndex) {
-                        dots[i].className = "h-1.5 w-8 bg-brand-brown rounded-full creative-ease duration-500";
-                    } else {
-                        dots[i].className = "h-1.5 w-2 bg-brand-gray/40 rounded-full creative-ease duration-500";
-                    }
-                }
-
-                current = nextIndex;
-            }
-
-            function runAutomatedTransition() {
-                let next = current + 1;
-                if (next >= slides.length) {
-                    next = 0;
-                }
-                executeDisplayState(next);
-            }
-
-            renderTrackMetrics();
-            
-            if(slides[current]) {
-                slides[current].classList.remove('opacity-0', 'pointer-events-none');
-                slides[current].classList.add('opacity-100');
-                slides[current].style.zIndex = "20";
-                const t = slides[current].querySelector('.slide-text');
-                const img = slides[current].querySelector('.slide-image');
-                if(t) t.classList.add('translate-y-0', 'opacity-100');
-                if(img) img.classList.add('translate-y-0');
-            }
-
-            if (slides.length > 1) {
-                setInterval(runAutomatedTransition, 4000);
-            }
-        });
     </script>
 </body>
 </html>
