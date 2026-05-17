@@ -1,319 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Portfolio | The Fluffy Beanie</title>
+    <title>The Fluffy Beanie | Social Media Static Posts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gray: '#5d5c5f',
+                            dark: '#232120',
+                            brown: '#7d421e',
+                            white: '#ffffff'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Base Styling & Exact Brand Colors */
-        :root {
-            --bg-color: #f8f9fa;
-            --text-main: #1a1d20;
-            --text-muted: #5f676d;
-            --accent-dark: #1a1d20; 
-            --border-color: #e9ecef;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        /* Fixed Navigation Bar (Matches your exact home page style) */
-        header {
-            background-color: var(--accent-dark);
-            padding: 1rem 2rem;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .logo-img {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .back-link {
-            color: #ced4da;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .back-link:hover {
-            color: #ffffff;
-        }
-
-        /* Hero Intro Section */
-        .intro-section {
-            max-width: 1200px;
-            margin: 120px auto 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .intro-section h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--text-main);
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-        }
-
-        .intro-section p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 600px;
-        }
-
-        /* Creative Cue Inspired Project Stack */
-        .project-stack {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            padding: 0 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Individual Project Section */
-        .project-section {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            min-height: 70vh;
-            padding: 4rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        /* Reverse alternate rows just like Creative Cue */
-        .project-section:nth-child(even) {
-            grid-template-columns: 1fr 1.2fr;
-        }
-        .project-section:nth-child(even) .project-image-window {
-            order: 2;
-        }
-
-        /* Image Window with Creative Cue Smooth Scale Hover Effect */
-        .project-image-window {
-            position: relative;
-            width: 100%;
-            padding-top: 100%; /* Perfect 1:1 Social Post Square */
-            background-color: #e2e8f0;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-        }
-
-        .project-image-window img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        /* Zoom animation when hovering the project area */
-        .project-section:hover .project-image-window img {
-            transform: scale(1.05);
-        }
-
-        /* Content Text Area */
-        .project-content {
-            padding: 1rem 0;
-        }
-
-        .project-num {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            display: block;
-            letter-spacing: 0.1em;
-        }
-
-        .project-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--text-main);
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.01em;
-        }
-
-        .project-description {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            max-width: 480px;
-        }
-
-        .project-tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            font-size: 0.8rem;
-            font-weight: 500;
-            background-color: #ffffff;
-            border: 1px solid var(--border-color);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            color: var(--text-main);
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 8rem;
-            background-color: var(--accent-dark);
-            padding: 4rem 2rem;
-            text-align: center;
-            color: #a0aec0;
-        }
-
-        footer p {
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Layout for Tablets/Mobile */
-        @media (max-width: 968px) {
-            .project-section, .project-section:nth-child(even) {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                padding: 3rem 0;
-            }
-            .project-section:nth-child(even) .project-image-window {
-                order: 0;
-            }
-            .intro-section h1 {
-                font-size: 2.2rem;
-            }
-            .project-title {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
+<body class="bg-brand-dark text-brand-white font-sans antialiased selection:bg-brand-brown selection:text-white">
 
-    <!-- Header / Navigation (Keeps your personal brand completely intact) -->
-    <header>
-        <div class="nav-container">
-            <a href="https://thefluffybeanie.github.io/portfolio" class="logo-area">
-                <img src="https://i.imgur.com/IFu6dnN.png" alt="The Fluffy Beanie Logo" class="logo-img">
-                <span>The Fluffy Beanie</span>
+    <!-- Sticky Navigation Bar (Perfectly matched to your home page) -->
+    <nav class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-gray/20 py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="https://thefluffybeanie.github.io/portfolio" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-brand-brown overflow-hidden border border-brand-gray/40 flex items-center justify-center">
+                    <img src="https://i.imgur.com/IFu6dnN.png" alt="The Fluffy Beanie Logo" class="w-full h-full object-cover">
+                </div>
+                <span class="font-bold text-xl tracking-tight group-hover:text-brand-brown transition">The Fluffy Beanie</span>
             </a>
-            <a href="https://thefluffybeanie.github.io/portfolio" class="back-link">← Back to Main Portfolio</a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide text-brand-white/80">
+                <a href="https://thefluffybeanie.github.io/portfolio" class="hover:text-brand-brown transition">← Back to Home Page</a>
+            </div>
+            <div>
+                <a href="https://thefluffybeanie.github.io/portfolio#book" class="bg-brand-brown hover:bg-opacity-90 text-white font-bold py-2.5 px-5 rounded text-sm tracking-wide transition shadow-lg shadow-brand-brown/20">Book a Call</a>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Section -->
-    <main>
-        
-        <!-- Hero Intro Section -->
-        <div class="intro-section">
-            <h1>Social Media Works.</h1>
-            <p>A curated stack of static visual layouts, social campaigns, and strategic brand designs executed for clients.</p>
+    <!-- Page Header Hero Section -->
+    <section class="max-w-5xl mx-auto text-center space-y-6 pt-24 pb-12 px-6 md:px-12">
+        <div class="inline-flex items-center gap-2 bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/70">
+            <span class="w-2 h-2 bg-brand-brown rounded-full"></span> Design Portfolio Showcase
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight max-w-4xl mx-auto leading-[1.1]">
+            Social Media <span class="text-brand-brown">Static Posts</span>
+        </h1>
+        <p class="text-lg text-brand-white/60 max-w-2xl mx-auto font-light leading-relaxed">
+            A curated look at layout mechanics, targeted promotional structures, and content frameworks built to keep digital channels engaging.
+        </p>
+    </section>
+
+    <!-- Creative Cue-Inspired Project Stack -->
+    <section class="max-w-6xl mx-auto px-6 md:px-12 py-12 space-y-24 md:space-y-36">
+
+        <!-- Case Study 1 -->
+        <div class="group grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center border-b border-brand-gray/10 pb-16 md:pb-24">
+            <!-- Image Area -->
+            <div class="md:col-span-7">
+                <div class="relative w-full aspect-square bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl">
+                    <!-- Image component with deep smooth cubic zoom transit from Creative Cue -->
+                    <img src="https://picsum.photos/900/900?random=1" alt="Social Post Case Study 1" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent pointer-events-none"></div>
+                </div>
+            </div>
+            <!-- Content Area -->
+            <div class="md:col-span-5 space-y-4">
+                <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">01 / PROMOTIONAL CASE</span>
+                <h2 class="text-3xl font-bold tracking-tight text-brand-white">Client Offer Campaign</h2>
+                <p class="text-brand-white/60 font-light leading-relaxed">
+                    A conversion-focused graphic framework balancing structured corporate text hierarchies with custom vector space. Tailored for targeted ad placements and immediate visual traction.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="text-xs font-medium bg-brand-gray/10 border border-brand-gray/30 px-3 py-1 rounded-full text-brand-white/80">Ad Creative</span>
+                    <span class="text-xs font-medium bg-brand-gray/10 border border-brand-gray/30 px-3 py-1 rounded-full text-brand-white/80">Brand Assets</span>
+                </div>
+            </div>
         </div>
 
-        <!-- Vertical Presentation Stack (Creative Cue Style) -->
-        <div class="project-stack">
-
-            <!-- Project Row 1 -->
-            <section class="project-section">
-                <div class="project-image-window">
-                    <img src="https://picsum.photos/800/800?random=1" alt="Campaign Post Display">
+        <!-- Case Study 2 (Alternating Content Layout) -->
+        <div class="group grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center border-b border-brand-gray/10 pb-16 md:pb-24">
+            <!-- Image Area (Ordered right on desktop screens) -->
+            <div class="md:col-span-7 md:order-2">
+                <div class="relative w-full aspect-square bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl">
+                    <img src="https://picsum.photos/900/900?random=2" alt="Social Post Case Study 2" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent pointer-events-none"></div>
                 </div>
-                <div class="project-content">
-                    <span class="project-num">01 / PROMOTIONAL</span>
-                    <h2 class="project-title">Client Offer Campaign</h2>
-                    <p class="project-description">A clean, high-conversion visual layout built to balance service clarity with direct structural branding elements.</p>
-                    <div class="project-tags">
-                        <span class="tag">Ad Creative</span>
-                        <span class="tag">Brand Strategy</span>
-                    </div>
+            </div>
+            <!-- Content Area -->
+            <div class="md:col-span-5 md:order-1 space-y-4">
+                <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">02 / EDUCATION SECTOR</span>
+                <h2 class="text-3xl font-bold tracking-tight text-brand-white">Value Retention Carousel</h2>
+                <p class="text-brand-white/60 font-light leading-relaxed">
+                    Multi-slide layouts built for quick data absorption. Isolates industry tips and actionable processes using customized branding variables and maximum whitespace control.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="text-xs font-medium bg-brand-gray/10 border border-brand-gray/30 px-3 py-1 rounded-full text-brand-white/80">Infographics</span>
+                    <span class="text-xs font-medium bg-brand-gray/10 border border-brand-gray/30 px-3 py-1 rounded-full text-brand-white/80">Value Packs</span>
                 </div>
-            </section>
-
-            <!-- Project Row 2 (Automatically reverses layout side-by-side) -->
-            <section class="project-section">
-                <div class="project-image-window">
-                    <img src="https://picsum.photos/800/800?random=2" alt="Educational Post Display">
-                </div>
-                <div class="project-content">
-                    <span class="project-num">02 / EDUCATION</span>
-                    <h2 class="project-title">Value Carousel Assets</h2>
-                    <p class="project-description">Multi-slide asset structures designed explicitly for high readability, community authority, and direct value retention.</p>
-                    <div class="project-tags">
-                        <span class="tag">Infographics</span>
-                        <span class="tag">Content Design</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Project Row 3 -->
-            <section class="project-section">
-                <div class="project-image-window">
-                    <img src="https://picsum.photos/800/800?random=3" alt="Social Proof Display">
-                </div>
-                <div class="project-content">
-                    <span class="project-num">03 / TRUST BUILDING</span>
-                    <h2 class="project-title">Social Proof Features</h2>
-                    <p class="project-description">Polished, authoritative review frameworks that isolate client success statements to generate massive local market trust.</p>
-                    <div class="project-tags">
-                        <span class="tag">Typography</span>
-                        <span class="tag">Social Proof</span>
-                    </div>
-                </div>
-            </section>
-
+            </div>
         </div>
-    </main>
 
-    <!-- Footer Area -->
-    <footer>
-        <p>© 2026 The Fluffy Beanie. All rights reserved. Optimized for high-end portfolio presentation.</p>
+        <!-- Case Study 3 -->
+        <div class="group grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center border-b border-brand-gray/10 pb-16 md:pb-24">
+            <!-- Image Area -->
+            <div class="md:col-span-7">
+                <div class="relative w-full aspect-square bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl">
+                    <img src="https://picsum.photos/900/900?random=3" alt="Social Post Case Study 3" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent pointer-events-none"></div>
+                </div>
+            </div>
+            <!-- Content Area -->
+            <div class="md:col-span-5 space-y-4">
+                <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">03 / SOCIAL PROOF STRATEGY</span>
+                <h2 class="text-3xl font-bold tracking-tight text-brand-white">Verified Feedback Features</h2>
+                <p class="text-brand-white/60 font-light leading-relaxed">
+                    Authority-building quote frameworks designed to extract five-star experiences cleanly. High contrast components built to establish rapid trust on dynamic active feeds.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="text-xs font-medium bg-brand-gray/10 border border-brand-gray/30 px-3 py-1 rounded-full text-brand-white/80">Reputation Design</span>
+                    <span class="text-xs font-medium bg-brand-gray/10 border border-brand-gray/30 px-3 py-1 rounded-full text-brand-white/80">Typography</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer Area (Perfectly matched to your home page) -->
+    <footer class="bg-brand-dark border-t border-brand-gray/20 py-8 px-6 md:px-12 text-center text-xs text-brand-white/40 space-y-2">
+        <p>&copy; 2026 The Fluffy Beanie. All rights reserved.</p>
+        <p class="font-mono text-[10px]">Built Clean. Hosted securely via GitHub Pages.</p>
     </footer>
 
+    <script>
+        // Init Lucide engine if icon hooks are appended later
+        lucide.createIcons();
+    </script>
 </body>
 </html>
