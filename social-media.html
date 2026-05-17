@@ -28,11 +28,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        .cubic-timing {
-            transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
-        }
-    </style>
 </head>
 <body class="bg-brand-dark text-brand-white font-sans antialiased selection:bg-brand-brown selection:text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
 
@@ -54,88 +49,78 @@
         </div>
     </nav>
 
-    <!-- Main Showcase Theatre Window -->
-    <!-- Added id="showcase-container" along with mouseover/mouseleave hooks to control auto-play pausing -->
-    <main id="showcase-container" class="flex-grow flex items-center justify-center px-6 md:px-12 py-12 relative" onmouseover="pauseAutoPlay()" onmouseleave="startAutoPlay()">
-        <div class="max-w-6xl w-full mx-auto relative h-[650px] md:h-[500px]">
+    <!-- Main Section Header -->
+    <section class="max-w-5xl mx-auto text-center space-y-4 pt-16 px-6">
+        <div class="inline-flex items-center gap-2 bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/70">
+            <span class="w-2 h-2 bg-brand-brown rounded-full animate-pulse"></span> Auto-Advancing Work Samples
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">Social Media Static Posts</h1>
+    </section>
+
+    <!-- Main Automated Viewport Window -->
+    <main class="flex-grow flex items-center justify-center px-6 md:px-12 py-12">
+        <div class="max-w-4xl w-full mx-auto overflow-hidden relative rounded-2xl border border-brand-gray/20 bg-brand-gray/5 p-4 md:p-8">
             
-            <!-- Slide Deck Window Track -->
-            <div id="slideshow-deck" class="relative w-full h-full">
+            <!-- Horizontal Sliding Window Track -->
+            <!-- The Javascript adjusts the translateX properties here to glide left/right smoothly -->
+            <div id="slideshow-track" class="flex transition-transform duration-[1000ms] ease-[cubic-bezier(0.25,1,0.5,1)] w-full">
 
                 <!-- Slide 1 -->
-                <div class="slide-item absolute inset-0 opacity-0 pointer-events-none grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center transition-all duration-[1000ms] cubic-timing">
-                    <div class="md:col-span-6 order-2 md:order-1 space-y-6 slide-text transform translate-y-8 transition-transform duration-[1000ms] cubic-timing">
-                        <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">01 / PROMOTIONAL ART</span>
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Client Offer Campaign</h1>
-                        <p class="text-brand-white/60 font-light leading-relaxed text-base md:text-lg">
-                            Clean layout optimized for service clarity and immediate visual traction. Engineered directly around specific brand guidelines to increase engagement spikes across organic feeds.
+                <div class="min-w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-12 gap-8 items-center px-2">
+                    <div class="md:col-span-6 order-2 md:order-1 space-y-4">
+                        <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">01 / PROMOTIONAL MASTER</span>
+                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-white">Client Offer Campaign</h2>
+                        <p class="text-brand-white/60 font-light leading-relaxed text-sm md:text-base">
+                            Clean visual alignment balancing structured promotional text hierarchies with localized service details. Engineered specifically to reduce user feed fatigue while maximizing active clicks.
                         </p>
-                        <div class="inline-block bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1.5 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/80">
-                            Ad Creative Design
-                        </div>
+                        <span class="inline-block bg-brand-gray/10 border border-brand-gray/30 text-brand-white/70 text-[11px] font-semibold tracking-wider uppercase py-1 px-3 rounded-full">Ad Layout Asset</span>
                     </div>
                     <div class="md:col-span-6 order-1 md:order-2 flex justify-center">
-                        <div class="slide-image w-full max-w-[400px] aspect-square bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl transform scale-90 transition-transform duration-[1000ms] cubic-timing group relative cursor-pointer">
-                            <img src="https://picsum.photos/800/800?random=1" alt="Campaign Post Layout" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+                        <div class="w-full max-w-[340px] aspect-square bg-brand-dark rounded-xl overflow-hidden border border-brand-gray/30 shadow-xl group">
+                            <img src="https://picsum.photos/600/600?random=1" alt="Post Layout 1" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700">
                         </div>
                     </div>
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="slide-item absolute inset-0 opacity-0 pointer-events-none grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center transition-all duration-[1000ms] cubic-timing">
-                    <div class="md:col-span-6 order-2 md:order-1 space-y-6 slide-text transform translate-y-8 transition-transform duration-[1000ms] cubic-timing">
+                <div class="min-w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-12 gap-8 items-center px-2">
+                    <div class="md:col-span-6 order-2 md:order-1 space-y-4">
                         <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">02 / EDUCATION SECTOR</span>
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Value Carousel Assets</h1>
-                        <p class="text-brand-white/60 font-light leading-relaxed text-base md:text-lg">
-                            Multi-slide data presentation boards designed for fast informational consumption. Controlled grid whitespace patterns isolate technical pointers cleanly without visual weight fatigue.
+                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-white">Value Carousel Designs</h2>
+                        <p class="text-brand-white/60 font-light leading-relaxed text-sm md:text-base">
+                            Multi-slide layout components designed for rapid customer retention. Controlled grid whitespace rules isolate specific operational data sets cleanly with maximum text balance.
                         </p>
-                        <div class="inline-block bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1.5 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/80">
-                            Content Architecture
-                        </div>
+                        <span class="inline-block bg-brand-gray/10 border border-brand-gray/30 text-brand-white/70 text-[11px] font-semibold tracking-wider uppercase py-1 px-3 rounded-full">Educational Content</span>
                     </div>
                     <div class="md:col-span-6 order-1 md:order-2 flex justify-center">
-                        <div class="slide-image w-full max-w-[400px] aspect-square bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl transform scale-90 transition-transform duration-[1000ms] cubic-timing group relative cursor-pointer">
-                            <img src="https://picsum.photos/800/800?random=2" alt="Carousel Layout Assets" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+                        <div class="w-full max-w-[340px] aspect-square bg-brand-dark rounded-xl overflow-hidden border border-brand-gray/30 shadow-xl group">
+                            <img src="https://picsum.photos/600/600?random=2" alt="Post Layout 2" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700">
                         </div>
                     </div>
                 </div>
 
                 <!-- Slide 3 -->
-                <div class="slide-item absolute inset-0 opacity-0 pointer-events-none grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center transition-all duration-[1000ms] cubic-timing">
-                    <div class="md:col-span-6 order-2 md:order-1 space-y-6 slide-text transform translate-y-8 transition-transform duration-[1000ms] cubic-timing">
-                        <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">03 / SOCIAL PROOF</span>
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Verified Review Cards</h1>
-                        <p class="text-brand-white/60 font-light leading-relaxed text-base md:text-lg">
-                            High-contrast quote frames structured to display client win updates cleanly. Eliminates complex filler patterns to focus audience view mechanics entirely on customer authority data.
+                <div class="min-w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-12 gap-8 items-center px-2">
+                    <div class="md:col-span-6 order-2 md:order-1 space-y-4">
+                        <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">03 / SOCIAL PROOF STRATEGY</span>
+                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-white">Verified Feedback Layouts</h2>
+                        <p class="text-brand-white/60 font-light leading-relaxed text-sm md:text-base">
+                            Polished testimonial design matrices optimized for business trust generation. Removes unneeded design elements to anchor background visual emphasis on verified metrics.
                         </p>
-                        <div class="inline-block bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1.5 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/80">
-                            Reputation Assets
-                        </div>
+                        <span class="inline-block bg-brand-gray/10 border border-brand-gray/30 text-brand-white/70 text-[11px] font-semibold tracking-wider uppercase py-1 px-3 rounded-full">Reputation Graphics</span>
                     </div>
                     <div class="md:col-span-6 order-1 md:order-2 flex justify-center">
-                        <div class="slide-image w-full max-w-[400px] aspect-square bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl transform scale-90 transition-transform duration-[1000ms] cubic-timing group relative cursor-pointer">
-                            <img src="https://picsum.photos/800/800?random=3" alt="Review Graphics Layout" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+                        <div class="w-full max-w-[340px] aspect-square bg-brand-dark rounded-xl overflow-hidden border border-brand-gray/30 shadow-xl group">
+                            <img src="https://picsum.photos/600/600?random=3" alt="Post Layout 3" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700">
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Floating Progress Dots Track -->
-            <div class="absolute -bottom-16 left-0 right-0 flex justify-between items-center z-20">
-                <div id="dot-track" class="flex gap-2">
-                    <!-- Controlled via script -->
-                </div>
-                
-                <!-- Manual override arrow controls -->
-                <div class="flex gap-3">
-                    <button onclick="changeActiveSlide(-1)" class="w-12 h-12 rounded-xl bg-brand-gray/10 border border-brand-gray/20 hover:border-brand-brown/40 flex items-center justify-center transition-all group active:scale-95">
-                        <i data-lucide="chevron-left" class="w-5 h-5 text-brand-white/60 group-hover:text-white transition"></i>
-                    </button>
-                    <button onclick="changeActiveSlide(1)" class="w-12 h-12 rounded-xl bg-brand-gray/10 border border-brand-gray/20 hover:border-brand-brown/40 flex items-center justify-center transition-all group active:scale-95">
-                        <i data-lucide="chevron-right" class="w-5 h-5 text-brand-white/60 group-hover:text-white transition"></i>
-                    </button>
-                </div>
+            <!-- Visual Progress Dots Track -->
+            <div id="dot-indicator-track" class="flex justify-center gap-2 mt-8">
+                <!-- Built automatically via script framework -->
             </div>
 
         </div>
@@ -147,85 +132,55 @@
         <p class="font-mono text-[10px]">Built Clean. Hosted securely via GitHub Pages.</p>
     </footer>
 
-    <!-- Interactive Auto-Play Script Engine -->
+    <!-- Completely Automated Control Logic -->
     <script>
         lucide.createIcons();
 
-        const slides = document.querySelectorAll('.slide-item');
-        const dotTrack = document.getElementById('dot-track');
-        let slidePointer = 0;
-        let autoPlayTimer;
+        const sliderTrack = document.getElementById('slideshow-track');
+        const totalSlides = sliderTrack.children.length;
+        const dotIndicatorTrack = document.getElementById('dot-indicator-track');
+        let slideIndexPointer = 0;
 
-        function renderTrackMetrics() {
-            dotTrack.innerHTML = '';
-            slides.forEach((_, idx) => {
-                const step = document.createElement('button');
-                step.className = `h-1.5 rounded-full cubic-timing duration-500 ${idx === slidePointer ? 'w-8 bg-brand-brown' : 'w-2 bg-brand-gray/40'}`;
-                step.onclick = () => jumpToSlide(idx);
-                dotTrack.appendChild(step);
-            });
+        // 1. Build pagination indicators dynamically
+        function initializeTrackDots() {
+            dotIndicatorTrack.innerHTML = '';
+            for (let i = 0; i < totalSlides; i++) {
+                const dotElement = document.createElement('div');
+                // Active slide dot starts wider
+                dotElement.className = `h-1.5 rounded-full transition-all duration-500 ease-out ${i === 0 ? 'w-8 bg-brand-brown' : 'w-2 bg-brand-gray/40'}`;
+                dotIndicatorTrack.appendChild(dotElement);
+            }
         }
 
-        function executeDisplayState() {
-            slides.forEach((item, idx) => {
-                const textBlock = item.querySelector('.slide-text');
-                const imageBlock = item.querySelector('.slide-image');
+        // 2. Perform the automated sliding action
+        function slideAutomatedTick() {
+            slideIndexPointer++;
+            
+            // Loop back to the first post seamlessly if it reaches the end
+            if (slideIndexPointer >= totalSlides) {
+                slideIndexPointer = 0;
+            }
 
-                if (idx === slidePointer) {
-                    item.classList.remove('opacity-0', 'pointer-events-none');
-                    item.classList.add('opacity-100');
-                    textBlock.classList.remove('translate-y-8');
-                    textBlock.classList.add('translate-y-0');
-                    imageBlock.classList.remove('scale-90', 'rotate-2');
-                    imageBlock.classList.add('scale-100', 'rotate-0');
-                } else {
-                    item.classList.remove('opacity-100');
-                    item.classList.add('opacity-0', 'pointer-events-none');
-                    textBlock.classList.remove('translate-y-0');
-                    textBlock.classList.add('translate-y-8');
-                    imageBlock.classList.remove('scale-100', 'rotate-0');
-                    imageBlock.classList.add('scale-90', 'rotate-2');
-                }
-            });
+            // Slide track horizontally based on current percentage index
+            let displacement = slideIndexPointer * 100;
+            sliderTrack.style.transform = `translateX(-${displacement}%)`;
 
-            const dots = dotTrack.children;
+            // Update dot indicator styles
+            const dots = dotIndicatorTrack.children;
             for (let i = 0; i < dots.length; i++) {
-                if (i === slidePointer) {
-                    dots[i].className = "h-1.5 w-8 bg-brand-brown rounded-full cubic-timing duration-500";
+                if (i === slideIndexPointer) {
+                    dots[i].className = "h-1.5 w-8 bg-brand-brown rounded-full transition-all duration-500 ease-out";
                 } else {
-                    dots[i].className = "h-1.5 w-2 bg-brand-gray/40 rounded-full cubic-timing duration-500";
+                    dots[i].className = "h-1.5 w-2 bg-brand-gray/40 rounded-full transition-all duration-500 ease-out";
                 }
             }
         }
 
-        function changeActiveSlide(direction) {
-            slidePointer += direction;
-            if (slidePointer >= slides.length) slidePointer = 0;
-            if (slidePointer < 0) slidePointer = slides.length - 1;
-            executeDisplayState();
-        }
-
-        function jumpToSlide(index) {
-            slidePointer = index;
-            executeDisplayState();
-        }
-
-        // AUTO-PLAY CONTROLLER ENGINE
-        // Moves the slide automatically every 4000 milliseconds (4 seconds)
-        function startAutoPlay() {
-            autoPlayTimer = setInterval(() => {
-                changeActiveSlide(1);
-            }, 4000);
-        }
-
-        function pauseAutoPlay() {
-            clearInterval(autoPlayTimer);
-        }
-
-        // Initialize execution systems
-        renderTrackMetrics();
-        executeDisplayState();
-        startAutoPlay(); // Start automatic sliding instantly on page mount
+        // 3. Mount Systems
+        initializeTrackDots();
+        
+        // Starts the motion cycle on page load. Rotates to a new slide every 3500 milliseconds (3.5 seconds) completely on its own.
+        setInterval(slideAutomatedTick, 3500);
     </script>
 </body>
 </html>
