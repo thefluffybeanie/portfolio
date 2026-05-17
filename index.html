@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Fluffy Beanie | Social Media Showcase</title>
+    <title>The Fluffy Beanie | Digital Marketing Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -29,186 +29,543 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Signature fluid easing curve utilized by premium presentation decks */
-        .creative-ease {
-            transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+        /* Pure CSS hardware-accelerated marquee track rules matching your requested animation style */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 25s linear infinite;
         }
     </style>
 </head>
-<body class="bg-brand-dark text-brand-white font-sans antialiased selection:bg-brand-brown selection:text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
+<body class="bg-brand-dark text-brand-white font-sans antialiased selection:bg-brand-brown selection:text-white">
 
-    <!-- Sticky Navigation Bar (Exact Home Page Match) -->
     <nav class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-gray/20 py-4 px-6 md:px-12">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="https://thefluffybeanie.github.io/portfolio" class="flex items-center gap-3 group">
+            <a href="#home" class="flex items-center gap-3 group">
                 <div class="w-10 h-10 rounded-full bg-brand-brown overflow-hidden border border-brand-gray/40 flex items-center justify-center">
                     <img src="https://i.imgur.com/IFu6dnN.png" alt="The Fluffy Beanie Logo" class="w-full h-full object-cover">
                 </div>
                 <span class="font-bold text-xl tracking-tight group-hover:text-brand-brown transition">The Fluffy Beanie</span>
             </a>
             <div class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide text-brand-white/80">
-                <a href="https://thefluffybeanie.github.io/portfolio" class="hover:text-brand-brown transition">← Back to Home Page</a>
+                <a href="#about" class="hover:text-brand-brown transition">About</a>
+                <a href="#services" class="hover:text-brand-brown transition">Services</a>
+                <a href="#portfolio" class="hover:text-brand-brown transition">Work Samples</a>
+                <a href="#pricing" class="hover:text-brand-brown transition">Pricing</a>
             </div>
             <div>
-                <a href="https://thefluffybeanie.github.io/portfolio#book" class="bg-brand-brown hover:bg-opacity-90 text-white font-bold py-2.5 px-5 rounded text-sm tracking-wide transition shadow-lg shadow-brand-brown/20">Book a Call</a>
+                <a href="#book" class="bg-brand-brown hover:bg-opacity-90 text-white font-bold py-2.5 px-5 rounded text-sm tracking-wide transition shadow-lg shadow-brand-brown/20">Book a Call</a>
             </div>
         </div>
     </nav>
 
-    <!-- Main Showcase Theatre Viewport -->
-    <main class="flex-grow flex items-center justify-center px-6 md:px-12 py-12 relative">
-        <div class="max-w-5xl w-full mx-auto relative h-[600px] md:h-[450px] overflow-hidden">
-            
-            <!-- Slide Deck Parent Frame Container -->
-            <div id="slideshow-deck" class="relative w-full h-full">
+    <section id="home" class="relative min-h-[85vh] flex items-center justify-center px-6 md:px-12 border-b border-brand-gray/10">
+        <div class="max-w-5xl mx-auto text-center space-y-8 py-20">
+            <div class="inline-flex items-center gap-2 bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/70">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> 4+ Years Experienced Virtual Assistant & Digital Specialist
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight max-w-4xl mx-auto leading-[1.1]">
+                Social Media, Email Marketing, & <span class="text-brand-brown">Graphic Design</span> Support
+            </h1>
+            <p class="text-lg md:text-xl text-brand-white/60 max-w-2xl mx-auto font-light leading-relaxed">
+                Hi, I'm Ian. Based in the Philippines, I handle daily digital execution—designing static posts, editing branded videos, creating flyers, drafting blog posts, and setting up your email marketing. 
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
+                <a href="#portfolio" class="w-full sm:w-auto bg-brand-brown hover:bg-opacity-90 text-white font-bold py-4 px-8 rounded transition text-center shadow-lg shadow-brand-brown/30">View My Work Samples</a>
+                <a href="#services" class="w-full sm:w-auto bg-brand-gray/20 hover:bg-brand-gray/30 text-white border border-brand-gray/40 font-bold py-4 px-8 rounded transition text-center">See Services & Pricing</a>
+            </div>
+        </div>
+    </section>
 
-                <!-- Slide 1 -->
-                <div class="slide-item absolute inset-0 opacity-0 pointer-events-none grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center transition-all duration-[1000ms] creative-ease">
-                    <div class="md:col-span-6 order-2 md:order-1 space-y-6 slide-text transform translate-y-12 opacity-0 transition-all duration-[1000ms] creative-ease">
-                        <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">01 / BRAND PROMOTION</span>
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Client Offer Campaign</h1>
-                        <p class="text-brand-white/60 font-light leading-relaxed text-sm md:text-base">
-                            Clean visual alignment balancing structured promotional text hierarchies with localized service details. Engineered specifically to reduce user feed fatigue while maximizing active clicks.
-                        </p>
-                        <div class="inline-block bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1.5 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/80">
-                            Ad Layout Creative
-                        </div>
-                    </div>
-                    <div class="md:col-span-6 order-1 md:order-2 flex justify-center overflow-hidden h-full items-center">
-                        <!-- Creative Cue Slide Up Transition Wrapper -->
-                        <div class="slide-image w-full max-w-[360px] aspect-square bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl transform translate-y-full transition-transform duration-[1000ms] creative-ease group relative cursor-pointer">
-                            <img src="https://picsum.photos/800/800?random=1" alt="Campaign Post Layout" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+    <section id="about" class="py-24 px-6 md:px-12 bg-brand-gray/5 border-b border-brand-gray/10">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-5 flex justify-center">
+                <div class="relative group max-w-xs md:max-w-full w-full">
+                    <div class="absolute inset-0 bg-brand-brown rounded-2xl transform rotate-3 scale-105 opacity-20 group-hover:rotate-6 transition duration-300"></div>
+                    <div class="relative bg-brand-dark border-2 border-brand-gray/40 rounded-2xl p-3 aspect-square flex items-center justify-center overflow-hidden">
+                        <div class="w-full h-full rounded-xl overflow-hidden border border-brand-brown/20 bg-brand-gray/10">
+                            <img src="https://media.licdn.com/dms/image/v2/D4D03AQHGyUcjKCQ26w/profile-displayphoto-scale_400_400/B4DZ3ANQbVGcAk-/0/1777046207796?e=1780531200&v=beta&t=Bs9RJkFJ9cq8fq1WS4IPbDkOYoTdv4yBXsmmRZhAYqE" alt="Ian" class="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition duration-500">
                         </div>
                     </div>
                 </div>
-
-                <!-- Slide 2 -->
-                <div class="slide-item absolute inset-0 opacity-0 pointer-events-none grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center transition-all duration-[1000ms] creative-ease">
-                    <div class="md:col-span-6 order-2 md:order-1 space-y-6 slide-text transform translate-y-12 opacity-0 transition-all duration-[1000ms] creative-ease">
-                        <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">02 / EDUCATION SECTOR</span>
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Value Carousel Designs</h1>
-                        <p class="text-brand-white/60 font-light leading-relaxed text-sm md:text-base">
-                            Multi-slide layout components designed for rapid customer retention. Controlled grid whitespace rules isolate specific operational data sets cleanly with maximum text balance.
-                        </p>
-                        <div class="inline-block bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1.5 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/80">
-                            Content Assets
-                        </div>
-                    </div>
-                    <div class="md:col-span-6 order-1 md:order-2 flex justify-center overflow-hidden h-full items-center">
-                        <div class="slide-image w-full max-w-[360px] aspect-square bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl transform translate-y-full transition-transform duration-[1000ms] creative-ease group relative cursor-pointer">
-                            <img src="https://picsum.photos/800/800?random=2" alt="Carousel Layout" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
-                        </div>
-                    </div>
+            </div>
+            <div class="md:col-span-7 space-y-6">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight">The Brain Behind the Beanie</h2>
+                <p class="text-brand-white/70 leading-relaxed text-base md:text-lg">
+                    I'm Ian, a virtual assistant and digital marketing resource based in the Philippines. For the last 4 years, I've focused on delivering straightforward task execution to help business owners keep their digital assets and marketing channels updated.
+                </p>
+                <p class="text-brand-white/70 leading-relaxed text-base md:text-lg">
+                    I work independently to complete your recurring creative and administrative work. Whether you need an updated social media feed, custom promotional graphics, organized email newsletters, or website updates, I handle the practical setup and content creation directly.
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-4 text-sm font-semibold tracking-wide uppercase text-brand-white/60">
+                    <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-brown"></i> Social & Video Creation</div>
+                    <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-brown"></i> Email & Blog Writing</div>
+                    <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-brown"></i> Flyer & Graphic Design</div>
+                    <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-brown"></i> Simple Web Support</div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Slide 3 -->
-                <div class="slide-item absolute inset-0 opacity-0 pointer-events-none grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center transition-all duration-[1000ms] creative-ease">
-                    <div class="md:col-span-6 order-2 md:order-1 space-y-6 slide-text transform translate-y-12 opacity-0 transition-all duration-[1000ms] creative-ease">
-                        <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">03 / SOCIAL PROOF</span>
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Verified Feedback Features</h1>
-                        <p class="text-brand-white/60 font-light leading-relaxed text-sm md:text-base">
-                            Polished testimonial design matrices optimized for business trust generation. Removes unneeded design elements to anchor background visual emphasis on verified metrics.
-                        </p>
-                        <div class="inline-block bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1.5 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/80">
-                            Trust Graphics
-                        </div>
-                    </div>
-                    <div class="md:col-span-6 order-1 md:order-2 flex justify-center overflow-hidden h-full items-center">
-                        <div class="slide-image w-full max-w-[360px] aspect-square bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl transform translate-y-full transition-transform duration-[1000ms] creative-ease group relative cursor-pointer">
-                            <img src="https://picsum.photos/800/800?random=3" alt="Review Graphics Layout" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
-                        </div>
-                    </div>
-                </div>
-
+    <section id="services" class="py-24 px-6 md:px-12 border-b border-brand-gray/10">
+        <div class="max-w-6xl mx-auto space-y-16">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Core Services</h2>
+                <p class="text-brand-white/60 max-w-xl mx-auto font-light">Done-for-you content creation and marketing setup to keep your digital channels updated.</p>
             </div>
 
-            <!-- Visual Progress Dots Track Indicator -->
-            <div class="absolute bottom-4 left-0 flex gap-2 z-20">
-                <div id="dot-indicator-track" class="flex gap-2">
-                    <!-- Configured dynamically via script -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
+                        <i data-lucide="instagram" class="w-6 h-6 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Social Media Management</h3>
+                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                        Consistent scheduling, organization, and management of your social channels. I keep your accounts active with planned posts tailored to your business details.
+                    </p>
+                </div>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
+                        <i data-lucide="image" class="w-6 h-6 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Static Posts</h3>
+                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                        Design and creation of clean static posts and social graphics based on your specific operational needs and brand guidelines.
+                    </p>
+                </div>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
+                        <i data-lucide="video" class="w-6 h-6 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Branded Video Assets</h3>
+                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                        Assembly and editing of branded short-form video content, short clips, and video materials for use across your active social channels.
+                    </p>
+                </div>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
+                        <i data-lucide="mail" class="w-6 h-6 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Email Marketing</h3>
+                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                        Technical layout creation, template building, and distribution setup for your business newsletters, product updates, and standard promotional email broadcasts.
+                    </p>
+                </div>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
+                        <i data-lucide="file-text" class="w-6 h-6 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Blog Post Creation</h3>
+                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                        Drafting and writing informational blog articles, updates, and online content frameworks tailored around your services or local industry topics.
+                    </p>
+                </div>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
+                        <i data-lucide="palette" class="w-6 h-6 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Graphic Design</h3>
+                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                        Creation of custom marketing graphics, business flyers, handouts, and other visual promotional print or digital layout materials.
+                    </p>
+                </div>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
+                        <i data-lucide="star" class="w-6 h-6 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Reputation Management</h3>
+                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                        Configuration of automatic AI responders for your Google reviews alongside structured cross-posting of verified reviews onto your social accounts.
+                    </p>
+                </div>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
+                        <i data-lucide="layout" class="w-6 h-6 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Simple Website Design & Basic SEO</h3>
+                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                        Construction of direct, informational single-page static websites built and hosted through HighLevel, including foundational meta-tag optimization.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-24 bg-brand-dark border-b border-brand-gray/10 relative w-full overflow-x-hidden">
+        
+        <div class="max-w-6xl mx-auto px-6 md:px-12 space-y-4 mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Work Samples</h2>
+            <p class="text-brand-white/60 max-w-xl font-light">Practical design execution, short-form video layouts, and digital content formats built for active channels.</p>
+        </div>
+
+        <div class="space-y-16 w-full">
+            
+            <div class="space-y-4 w-full">
+                <div class="max-w-6xl mx-auto px-6 md:px-12">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-brand-brown font-mono">/ 01. Social Media Static Posts</h3>
+                </div>
+                <div class="w-full overflow-hidden relative bg-brand-gray/5 border-y border-brand-gray/10 py-10 group/window">
+                    <div class="flex w-max flex-row flex-nowrap items-stretch animate-marquee group-hover/window:animation-play-state-paused">
+                        
+                        <div class="flex gap-8 px-4 flex-row flex-nowrap">
+                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-square w-full relative">
+                                    <img src="https://picsum.photos/600/600?random=1" alt="Post Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Social Proof</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Verified Feedback Card</h4>
+                                    <p class="text-brand-white/60 text-xs leading-relaxed">Clean customer review grid layout to display social proof and build business trust anchors.</p>
+                                </div>
+                            </div>
+                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-square w-full relative">
+                                    <img src="https://picsum.photos/600/600?random=11" alt="Post Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Promotional</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Client Offer Campaign</h4>
+                                    <p class="text-brand-white/60 text-xs leading-relaxed">Clean visual hierarchy focusing on service parameters and localized campaign settings.</p>
+                                </div>
+                            </div>
+                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-square w-full relative">
+                                    <img src="https://picsum.photos/600/600?random=12" alt="Post Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Education</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Value Carousel Designs</h4>
+                                    <p class="text-brand-white/60 text-xs leading-relaxed">Highly legible multi-slide asset models built to capture core customer info patterns.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-8 px-4 flex-row flex-nowrap">
+                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-square w-full relative">
+                                    <img src="https://picsum.photos/600/600?random=1" alt="Post Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Social Proof</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Verified Feedback Card</h4>
+                                    <p class="text-brand-white/60 text-xs leading-relaxed">Clean customer review grid layout to display social proof and build business trust anchors.</p>
+                                </div>
+                            </div>
+                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-square w-full relative">
+                                    <img src="https://picsum.photos/600/600?random=11" alt="Post Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Promotional</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Client Offer Campaign</h4>
+                                    <p class="text-brand-white/60 text-xs leading-relaxed">Clean visual hierarchy focusing on service parameters and localized campaign settings.</p>
+                                </div>
+                            </div>
+                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-square w-full relative">
+                                    <img src="https://picsum.photos/600/600?random=12" alt="Post Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Education</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Value Carousel Designs</h4>
+                                    <p class="text-brand-white/60 text-xs leading-relaxed">Highly legible multi-slide asset models built to capture core customer info patterns.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-4 w-full">
+                <div class="max-w-6xl mx-auto px-6 md:px-12">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-brand-brown font-mono">/ 02. Branded Video Assets</h3>
+                </div>
+                <div class="w-full overflow-hidden relative bg-brand-gray/5 border-y border-brand-gray/10 py-10 group/window">
+                    <div class="flex w-max flex-row flex-nowrap items-stretch animate-marquee group-hover/window:animation-play-state-paused" style="animation-direction: reverse; animation-duration: 22s;">
+                        
+                        <div class="flex gap-8 px-4 flex-row flex-nowrap">
+                            <div class="w-[280px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
+                                    <img src="https://picsum.photos/450/800?random=2" alt="Video Layout" class="w-full h-full object-cover opacity-80">
+                                    <i data-lucide="play" class="w-10 h-10 text-white absolute bg-brand-brown/90 rounded-full p-2.5"></i>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Kinetic Caption Overlays</h4>
+                                    <p class="text-brand-white/60 text-xs leading-relaxed">Timed text blocks structured cleanly over timelines to capture muted screen scrolls.</p>
+                                </div>
+                            </div>
+                            <div class="w-[280px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
+                                    <img src="https://picsum.photos/450/800?random=21" alt="Video Layout" class="w-full h-full object-cover opacity-80">
+                                    <i data-lucide="play" class="w-10 h-10 text-white absolute bg-brand-brown/90 rounded-full p-2.5"></i>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Short-Form B-Roll Cuts</h4>
+                                    <p class="text-brand-white/60 text-xs leading-relaxed">Clip arrangement and tracking cuts executed cleanly using raw corporate footage pieces.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-8 px-4 flex-row flex-nowrap">
+                            <div class="w-[280px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
+                                    <img src="https://picsum.photos/450/800?random=2" alt="Video Layout" class="w-full h-full object-cover opacity-80">
+                                    <i data-lucide="play" class="w-10 h-10 text-white absolute bg-brand-brown/90 rounded-full p-2.5"></i>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Kinetic Caption Overlays</h4>
+                                    <p class="text-brand-white/60 text-xs leading-relaxed">Timed text blocks structured cleanly over timelines to capture muted screen scrolls.</p>
+                                </div>
+                            </div>
+                            <div class="w-[280px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
+                                    <img src="https://picsum.photos/450/800?random=21" alt="Video Layout" class="w-full h-full object-cover opacity-80">
+                                    <i data-lucide="play" class="w-10 h-10 text-white absolute bg-brand-brown/90 rounded-full p-2.5"></i>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Short-Form B-Roll Cuts</h4>
+                                    <p class="text-brand-white/60 text-xs leading-relaxed">Clip arrangement and tracking cuts executed cleanly using raw corporate footage pieces.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-4 w-full">
+                <div class="max-w-6xl mx-auto px-6 md:px-12">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-brand-brown font-mono">/ 03. Graphic Design</h3>
+                </div>
+                <div class="w-full overflow-hidden relative bg-brand-gray/5 border-y border-brand-gray/10 py-10 group/window">
+                    <div class="flex w-max flex-row flex-nowrap items-stretch animate-marquee group-hover/window:animation-play-state-paused" style="animation-duration: 28s;">
+                        
+                        <div class="flex gap-8 px-4 flex-row flex-nowrap">
+                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                    <img src="https://picsum.photos/600/750?random=31" alt="Flyer Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Flyer Design</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Promotional Marketing Flyer</h4>
+                                    <p class="text-brand-white/60 text-xs leading-relaxed">Structural layout design formatted to display client updates cleanly for physical printing or messaging.</p>
+                                </div>
+                            </div>
+                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                    <img src="https://picsum.photos/600/750?random=32" alt="Flyer Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Print Asset</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Corporate Resource Guide</h4>
+                                    <p class="text-brand-white/60 text-xs leading-relaxed">Clean vector layout architecture highlighting standard business hours and specific location details.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-8 px-4 flex-row flex-nowrap">
+                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                    <img src="https://picsum.photos/600/750?random=31" alt="Flyer Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Flyer Design</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Promotional Marketing Flyer</h4>
+                                    <p class="text-brand-white/60 text-xs leading-relaxed">Structural layout design formatted to display client updates cleanly for physical printing or messaging.</p>
+                                </div>
+                            </div>
+                            <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0">
+                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                    <img src="https://picsum.photos/600/750?random=32" alt="Flyer Layout" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-brand-white/80">Print Asset</span>
+                                </div>
+                                <div class="p-6 space-y-2">
+                                    <h4 class="font-bold text-base text-white">Corporate Resource Guide</h4>
+                                    <p class="text-brand-white/60 text-xs leading-relaxed">Clean vector layout architecture highlighting standard business hours and specific location details.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
         </div>
-    </main>
 
-    <!-- Footer Area (Exact Home Page Match) -->
+        <div class="max-w-6xl mx-auto px-6 md:px-12 space-y-12 pt-24">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 bg-brand-gray/10 p-6 rounded-xl border border-brand-gray/20 space-y-4">
+                    <div class="w-10 h-10 rounded-lg bg-brand-brown/20 flex items-center justify-center border border-brand-brown/40">
+                        <i data-lucide="cpu" class="w-5 h-5 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Optimized AI-Powered Writing</h3>
+                    <p class="text-xs md:text-sm text-brand-white/70 leading-relaxed font-light">
+                        All web blog articles are initiated using generative AI writing models to maintain efficient delivery speeds. Because raw text generation lacks local business specificity, I manually rebuild and audit every asset draft.
+                    </p>
+                    <p class="text-xs md:text-sm text-brand-white/70 leading-relaxed font-light">
+                        I optimize the resulting copy structure to align explicitly with engine processing guidelines:
+                    </p>
+                    <ul class="space-y-2 text-xs font-mono text-brand-white/60">
+                        <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-brown"></i> SEO (Search Engine Optimization)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-brown"></i> GEO (Generative Engine Optimization)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-brown"></i> AIO (AI Optimization Standards)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-brown"></i> AEO (Answer Engine Optimization)</li>
+                    </ul>
+                </div>
+                <div class="md:col-span-7 space-y-4 bg-brand-dark border border-brand-gray/20 rounded-xl p-6">
+                    <span class="text-xs font-mono text-brand-white/40">[Structured Article Layout Draft]</span>
+                    <h4 class="text-lg font-bold text-white border-b border-brand-gray/10 pb-2">Sample Outline: Structural Local Business Maintenance</h4>
+                    <p class="text-xs text-brand-white/50 leading-relaxed italic">
+                        "Below is an example of an optimized information framework. Notice the structural inclusion of target service metrics inside standard H2 text blocks to align completely with foundational engine parameters..."
+                    </p>
+                    <div class="space-y-3 pt-2 text-xs font-light text-brand-white/70">
+                        <p class="font-bold text-brand-brown"># H1: Why Local Property Upkeep Saves Long-Term Operational Budget</p>
+                        <p>Standard introductory text establishing direct operational context without fluff. This area introduces structural definitions clearly...</p>
+                        <p class="font-bold text-brand-brown">## H2: Key Service Tasks Mapped in Your Local Region</p>
+                        <p>Detailed breakdown lists targeting standard user search queries. Explicit definitions help fulfill direct answers required by voice engines and generative summaries.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start pt-6">
+                <div class="md:col-span-7 bg-brand-dark border border-brand-gray/20 rounded-xl p-6 space-y-4 order-2 md:order-1">
+                    <span class="text-xs font-mono text-brand-white/40">[HighLevel Dashboard Markdown Template]</span>
+                    <div class="border border-brand-gray/20 rounded-lg p-4 bg-brand-gray/5 space-y-3 text-xs text-brand-white/70 font-light">
+                        <div class="border-b border-brand-gray/20 pb-2 font-mono text-brand-white/40 text-[10px]">
+                            Subject: Core Business Operational Update [First Name]
+                        </div>
+                        <p>Hi [First Name],</p>
+                        <p>This is a direct example of a clean newsletter layout structured inside HighLevel communication channels. The text is organized into brief paragraphs using standard Markdown rules to ensure fast rendering speeds and high deliverability scores.</p>
+                        <p>Our upcoming operations schedule includes specific changes outlined explicitly below:</p>
+                        <p class="font-mono text-brand-brown text-[11px] font-bold">[Insert Standard Promotional Link Bracket Here]</p>
+                        <p>Best regards,<br>Your Business Operations Team</p>
+                    </div>
+                </div>
+                <div class="md:col-span-5 bg-brand-gray/10 p-6 rounded-xl border border-brand-gray/20 space-y-4 order-1 md:order-2">
+                    <div class="w-10 h-10 rounded-lg bg-brand-brown/20 flex items-center justify-center border border-brand-brown/40">
+                        <i data-lucide="mail" class="w-5 h-5 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Email Template Structuring</h3>
+                    <p class="text-xs md:text-sm text-brand-white/70 leading-relaxed font-light">
+                        I create explicit technical layouts and structured email templates directly inside your HighLevel communication dashboard. 
+                    </p>
+                    <p class="text-xs md:text-sm text-brand-white/70 leading-relaxed font-light">
+                        The content focuses on markdown-optimized spacing, clear text hierarchies, and organized link blocks to keep your recurring broadcasts, customer news alerts, and informational updates uniform.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-24 px-6 md:px-12 border-b border-brand-gray/10">
+        <div class="max-w-5xl mx-auto space-y-16">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Straightforward Pricing</h2>
+                <p class="text-brand-white/60 max-w-xl mx-auto font-light">Defined monthly packages matching specific workflow requirements.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-2xl p-8 relative space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold">Standard Creative Support</h3>
+                        <p class="text-brand-white/50 text-xs uppercase tracking-wider font-semibold">Core channel updates</p>
+                        <div class="text-3xl font-extrabold text-white">$1,500 <span class="text-sm font-normal text-brand-white/60">/ month</span></div>
+                        <hr class="border-brand-gray/20">
+                        <ul class="space-y-3 text-sm text-brand-white/70">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> 3 Static Graphic Posts Per Week</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Flyer Designs & Marketing Graphics</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Email Campaign Template Setup</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Simple Website Design & Basic SEO</li>
+                        </ul>
+                    </div>
+                    <a href="#book" class="block w-full text-center bg-brand-gray/20 hover:bg-brand-gray/30 border border-brand-gray/40 text-white font-bold py-3 rounded transition text-sm">Select Package</a>
+                </div>
+
+                <div class="bg-brand-gray/10 border-2 border-brand-brown rounded-2xl p-8 relative space-y-6 flex flex-col justify-between shadow-xl shadow-brand-brown/5">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold">Full Creative Support Package</h3>
+                        <p class="text-brand-white/50 text-xs uppercase tracking-wider font-semibold">Expanded content production</p>
+                        <div class="text-3xl font-extrabold text-white">$2,800 <span class="text-sm font-normal text-brand-white/60">/ month</span></div>
+                        <hr class="border-brand-gray/20">
+                        <ul class="space-y-3 text-sm text-brand-white/70">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> All Deliverables from the Standard Package</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> 2 Branded Short Video Edits Per Week</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Monthly Informational Blog Post Writing</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Ongoing Email Newsletter Coordination</li>
+                        </ul>
+                    </div>
+                    <a href="#book" class="block w-full text-center bg-brand-brown hover:bg-opacity-90 text-white font-bold py-3 rounded transition text-sm shadow-md">Get Started Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 md:px-12 bg-brand-gray/5 border-b border-brand-gray/10">
+        <div class="max-w-5xl mx-auto space-y-12">
+            <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-center">Client Feedback</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-brand-dark p-6 border border-brand-gray/20 rounded-xl space-y-4">
+                    <div class="flex text-yellow-500 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                    <p class="text-brand-white/70 text-sm italic leading-relaxed">"Ian builds out our monthly newsletter updates exactly as requested and organizes our list layouts cleanly."</p>
+                    <div class="text-xs font-bold text-brand-white/50">— Local Business Owner, West Coast</div>
+                </div>
+                <div class="bg-brand-dark p-6 border border-brand-gray/20 rounded-xl space-y-4">
+                    <div class="flex text-yellow-500 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                    <p class="text-brand-white/70 text-sm italic leading-relaxed">"Our social graphics and promotional flyers look clean, consistent, and match our branding details perfectly every week."</p>
+                    <div class="text-xs font-bold text-brand-white/50">— E-Commerce Founder</div>
+                </div>
+                <div class="bg-brand-dark p-6 border border-brand-gray/20 rounded-xl space-y-4">
+                    <div class="flex text-yellow-500 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                    <p class="text-brand-white/70 text-sm italic leading-relaxed">"The short branded video adjustments and single informational web page layout were structured exactly how we asked."</p>
+                    <div class="text-xs font-bold text-brand-white/50">— Franchise Operator, CA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="book" class="py-24 px-6 md:px-12 max-w-4xl mx-auto space-y-12">
+        <div class="text-center space-y-4">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Let's Connect</h2>
+            <p class="text-brand-white/60 max-w-md mx-auto font-light">Select a time below to schedule an implementation call via Google Calendar.</p>
+        </div>
+
+        <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-2xl p-4 md:p-8 min-h-[500px] flex flex-col justify-between items-center relative overflow-hidden">
+            <div class="w-full flex justify-between items-center text-xs font-mono text-brand-white/40 pb-4 border-b border-brand-gray/20">
+                <span>[Google Calendar Embed Window]</span>
+                <span>ID: custom-scheduler-iframe</span>
+            </div>
+            
+            <div class="my-auto space-y-4 text-center max-w-sm">
+                <i data-lucide="calendar" class="w-12 h-12 text-brand-brown mx-auto opacity-80"></i>
+                <h4 class="font-bold text-lg text-white">Your Calendar Layout Renders Here</h4>
+                <p class="text-xs text-brand-white/50 leading-relaxed">
+                    Once deployed on your HighLevel platform, swap this block out for your responsive booking page link or standard public scheduling iframe code.
+                </p>
+            </div>
+
+            <div class="w-full grid grid-cols-7 gap-2 pt-6 border-t border-brand-gray/10 text-[10px] font-mono text-brand-white/30 text-center">
+                <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+                <span class="bg-brand-gray/20 py-2 rounded text-brand-white/50">10:00</span>
+                <span class="bg-brand-gray/20 py-2 rounded text-brand-white/50">11:30</span>
+                <span class="bg-brand-brown text-white py-2 rounded font-bold">14:00</span>
+                <span class="bg-brand-gray/20 py-2 rounded text-brand-white/50">15:30</span>
+                <span class="bg-brand-gray/5 py-2 rounded line-through">--:--</span>
+                <span class="bg-brand-gray/5 py-2 rounded line-through">--:--</span>
+                <span class="bg-brand-gray/5 py-2 rounded line-through">--:--</span>
+            </div>
+        </div>
+    </section>
+
     <footer class="bg-brand-dark border-t border-brand-gray/20 py-8 px-6 md:px-12 text-center text-xs text-brand-white/40 space-y-2">
         <p>&copy; 2026 The Fluffy Beanie. All rights reserved.</p>
-        <p class="font-mono text-[10px]">Built Clean. Hosted securely via GitHub Pages.</p>
+        <p class="font-mono text-[10px]">Built Clean. Hosted securely via HighLevel.</p>
     </footer>
 
-    <!-- Completely Automated Presentation Logic -->
     <script>
         lucide.createIcons();
-
-        const slides = document.querySelectorAll('.slide-item');
-        const dotTrack = document.getElementById('dot-indicator-track');
-        let slidePointer = 0;
-
-        // 1. Build bottom indicator tracking rules
-        function renderTrackMetrics() {
-            dotTrack.innerHTML = '';
-            slides.forEach((_, idx) => {
-                const step = document.createElement('div');
-                step.className = `h-1.5 rounded-full creative-ease duration-500 ${idx === slidePointer ? 'w-8 bg-brand-brown' : 'w-2 bg-brand-gray/40'}`;
-                dotTrack.appendChild(step);
-            });
-        }
-
-        // 2. Control active positions using vertical slide up translation matching Creative Cue
-        function executeDisplayState() {
-            slides.forEach((item, idx) => {
-                const textBlock = item.querySelector('.slide-text');
-                const imageBlock = item.querySelector('.slide-image');
-
-                if (idx === slidePointer) {
-                    item.classList.remove('opacity-0', 'pointer-events-none');
-                    item.classList.add('opacity-100');
-                    
-                    // Text blocks drop smoothly into regular placement
-                    textBlock.classList.remove('translate-y-12', 'opacity-0');
-                    textBlock.classList.add('translate-y-0', 'opacity-100');
-
-                    // Core post graphics slide completely up from bottom viewport limits
-                    imageBlock.classList.remove('translate-y-full');
-                    imageBlock.classList.add('translate-y-0');
-                } else {
-                    item.classList.remove('opacity-100');
-                    item.classList.add('opacity-0', 'pointer-events-none');
-
-                    textBlock.classList.remove('translate-y-0', 'opacity-100');
-                    textBlock.classList.add('translate-y-12', 'opacity-0');
-
-                    imageBlock.classList.remove('translate-y-0');
-                    imageBlock.classList.add('translate-y-full');
-                }
-            });
-
-            const dots = dotTrack.children;
-            for (let i = 0; i < dots.length; i++) {
-                if (i === slidePointer) {
-                    dots[i].className = "h-1.5 w-8 bg-brand-brown rounded-full creative-ease duration-500";
-                } else {
-                    dots[i].className = "h-1.5 w-2 bg-brand-gray/40 rounded-full creative-ease duration-500";
-                }
-            }
-        }
-
-        function runAutomatedTransition() {
-            slidePointer++;
-            if (slidePointer >= slides.length) {
-                slidePointer = 0;
-            }
-            executeDisplayState();
-        }
-
-        // 3. Mount and kick off automation cycle loops
-        renderTrackMetrics();
-        executeDisplayState();
-
-        // Advances the slide section every 4000ms (4 seconds) automatically with zero clicks required
-        setInterval(runAutomatedTransition, 4000);
     </script>
 </body>
 </html>
