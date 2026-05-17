@@ -8,16 +8,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Base Styling & Brand Colors */
+        /* Base Styling & Exact Brand Colors */
         :root {
             --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
             --text-main: #1a1d20;
             --text-muted: #5f676d;
-            --accent-color: #212529;
+            --accent-dark: #1a1d20; 
             --border-color: #e9ecef;
-            --border-radius: 12px;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
 
         * {
@@ -31,16 +28,18 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            overflow-x: hidden; /* Prevents horizontal scrollbars from the animation */
         }
 
-        /* Navigation Bar */
+        /* Fixed Navigation Bar (Matches your exact home page style) */
         header {
-            background-color: #1a1d20;
+            background-color: var(--accent-dark);
             padding: 1rem 2rem;
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 100;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .nav-container {
@@ -65,7 +64,7 @@
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background-color: #fff;
+            object-fit: cover;
         }
 
         .back-link {
@@ -80,150 +79,164 @@
             color: #ffffff;
         }
 
-        /* Main Content Container */
-        main {
-            padding: 3rem 0; /* Removed side padding so ticker spans edge-to-edge */
-        }
-
-        /* Page Intro Section */
+        /* Hero Intro Section */
         .intro-section {
             max-width: 1200px;
-            margin: 0 auto 3.5rem auto;
+            margin: 120px auto 4rem auto;
             padding: 0 2rem;
-            text-align: left;
         }
 
         .intro-section h1 {
-            font-size: 2.2rem;
+            font-size: 3rem;
             font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
         }
 
         .intro-section p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
-            max-width: 700px;
+            max-width: 600px;
         }
 
-        /* Ticker Container Window */
-        .ticker-wrap {
+        /* Creative Cue Inspired Project Stack */
+        .project-stack {
             width: 100%;
-            overflow: hidden;
-            background-color: transparent;
-            padding: 2rem 0;
-            position: relative;
-        }
-
-        /* Moving track holding the items */
-        .ticker-track {
             display: flex;
-            width: max-content;
-            animation: scrollMarquee 35s linear infinite;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 0 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        /* Pause animation on hover */
-        .ticker-wrap:hover .ticker-track {
-            animation-play-state: paused;
+        /* Individual Project Section */
+        .project-section {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 70vh;
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        /* Individual Card Item inside Ticker */
-        .portfolio-card {
-            width: 300px; /* Explicit size for horizontal consistency */
-            margin: 0 1rem; /* Spacing between scrolling items */
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            flex-shrink: 0;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Reverse alternate rows just like Creative Cue */
+        .project-section:nth-child(even) {
+            grid-template-columns: 1fr 1.2fr;
+        }
+        .project-section:nth-child(even) .project-image-window {
+            order: 2;
         }
 
-        /* Slight pop dynamic when hovering a card */
-        .portfolio-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Image Setup */
-        .image-wrapper {
+        /* Image Window with Creative Cue Smooth Scale Hover Effect */
+        .project-image-window {
             position: relative;
             width: 100%;
-            padding-top: 100%; /* Keeps it a strict square */
-            background-color: #eaedf0;
+            padding-top: 100%; /* Perfect 1:1 Social Post Square */
+            background-color: #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
         }
 
-        .image-wrapper img {
+        .project-image-window img {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* Card Text Information */
-        .card-details {
-            padding: 1.25rem;
+        /* Zoom animation when hovering the project area */
+        .project-section:hover .project-image-window img {
+            transform: scale(1.05);
         }
 
-        .card-tag {
-            display: inline-block;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+        /* Content Text Area */
+        .project-content {
+            padding: 1rem 0;
+        }
+
+        .project-num {
+            font-size: 0.9rem;
+            font-weight: 600;
             color: var(--text-muted);
-            font-weight: 600;
-            margin-bottom: 0.4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            letter-spacing: 0.1em;
         }
 
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 600;
+        .project-title {
+            font-size: 2.2rem;
+            font-weight: 700;
             color: var(--text-main);
-            margin-bottom: 0.4rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
         }
 
-        .card-description {
-            font-size: 0.85rem;
+        .project-description {
+            font-size: 1.05rem;
             color: var(--text-muted);
-            line-height: 1.4;
+            margin-bottom: 2rem;
+            max-width: 480px;
         }
 
-        /* KEYFRAME ANIMATION: Moves items left smoothly */
-        @keyframes scrollMarquee {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%); /* Moves exactly halfway (one full set of duplicates) */
-            }
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            font-weight: 500;
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            color: var(--text-main);
         }
 
         /* Footer */
         footer {
-            margin-top: 5rem;
-            border-top: 1px solid var(--border-color);
-            padding: 2rem;
+            margin-top: 8rem;
+            background-color: var(--accent-dark);
+            padding: 4rem 2rem;
             text-align: center;
-            color: var(--text-muted);
+            color: #a0aec0;
+        }
+
+        footer p {
             font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
-            .intro-section h1 {
-                font-size: 1.8rem;
+        /* Responsive Layout for Tablets/Mobile */
+        @media (max-width: 968px) {
+            .project-section, .project-section:nth-child(even) {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 3rem 0;
             }
-            .ticker-track {
-                animation-duration: 25s; /* Speed up slightly on mobile screens */
+            .project-section:nth-child(even) .project-image-window {
+                order: 0;
+            }
+            .intro-section h1 {
+                font-size: 2.2rem;
+            }
+            .project-title {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navigation -->
+    <!-- Header / Navigation (Keeps your personal brand completely intact) -->
     <header>
         <div class="nav-container">
             <a href="https://thefluffybeanie.github.io/portfolio" class="logo-area">
@@ -237,117 +250,69 @@
     <!-- Main Section -->
     <main>
         
-        <!-- Intro Header -->
+        <!-- Hero Intro Section -->
         <div class="intro-section">
-            <h1>Social Media Static Posts</h1>
-            <p>A continuous, curated look at clean visual layouts, promotional graphics, and custom brand designs created for clients. Hover over any post to pause.</p>
+            <h1>Social Media Works.</h1>
+            <p>A curated stack of static visual layouts, social campaigns, and strategic brand designs executed for clients.</p>
         </div>
 
-        <!-- Continuous Ticker Window -->
-        <div class="ticker-wrap">
-            <!-- The Track contains TWO identical sets of cards back-to-back to make the loop infinite and seamless -->
-            <div class="ticker-track">
+        <!-- Vertical Presentation Stack (Creative Cue Style) -->
+        <div class="project-stack">
 
-                <!-- --- SET 1 --- -->
-                <div class="portfolio-card">
-                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=1" alt="Campaign Post"></div>
-                    <div class="card-details">
-                        <span class="card-tag">Promotional Graphic</span>
-                        <h2 class="card-title">Client Offer Campaign</h2>
-                        <p class="card-description">Clean layout focusing on service clarity, structural branding, and direct calls to action.</p>
+            <!-- Project Row 1 -->
+            <section class="project-section">
+                <div class="project-image-window">
+                    <img src="https://picsum.photos/800/800?random=1" alt="Campaign Post Display">
+                </div>
+                <div class="project-content">
+                    <span class="project-num">01 / PROMOTIONAL</span>
+                    <h2 class="project-title">Client Offer Campaign</h2>
+                    <p class="project-description">A clean, high-conversion visual layout built to balance service clarity with direct structural branding elements.</p>
+                    <div class="project-tags">
+                        <span class="tag">Ad Creative</span>
+                        <span class="tag">Brand Strategy</span>
                     </div>
                 </div>
+            </section>
 
-                <div class="portfolio-card">
-                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=2" alt="Educational Post"></div>
-                    <div class="card-details">
-                        <span class="card-tag">Informational Tip</span>
-                        <h2 class="card-title">Educational Carousel</h2>
-                        <p class="card-description">Highly readable multi-slide structure tailored for straightforward tips and community value.</p>
+            <!-- Project Row 2 (Automatically reverses layout side-by-side) -->
+            <section class="project-section">
+                <div class="project-image-window">
+                    <img src="https://picsum.photos/800/800?random=2" alt="Educational Post Display">
+                </div>
+                <div class="project-content">
+                    <span class="project-num">02 / EDUCATION</span>
+                    <h2 class="project-title">Value Carousel Assets</h2>
+                    <p class="project-description">Multi-slide asset structures designed explicitly for high readability, community authority, and direct value retention.</p>
+                    <div class="project-tags">
+                        <span class="tag">Infographics</span>
+                        <span class="tag">Content Design</span>
                     </div>
                 </div>
+            </section>
 
-                <div class="portfolio-card">
-                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=3" alt="Review Post"></div>
-                    <div class="card-details">
-                        <span class="card-tag">Review Feature</span>
-                        <h2 class="card-title">Customer Feedback Post</h2>
-                        <p class="card-description">Clean review template maximizing customer trust and social proof using precise text hierarchy.</p>
+            <!-- Project Row 3 -->
+            <section class="project-section">
+                <div class="project-image-window">
+                    <img src="https://picsum.photos/800/800?random=3" alt="Social Proof Display">
+                </div>
+                <div class="project-content">
+                    <span class="project-num">03 / TRUST BUILDING</span>
+                    <h2 class="project-title">Social Proof Features</h2>
+                    <p class="project-description">Polished, authoritative review frameworks that isolate client success statements to generate massive local market trust.</p>
+                    <div class="project-tags">
+                        <span class="tag">Typography</span>
+                        <span class="tag">Social Proof</span>
                     </div>
                 </div>
+            </section>
 
-                <div class="portfolio-card">
-                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=4" alt="Update Post"></div>
-                    <div class="card-details">
-                        <span class="card-tag">Brand Announcement</span>
-                        <h2 class="card-title">Holiday Hours Update</h2>
-                        <p class="card-description">Quick operational notification post matching local industry specifics with zero filler elements.</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=5" alt="Launch Post"></div>
-                    <div class="card-details">
-                        <span class="card-tag">Promotional Graphic</span>
-                        <h2 class="card-title">Seasonal Service Launch</h2>
-                        <p class="card-description">High-contrast visual layout designed to catch eyes on active feeds and drive engagement.</p>
-                    </div>
-                </div>
-
-
-                <!-- --- SET 2 (Exact Duplicate for Seamless Loop) --- -->
-                <div class="portfolio-card">
-                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=1" alt="Campaign Post"></div>
-                    <div class="card-details">
-                        <span class="card-tag">Promotional Graphic</span>
-                        <h2 class="card-title">Client Offer Campaign</h2>
-                        <p class="card-description">Clean layout focusing on service clarity, structural branding, and direct calls to action.</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=2" alt="Educational Post"></div>
-                    <div class="card-details">
-                        <span class="card-tag">Informational Tip</span>
-                        <h2 class="card-title">Educational Carousel</h2>
-                        <p class="card-description">Highly readable multi-slide structure tailored for straightforward tips and community value.</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=3" alt="Review Post"></div>
-                    <div class="card-details">
-                        <span class="card-tag">Review Feature</span>
-                        <h2 class="card-title">Customer Feedback Post</h2>
-                        <p class="card-description">Clean review template maximizing customer trust and social proof using precise text hierarchy.</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=4" alt="Update Post"></div>
-                    <div class="card-details">
-                        <span class="card-tag">Brand Announcement</span>
-                        <h2 class="card-title">Holiday Hours Update</h2>
-                        <p class="card-description">Quick operational notification post matching local industry specifics with zero filler elements.</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="image-wrapper"><img src="https://picsum.photos/600/600?random=5" alt="Launch Post"></div>
-                    <div class="card-details">
-                        <span class="card-tag">Promotional Graphic</span>
-                        <h2 class="card-title">Seasonal Service Launch</h2>
-                        <p class="card-description">High-contrast visual layout designed to catch eyes on active feeds and drive engagement.</p>
-                    </div>
-                </div>
-
-            </div>
         </div>
     </main>
 
     <!-- Footer Area -->
     <footer>
-        <p>© 2026 The Fluffy Beanie. All rights reserved. Created for digital execution support.</p>
+        <p>© 2026 The Fluffy Beanie. All rights reserved. Optimized for high-end portfolio presentation.</p>
     </footer>
 
 </body>
