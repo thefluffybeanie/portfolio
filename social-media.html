@@ -28,10 +28,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Precision acceleration mechanics for premium interaction */
+        .cubic-timing {
+            transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+    </style>
 </head>
-<body class="bg-brand-dark text-brand-white font-sans antialiased selection:bg-brand-brown selection:text-white">
+<body class="bg-brand-dark text-brand-white font-sans antialiased selection:bg-brand-brown selection:text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
 
-    <!-- Sticky Navigation Bar (Exact match to your home page layout) -->
+    <!-- Sticky Navigation Bar (Matches Home Page) -->
     <nav class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-gray/20 py-4 px-6 md:px-12">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="https://thefluffybeanie.github.io/portfolio" class="flex items-center gap-3 group">
@@ -49,197 +55,172 @@
         </div>
     </nav>
 
-    <!-- Work Samples Section Header -->
-    <section class="pt-24 px-6 md:px-12 bg-brand-gray/5">
-        <div class="max-w-6xl mx-auto space-y-12">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-brand-gray/10 pb-8">
-                <div class="space-y-4">
-                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Social Media Work Samples</h2>
-                    <p class="text-brand-white/60 max-w-xl font-light">Interactive sliding showcase of static graphic posts and content formats created for clients.</p>
+    <!-- Main Showcase Theatre Window -->
+    <main class="flex-grow flex items-center justify-center px-6 md:px-12 py-12 relative">
+        <div class="max-w-6xl w-full mx-auto relative h-[650px] md:h-[500px]">
+            
+            <!-- Slide Deck Window Track -->
+            <div id="slideshow-deck" class="relative w-full h-full">
+
+                <!-- Slide 1 -->
+                <div class="slide-item absolute inset-0 opacity-0 pointer-events-none grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center transition-all duration-[1000ms] cubic-timing">
+                    <div class="md:col-span-6 order-2 md:order-1 space-y-6 slide-text transform translate-y-8 transition-transform duration-[1000ms] cubic-timing">
+                        <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">01 / PROMOTIONAL ART</span>
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Client Offer Campaign</h1>
+                        <p class="text-brand-white/60 font-light leading-relaxed text-base md:text-lg">
+                            Clean layout optimized for service clarity and immediate visual traction. Engineered directly around specific brand guidelines to increase engagement spikes across organic feeds.
+                        </p>
+                        <div class="inline-block bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1.5 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/80">
+                            Ad Creative Design
+                        </div>
+                    </div>
+                    <div class="md:col-span-6 order-1 md:order-2 flex justify-center">
+                        <div class="slide-image w-full max-w-[400px] aspect-square bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl transform scale-90 transition-transform duration-[1000ms] cubic-timing group relative cursor-pointer">
+                            <img src="https://picsum.photos/800/800?random=1" alt="Campaign Post Layout" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+                        </div>
+                    </div>
                 </div>
-                <!-- Navigation Arrows for the Slide Deck -->
-                <div class="flex gap-2">
-                    <button onclick="prevSlide()" class="p-3 rounded-lg bg-brand-gray/10 border border-brand-gray/20 hover:border-brand-brown/60 text-brand-white/80 hover:text-white transition">
-                        <i data-lucide="arrow-left" class="w-5 h-5"></i>
+
+                <!-- Slide 2 -->
+                <div class="slide-item absolute inset-0 opacity-0 pointer-events-none grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center transition-all duration-[1000ms] cubic-timing">
+                    <div class="md:col-span-6 order-2 md:order-1 space-y-6 slide-text transform translate-y-8 transition-transform duration-[1000ms] cubic-timing">
+                        <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">02 / EDUCATION SECTOR</span>
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Value Carousel Assets</h1>
+                        <p class="text-brand-white/60 font-light leading-relaxed text-base md:text-lg">
+                            Multi-slide data presentation boards designed for fast informational consumption. Controlled grid whitespace patterns isolate technical pointers cleanly without visual weight fatigue.
+                        </p>
+                        <div class="inline-block bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1.5 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/80">
+                            Content Architecture
+                        </div>
+                    </div>
+                    <div class="md:col-span-6 order-1 md:order-2 flex justify-center">
+                        <div class="slide-image w-full max-w-[400px] aspect-square bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl transform scale-90 transition-transform duration-[1000ms] cubic-timing group relative cursor-pointer">
+                            <img src="https://picsum.photos/800/800?random=2" alt="Carousel Layout Assets" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide-item absolute inset-0 opacity-0 pointer-events-none grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center transition-all duration-[1000ms] cubic-timing">
+                    <div class="md:col-span-6 order-2 md:order-1 space-y-6 slide-text transform translate-y-8 transition-transform duration-[1000ms] cubic-timing">
+                        <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">03 / SOCIAL PROOF</span>
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Verified Review Cards</h1>
+                        <p class="text-brand-white/60 font-light leading-relaxed text-base md:text-lg">
+                            High-contrast quote frames structured to display client win updates cleanly. Eliminates complex filler patterns to focus audience view mechanics entirely on customer authority data.
+                        </p>
+                        <div class="inline-block bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1.5 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/80">
+                            Reputation Assets
+                        </div>
+                    </div>
+                    <div class="md:col-span-6 order-1 md:order-2 flex justify-center">
+                        <div class="slide-image w-full max-w-[400px] aspect-square bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl transform scale-90 transition-transform duration-[1000ms] cubic-timing group relative cursor-pointer">
+                            <img src="https://picsum.photos/800/800?random=3" alt="Review Graphics Layout" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Precision Floating Navigation UI controls -->
+            <div class="absolute -bottom-16 left-0 right-0 flex justify-between items-center z-20">
+                <!-- Track Dots indicators -->
+                <div id="dot-track" class="flex gap-2">
+                    <!-- Controlled via script -->
+                </div>
+                
+                <!-- Linear navigation buttons -->
+                <div class="flex gap-3">
+                    <button onclick="changeActiveSlide(-1)" class="w-12 h-12 rounded-xl bg-brand-gray/10 border border-brand-gray/20 hover:border-brand-brown/40 flex items-center justify-center transition-all group active:scale-95">
+                        <i data-lucide="chevron-left" class="w-5 h-5 text-brand-white/60 group-hover:text-white transition"></i>
                     </button>
-                    <button onclick="nextSlide()" class="p-3 rounded-lg bg-brand-gray/10 border border-brand-gray/20 hover:border-brand-brown/60 text-brand-white/80 hover:text-white transition">
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    <button onclick="changeActiveSlide(1)" class="w-12 h-12 rounded-xl bg-brand-gray/10 border border-brand-gray/20 hover:border-brand-brown/40 flex items-center justify-center transition-all group active:scale-95">
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-brand-white/60 group-hover:text-white transition"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- THE SLIDESHOW CONTAINER (Maintains your clean 3-card grid visual on desktop, but glides smoothly) -->
-            <div class="overflow-hidden relative py-4">
-                <div id="slider-track" class="flex gap-8 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] w-full">
-                    
-                    <!-- Slide Card 1 -->
-                    <div class="min-w-full sm:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition flex-shrink-0">
-                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
-                            <img src="https://picsum.photos/600/600?random=1" alt="Post Layout" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
-                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Promotional</span>
-                        </div>
-                        <div class="p-6 space-y-2">
-                            <h4 class="font-bold text-lg">Social Media Post Layout</h4>
-                            <p class="text-brand-white/60 text-sm">Clean image design using clear typography to display specific client information and updates.</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide Card 2 -->
-                    <div class="min-w-full sm:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition flex-shrink-0">
-                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
-                            <img src="https://picsum.photos/600/600?random=2" alt="Flyer Layout" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
-                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Flyer Design</span>
-                        </div>
-                        <div class="p-6 space-y-2">
-                            <h4 class="font-bold text-lg">Promotional Marketing Flyer</h4>
-                            <p class="text-brand-white/60 text-sm">A balanced digital layout created for printing or digital distribution to present services.</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide Card 3 -->
-                    <div class="min-w-full sm:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition flex-shrink-0">
-                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
-                            <img src="https://picsum.photos/600/600?random=3" alt="Brand Updates" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
-                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Operational</span>
-                        </div>
-                        <div class="p-6 space-y-2">
-                            <h4 class="font-bold text-lg">Brand Launch Frameworks</h4>
-                            <p class="text-brand-white/60 text-sm">Clean architectural update posts matching specialized niche requirements with zero filler elements.</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide Card 4 -->
-                    <div class="min-w-full sm:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition flex-shrink-0">
-                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
-                            <img src="https://picsum.photos/600/600?random=4" alt="Carousel Asset" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
-                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Infographics</span>
-                        </div>
-                        <div class="p-6 space-y-2">
-                            <h4 class="font-bold text-lg">Value Carousel Layouts</h4>
-                            <p class="text-brand-white/60 text-sm">Multi-slide asset structures engineered for rapid readability and straightforward data value.</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide Card 5 -->
-                    <div class="min-w-full sm:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition flex-shrink-0">
-                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
-                            <img src="https://picsum.photos/600/600?random=5" alt="Review Design" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
-                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Social Proof</span>
-                        </div>
-                        <div class="p-6 space-y-2">
-                            <h4 class="font-bold text-lg">Verified Customer Reviews</h4>
-                            <p class="text-brand-white/60 text-sm">Polished testimonial templates maximizing user trust using clean structural typography styles.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Bottom Slide Indicators -->
-            <div id="indicator-container" class="flex justify-center gap-2 pt-4 pb-12">
-                <!-- Javascript builds these dynamically based on card quantity -->
-            </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Footer Area (Exact match to your home page) -->
+    <!-- Footer Area (Matches Home Page) -->
     <footer class="bg-brand-dark border-t border-brand-gray/20 py-8 px-6 md:px-12 text-center text-xs text-brand-white/40 space-y-2">
         <p>&copy; 2026 The Fluffy Beanie. All rights reserved.</p>
         <p class="font-mono text-[10px]">Built Clean. Hosted securely via GitHub Pages.</p>
     </footer>
 
-    <!-- Slideshow Core Logic -->
+    <!-- Interactive Execution Engine Script -->
     <script>
-        // Start Lucide Icons
         lucide.createIcons();
 
-        const track = document.getElementById('slider-track');
-        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide-item');
+        const dotTrack = document.getElementById('dot-track');
+        let slidePointer = 0;
 
-        function getVisibleCards() {
-            if (window.innerWidth >= 1024) return 3; // Desktop
-            if (window.innerWidth >= 640) return 2;  // Tablet
-            return 1;                                // Mobile
+        // Build navigation trace track
+        function renderTrackMetrics() {
+            dotTrack.innerHTML = '';
+            slides.forEach((_, idx) => {
+                const step = document.createElement('button');
+                step.className = `h-1.5 rounded-full cubic-timing duration-500 ${idx === slidePointer ? 'w-8 bg-brand-brown' : 'w-2 bg-brand-gray/40'}`;
+                step.onclick = () => jumpToSlide(idx);
+                dotTrack.appendChild(step);
+            });
         }
 
-        function getMaxIndex() {
-            const totalCards = track.children.length;
-            return totalCards - getVisibleCards();
-        }
+        function executeDisplayState() {
+            slides.forEach((item, idx) => {
+                const textBlock = item.querySelector('.slide-text');
+                const imageBlock = item.querySelector('.slide-image');
 
-        function updateSlider() {
-            const maxIndex = getMaxIndex();
-            if (currentIndex > maxIndex) currentIndex = maxIndex;
-            if (currentIndex < 0) currentIndex = 0;
+                if (idx === slidePointer) {
+                    // Activate slide item layer elements cleanly
+                    item.classList.remove('opacity-0', 'pointer-events-none');
+                    item.classList.add('opacity-100');
+                    
+                    textBlock.classList.remove('translate-y-8');
+                    textBlock.classList.add('translate-y-0');
 
-            let cardWidth = track.children[0].getBoundingClientRect().width;
-            let gap = 32; // Corresponds to Tailwind gap-8 (32px)
-            
-            // Calculate precise sliding position
-            let moveAmount = currentIndex * (cardWidth + gap);
-            track.style.transform = `translateX(-${moveAmount}px)`;
-            
-            updateIndicators();
-        }
-
-        function nextSlide() {
-            if (currentIndex < getMaxIndex()) {
-                currentIndex++;
-            } else {
-                currentIndex = 0; // Loop back to start smoothly
-            }
-            updateSlider();
-        }
-
-        function prevSlide() {
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                currentIndex = getMaxIndex(); // Loop to the end
-            }
-            updateSlider();
-        }
-
-        // Build pagination indicator dots dynamically
-        function setupIndicators() {
-            const container = document.getElementById('indicator-container');
-            container.innerHTML = '';
-            const steps = getMaxIndex() + 1;
-
-            for (let i = 0; i < steps; i++) {
-                const dot = document.createElement('button');
-                dot.className = `h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'w-6 bg-brand-brown' : 'w-2 bg-brand-gray/40'}`;
-                dot.onclick = () => {
-                    currentIndex = i;
-                    updateSlider();
-                };
-                container.appendChild(dot);
-            }
-        }
-
-        function updateIndicators() {
-            const container = document.getElementById('indicator-container');
-            const dots = container.children;
-            for (let i = 0; i < dots.length; i++) {
-                if (i === currentIndex) {
-                    dots[i].className = "h-2 w-6 bg-brand-brown rounded-full transition-all duration-300";
+                    imageBlock.classList.remove('scale-90', 'rotate-2');
+                    imageBlock.classList.add('scale-100', 'rotate-0');
                 } else {
-                    dots[i].className = "h-2 w-2 bg-brand-gray/40 rounded-full transition-all duration-300";
+                    // Deactivate and reset positions seamlessly
+                    item.classList.remove('opacity-100');
+                    item.classList.add('opacity-0', 'pointer-events-none');
+
+                    textBlock.classList.remove('translate-y-0');
+                    textBlock.classList.add('translate-y-8');
+
+                    imageBlock.classList.remove('scale-100', 'rotate-0');
+                    imageBlock.classList.add('scale-90', 'rotate-2');
+                }
+            });
+
+            // Re-render dot metrics indicators
+            const dots = dotTrack.children;
+            for (let i = 0; i < dots.length; i++) {
+                if (i === slidePointer) {
+                    dots[i].className = "h-1.5 w-8 bg-brand-brown rounded-full cubic-timing duration-500";
+                } else {
+                    dots[i].className = "h-1.5 w-2 bg-brand-gray/40 rounded-full cubic-timing duration-500";
                 }
             }
         }
 
-        // Initialize and handle screen resize adjustments dynamically
-        window.addEventListener('resize', () => {
-            setupIndicators();
-            updateSlider();
-        });
-        
-        // Initial execution run
-        setTimeout(() => {
-            setupIndicators();
-            updateSlider();
-        }, 100);
+        function changeActiveSlide(direction) {
+            slidePointer += direction;
+            if (slidePointer >= slides.length) slidePointer = 0;
+            if (slidePointer < 0) slidePointer = slides.length - 1;
+            executeDisplayState();
+        }
+
+        function jumpToSlide(index) {
+            slidePointer = index;
+            executeDisplayState();
+        }
+
+        // Initialize execution on runtime loop mount
+        renderTrackMetrics();
+        executeDisplayState();
     </script>
 </body>
 </html>
