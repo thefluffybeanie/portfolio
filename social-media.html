@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Fluffy Beanie | Social Media Static Posts</title>
+    <title>The Fluffy Beanie | Social Media Showcase</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -31,7 +31,7 @@
 </head>
 <body class="bg-brand-dark text-brand-white font-sans antialiased selection:bg-brand-brown selection:text-white">
 
-    <!-- Sticky Navigation Bar (Perfectly matched to your home page) -->
+    <!-- Sticky Navigation Bar (Exact match to your home page layout) -->
     <nav class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-gray/20 py-4 px-6 md:px-12">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="https://thefluffybeanie.github.io/portfolio" class="flex items-center gap-3 group">
@@ -49,103 +49,197 @@
         </div>
     </nav>
 
-    <!-- Page Header Hero Section -->
-    <section class="max-w-5xl mx-auto text-center space-y-6 pt-24 pb-12 px-6 md:px-12">
-        <div class="inline-flex items-center gap-2 bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/70">
-            <span class="w-2 h-2 bg-brand-brown rounded-full"></span> Design Portfolio Showcase
+    <!-- Work Samples Section Header -->
+    <section class="pt-24 px-6 md:px-12 bg-brand-gray/5">
+        <div class="max-w-6xl mx-auto space-y-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-brand-gray/10 pb-8">
+                <div class="space-y-4">
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Social Media Work Samples</h2>
+                    <p class="text-brand-white/60 max-w-xl font-light">Interactive sliding showcase of static graphic posts and content formats created for clients.</p>
+                </div>
+                <!-- Navigation Arrows for the Slide Deck -->
+                <div class="flex gap-2">
+                    <button onclick="prevSlide()" class="p-3 rounded-lg bg-brand-gray/10 border border-brand-gray/20 hover:border-brand-brown/60 text-brand-white/80 hover:text-white transition">
+                        <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </button>
+                    <button onclick="nextSlide()" class="p-3 rounded-lg bg-brand-gray/10 border border-brand-gray/20 hover:border-brand-brown/60 text-brand-white/80 hover:text-white transition">
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- THE SLIDESHOW CONTAINER (Maintains your clean 3-card grid visual on desktop, but glides smoothly) -->
+            <div class="overflow-hidden relative py-4">
+                <div id="slider-track" class="flex gap-8 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] w-full">
+                    
+                    <!-- Slide Card 1 -->
+                    <div class="min-w-full sm:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition flex-shrink-0">
+                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
+                            <img src="https://picsum.photos/600/600?random=1" alt="Post Layout" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
+                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Promotional</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h4 class="font-bold text-lg">Social Media Post Layout</h4>
+                            <p class="text-brand-white/60 text-sm">Clean image design using clear typography to display specific client information and updates.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide Card 2 -->
+                    <div class="min-w-full sm:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition flex-shrink-0">
+                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
+                            <img src="https://picsum.photos/600/600?random=2" alt="Flyer Layout" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
+                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Flyer Design</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h4 class="font-bold text-lg">Promotional Marketing Flyer</h4>
+                            <p class="text-brand-white/60 text-sm">A balanced digital layout created for printing or digital distribution to present services.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide Card 3 -->
+                    <div class="min-w-full sm:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition flex-shrink-0">
+                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
+                            <img src="https://picsum.photos/600/600?random=3" alt="Brand Updates" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
+                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Operational</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h4 class="font-bold text-lg">Brand Launch Frameworks</h4>
+                            <p class="text-brand-white/60 text-sm">Clean architectural update posts matching specialized niche requirements with zero filler elements.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide Card 4 -->
+                    <div class="min-w-full sm:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition flex-shrink-0">
+                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
+                            <img src="https://picsum.photos/600/600?random=4" alt="Carousel Asset" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
+                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Infographics</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h4 class="font-bold text-lg">Value Carousel Layouts</h4>
+                            <p class="text-brand-white/60 text-sm">Multi-slide asset structures engineered for rapid readability and straightforward data value.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide Card 5 -->
+                    <div class="min-w-full sm:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition flex-shrink-0">
+                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
+                            <img src="https://picsum.photos/600/600?random=5" alt="Review Design" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
+                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Social Proof</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h4 class="font-bold text-lg">Verified Customer Reviews</h4>
+                            <p class="text-brand-white/60 text-sm">Polished testimonial templates maximizing user trust using clean structural typography styles.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Bottom Slide Indicators -->
+            <div id="indicator-container" class="flex justify-center gap-2 pt-4 pb-12">
+                <!-- Javascript builds these dynamically based on card quantity -->
+            </div>
         </div>
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight max-w-4xl mx-auto leading-[1.1]">
-            Social Media <span class="text-brand-brown">Static Posts</span>
-        </h1>
-        <p class="text-lg text-brand-white/60 max-w-2xl mx-auto font-light leading-relaxed">
-            A curated look at layout mechanics, targeted promotional structures, and content frameworks built to keep digital channels engaging.
-        </p>
     </section>
 
-    <!-- Creative Cue-Inspired Project Stack -->
-    <section class="max-w-6xl mx-auto px-6 md:px-12 py-12 space-y-24 md:space-y-36">
-
-        <!-- Case Study 1 -->
-        <div class="group grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center border-b border-brand-gray/10 pb-16 md:pb-24">
-            <!-- Image Area -->
-            <div class="md:col-span-7">
-                <div class="relative w-full aspect-square bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl">
-                    <!-- Image component with deep smooth cubic zoom transit from Creative Cue -->
-                    <img src="https://picsum.photos/900/900?random=1" alt="Social Post Case Study 1" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent pointer-events-none"></div>
-                </div>
-            </div>
-            <!-- Content Area -->
-            <div class="md:col-span-5 space-y-4">
-                <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">01 / PROMOTIONAL CASE</span>
-                <h2 class="text-3xl font-bold tracking-tight text-brand-white">Client Offer Campaign</h2>
-                <p class="text-brand-white/60 font-light leading-relaxed">
-                    A conversion-focused graphic framework balancing structured corporate text hierarchies with custom vector space. Tailored for targeted ad placements and immediate visual traction.
-                </p>
-                <div class="flex flex-wrap gap-2 pt-2">
-                    <span class="text-xs font-medium bg-brand-gray/10 border border-brand-gray/30 px-3 py-1 rounded-full text-brand-white/80">Ad Creative</span>
-                    <span class="text-xs font-medium bg-brand-gray/10 border border-brand-gray/30 px-3 py-1 rounded-full text-brand-white/80">Brand Assets</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Case Study 2 (Alternating Content Layout) -->
-        <div class="group grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center border-b border-brand-gray/10 pb-16 md:pb-24">
-            <!-- Image Area (Ordered right on desktop screens) -->
-            <div class="md:col-span-7 md:order-2">
-                <div class="relative w-full aspect-square bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl">
-                    <img src="https://picsum.photos/900/900?random=2" alt="Social Post Case Study 2" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent pointer-events-none"></div>
-                </div>
-            </div>
-            <!-- Content Area -->
-            <div class="md:col-span-5 md:order-1 space-y-4">
-                <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">02 / EDUCATION SECTOR</span>
-                <h2 class="text-3xl font-bold tracking-tight text-brand-white">Value Retention Carousel</h2>
-                <p class="text-brand-white/60 font-light leading-relaxed">
-                    Multi-slide layouts built for quick data absorption. Isolates industry tips and actionable processes using customized branding variables and maximum whitespace control.
-                </p>
-                <div class="flex flex-wrap gap-2 pt-2">
-                    <span class="text-xs font-medium bg-brand-gray/10 border border-brand-gray/30 px-3 py-1 rounded-full text-brand-white/80">Infographics</span>
-                    <span class="text-xs font-medium bg-brand-gray/10 border border-brand-gray/30 px-3 py-1 rounded-full text-brand-white/80">Value Packs</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Case Study 3 -->
-        <div class="group grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center border-b border-brand-gray/10 pb-16 md:pb-24">
-            <!-- Image Area -->
-            <div class="md:col-span-7">
-                <div class="relative w-full aspect-square bg-brand-gray/20 rounded-2xl overflow-hidden border border-brand-gray/30 shadow-2xl">
-                    <img src="https://picsum.photos/900/900?random=3" alt="Social Post Case Study 3" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent pointer-events-none"></div>
-                </div>
-            </div>
-            <!-- Content Area -->
-            <div class="md:col-span-5 space-y-4">
-                <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">03 / SOCIAL PROOF STRATEGY</span>
-                <h2 class="text-3xl font-bold tracking-tight text-brand-white">Verified Feedback Features</h2>
-                <p class="text-brand-white/60 font-light leading-relaxed">
-                    Authority-building quote frameworks designed to extract five-star experiences cleanly. High contrast components built to establish rapid trust on dynamic active feeds.
-                </p>
-                <div class="flex flex-wrap gap-2 pt-2">
-                    <span class="text-xs font-medium bg-brand-gray/10 border border-brand-gray/30 px-3 py-1 rounded-full text-brand-white/80">Reputation Design</span>
-                    <span class="text-xs font-medium bg-brand-gray/10 border border-brand-gray/30 px-3 py-1 rounded-full text-brand-white/80">Typography</span>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Footer Area (Perfectly matched to your home page) -->
+    <!-- Footer Area (Exact match to your home page) -->
     <footer class="bg-brand-dark border-t border-brand-gray/20 py-8 px-6 md:px-12 text-center text-xs text-brand-white/40 space-y-2">
         <p>&copy; 2026 The Fluffy Beanie. All rights reserved.</p>
         <p class="font-mono text-[10px]">Built Clean. Hosted securely via GitHub Pages.</p>
     </footer>
 
+    <!-- Slideshow Core Logic -->
     <script>
-        // Init Lucide engine if icon hooks are appended later
+        // Start Lucide Icons
         lucide.createIcons();
+
+        const track = document.getElementById('slider-track');
+        let currentIndex = 0;
+
+        function getVisibleCards() {
+            if (window.innerWidth >= 1024) return 3; // Desktop
+            if (window.innerWidth >= 640) return 2;  // Tablet
+            return 1;                                // Mobile
+        }
+
+        function getMaxIndex() {
+            const totalCards = track.children.length;
+            return totalCards - getVisibleCards();
+        }
+
+        function updateSlider() {
+            const maxIndex = getMaxIndex();
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            if (currentIndex < 0) currentIndex = 0;
+
+            let cardWidth = track.children[0].getBoundingClientRect().width;
+            let gap = 32; // Corresponds to Tailwind gap-8 (32px)
+            
+            // Calculate precise sliding position
+            let moveAmount = currentIndex * (cardWidth + gap);
+            track.style.transform = `translateX(-${moveAmount}px)`;
+            
+            updateIndicators();
+        }
+
+        function nextSlide() {
+            if (currentIndex < getMaxIndex()) {
+                currentIndex++;
+            } else {
+                currentIndex = 0; // Loop back to start smoothly
+            }
+            updateSlider();
+        }
+
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = getMaxIndex(); // Loop to the end
+            }
+            updateSlider();
+        }
+
+        // Build pagination indicator dots dynamically
+        function setupIndicators() {
+            const container = document.getElementById('indicator-container');
+            container.innerHTML = '';
+            const steps = getMaxIndex() + 1;
+
+            for (let i = 0; i < steps; i++) {
+                const dot = document.createElement('button');
+                dot.className = `h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'w-6 bg-brand-brown' : 'w-2 bg-brand-gray/40'}`;
+                dot.onclick = () => {
+                    currentIndex = i;
+                    updateSlider();
+                };
+                container.appendChild(dot);
+            }
+        }
+
+        function updateIndicators() {
+            const container = document.getElementById('indicator-container');
+            const dots = container.children;
+            for (let i = 0; i < dots.length; i++) {
+                if (i === currentIndex) {
+                    dots[i].className = "h-2 w-6 bg-brand-brown rounded-full transition-all duration-300";
+                } else {
+                    dots[i].className = "h-2 w-2 bg-brand-gray/40 rounded-full transition-all duration-300";
+                }
+            }
+        }
+
+        // Initialize and handle screen resize adjustments dynamically
+        window.addEventListener('resize', () => {
+            setupIndicators();
+            updateSlider();
+        });
+        
+        // Initial execution run
+        setTimeout(() => {
+            setupIndicators();
+            updateSlider();
+        }, 100);
     </script>
 </body>
 </html>
