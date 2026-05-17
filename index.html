@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fluffy Beanie | Digital Marketing Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gray: '#5d5c5f',
+                            dark: '#232120',
+                            brown: '#7d421e',
+                            white: '#ffffff'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-brand-dark text-brand-white font-sans antialiased selection:bg-brand-brown selection:text-white">
+
+    <nav class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-gray/20 py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-brand-brown overflow-hidden border border-brand-gray/40 flex items-center justify-center font-bold text-sm">
+                    TFB
+                </div>
+                <span class="font-bold text-xl tracking-tight group-hover:text-brand-brown transition">The Fluffy Beanie</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide text-brand-white/80">
+                <a href="#about" class="hover:text-brand-brown transition">About</a>
+                <a href="#services" class="hover:text-brand-brown transition">Services</a>
+                <a href="#portfolio" class="hover:text-brand-brown transition">Work Samples</a>
+                <a href="#pricing" class="hover:text-brand-brown transition">Pricing</a>
+            </div>
+            <div>
+                <a href="#book" class="bg-brand-brown hover:bg-opacity-90 text-white font-bold py-2.5 px-5 rounded text-sm tracking-wide transition shadow-lg shadow-brand-brown/20">Book a Call</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative min-h-[85vh] flex items-center justify-center px-6 md:px-12 border-b border-brand-gray/10">
+        <div class="max-w-5xl mx-auto text-center space-y-8 py-20">
+            <div class="inline-flex items-center gap-2 bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/70">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> 4+ Years Experienced Virtual Assistant & Digital Specialist
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight max-w-4xl mx-auto leading-[1.1]">
+                Turning Scrollers Into Customers via <span class="text-brand-brown">Social & Email</span>
+            </h1>
+            <p class="text-lg md:text-xl text-brand-white/60 max-w-2xl mx-auto font-light leading-relaxed">
+                Hi, I'm Ian. Based in the Philippines, I build high-converting social content, automate customized email marketing pipelines through GoHighLevel, and defend your local reputation. Zero fluff. Pure growth.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
+                <a href="#portfolio" class="w-full sm:w-auto bg-brand-brown hover:bg-opacity-90 text-white font-bold py-4 px-8 rounded transition text-center shadow-lg shadow-brand-brown/30">View My Portfolio</a>
+                <a href="#services" class="w-full sm:w-auto bg-brand-gray/20 hover:bg-brand-gray/30 text-white border border-brand-gray/40 font-bold py-4 px-8 rounded transition text-center">See Services & Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 md:px-12 bg-brand-gray/5 border-b border-brand-gray/10">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-5 flex justify-center">
+                <div class="relative group max-w-xs md:max-w-full">
+                    <div class="absolute inset-0 bg-brand-brown rounded-2xl transform rotate-3 scale-105 opacity-20 group-hover:rotate-6 transition duration-300"></div>
+                    <div class="relative bg-brand-dark border-2 border-brand-gray/40 rounded-2xl p-4 aspect-square flex items-center justify-center overflow-hidden">
+                        <span class="text-brand-gray/40 text-xs absolute top-4 left-4 font-mono">[Brand Avatar Placeholder]</span>
+                        <div class="w-48 h-48 rounded-full bg-brand-gray/20 flex items-center justify-center border border-brand-brown/40">
+                            <i data-lucide="user" class="w-16 h-16 text-brand-brown"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-7 space-y-6">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight">The Brain Behind the Beanie</h2>
+                <p class="text-brand-white/70 leading-relaxed text-base md:text-lg">
+                    I'm Ian, a dedicated virtual assistant and digital marketing strategist based in the Philippines. Over the last 4 years, I've cut through the traditional agency noise to help businesses build scalable customer journeys that actually convert.
+                </p>
+                <p class="text-brand-white/70 leading-relaxed text-base md:text-lg">
+                    As a solo entrepreneur, I understand the value of quick, practical execution. I design your social grids, deploy GoHighLevel automated backends, clear out negative review bottlenecks, and ensure your digital footprint stays sharp—without adding heavy internal management overhead to your daily workflow.
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-4 text-sm font-semibold tracking-wide uppercase text-brand-white/60">
+                    <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-brown"></i> 4 Years Elite VA Experience</div>
+                    <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-brown"></i> GHL Automations Specialist</div>
+                    <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-brown"></i> Branded & AI Short-Form Video</div>
+                    <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-brown"></i> Local Reputation Defense</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 px-6 md:px-12 border-b border-brand-gray/10">
+        <div class="max-w-6xl mx-auto space-y-16">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Core Capabilities</h2>
+                <p class="text-brand-white/60 max-w-xl mx-auto font-light">Done-for-you execution built to capture attention and automate client retention.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
+                        <i data-lucide="mail" class="w-6 h-6 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Email Marketing & GHL Setup</h3>
+                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                        Full technical setup of GoHighLevel pipelines to send broadcasts and automated campaigns. Keep your client base hyper-engaged without managing ongoing inbound leads manually.
+                    </p>
+                </div>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
+                        <i data-lucide="instagram" class="w-6 h-6 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Social Media Management</h3>
+                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                        Consistent scheduling, design of custom static posts, high-converting social graphics, and tailored content pillars that align completely with your distinct brand identity.
+                    </p>
+                </div>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
+                        <i data-lucide="video" class="w-6 h-6 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Branded & AI Video Content</h3>
+                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                        Engaging, short-form branded video assets combined with state-of-the-art AI-driven video optimization to hook viewers on TikTok, Reels, and YouTube Shorts.
+                    </p>
+                </div>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
+                        <i data-lucide="layout" class="w-6 h-6 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Simple Web Design & SEO</h3>
+                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                        Clean, high-performance static websites built for fast loading speeds and structurally optimized with foundational on-page SEO principles to capture local search visibility.
+                    </p>
+                </div>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
+                        <i data-lucide="star" class="w-6 h-6 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Reputation Management</h3>
+                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                        Strategic setup to capture clean public reviews, mitigate negative user experiences silently behind the scenes, and build unmatched brand trustworthiness.
+                    </p>
+                </div>
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-xl p-8 space-y-4 hover:border-brand-brown/40 transition">
+                    <div class="w-12 h-12 rounded-lg bg-brand-brown/10 flex items-center justify-center border border-brand-brown/30">
+                        <i data-lucide="globe" class="w-6 h-6 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Coverage Areas</h3>
+                    <p class="text-brand-white/60 text-sm leading-relaxed">
+                        Serving local businesses across California, global e-commerce operators, and remote partners from my production base in the Philippines.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-24 px-6 md:px-12 bg-brand-gray/5 border-b border-brand-gray/10">
+        <div class="max-w-6xl mx-auto space-y-16">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+                <div class="space-y-4">
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Work Samples</h2>
+                    <p class="text-brand-white/60 max-w-xl font-light">Proof of concept across copywriting, design, and video assets.</p>
+                </div>
+                <div class="flex flex-wrap gap-2 text-xs font-semibold tracking-wide uppercase bg-brand-dark border border-brand-gray/30 p-1 rounded-lg">
+                    <span class="bg-brand-brown px-3 py-1.5 rounded text-white cursor-pointer">All</span>
+                    <span class="px-3 py-1.5 rounded text-brand-white/60 hover:text-white cursor-pointer">Social</span>
+                    <span class="px-3 py-1.5 rounded text-brand-white/60 hover:text-white cursor-pointer">Email & Blogs</span>
+                    <span class="px-3 py-1.5 rounded text-brand-white/60 hover:text-white cursor-pointer">Video Assets</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition">
+                    <div class="bg-brand-gray/20 aspect-square w-full flex flex-col justify-between p-6 relative">
+                        <span class="text-brand-gray/40 text-xs font-mono">[Static Post Graphic Placeholder]</span>
+                        <i data-lucide="image" class="w-12 h-12 text-brand-brown/40 self-center my-auto"></i>
+                        <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Social Graphic</span>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h4 class="font-bold text-lg">High-Engagement Industry Carousel</h4>
+                        <p class="text-brand-white/60 text-sm">Custom vector typography and clean educational designs optimized for saving and sharing.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition">
+                    <div class="bg-brand-gray/20 aspect-square w-full flex flex-col justify-between p-6 relative">
+                        <span class="text-brand-gray/40 text-xs font-mono">[Blog Post Framework Placeholder]</span>
+                        <i data-lucide="file-text" class="w-12 h-12 text-brand-brown/40 self-center my-auto"></i>
+                        <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Blog Content</span>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h4 class="font-bold text-lg">SEO Optimization Content Framework</h4>
+                        <p class="text-brand-white/60 text-sm">Long-form localized blog layout addressing high-intent user inquiries to naturally drive search traffic.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition">
+                    <div class="bg-brand-gray/20 aspect-square w-full flex flex-col justify-between p-6 relative">
+                        <span class="text-brand-gray/40 text-xs font-mono">[Branded Video Asset Placeholder]</span>
+                        <i data-lucide="play-circle" class="w-12 h-12 text-brand-brown/40 self-center my-auto"></i>
+                        <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Branded Short</span>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h4 class="font-bold text-lg">Kinetic-Text Product Launch Reel</h4>
+                        <p class="text-brand-white/60 text-sm">Dynamic timing, clean background frames, and structured sound design built to retain early viewer attention.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition">
+                    <div class="bg-brand-gray/20 aspect-square w-full flex flex-col justify-between p-6 relative">
+                        <span class="text-brand-gray/40 text-xs font-mono">[AI Video Render Placeholder]</span>
+                        <i data-lucide="cpu" class="w-12 h-12 text-brand-brown/40 self-center my-auto"></i>
+                        <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">AI Optimized Video</span>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h4 class="font-bold text-lg">Algorithmic Faceless Short Form</h4>
+                        <p class="text-brand-white/60 text-sm">AI-assisted visual compilation paired with crisp voice-cloning configurations targeting viral reach metrics.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition">
+                    <div class="bg-brand-gray/20 aspect-square w-full flex flex-col justify-between p-6 relative">
+                        <span class="text-brand-gray/40 text-xs font-mono">[Reputation Funnel Wireframe]</span>
+                        <i data-lucide="shield-check" class="w-12 h-12 text-brand-brown/40 self-center my-auto"></i>
+                        <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Reputation Funnel</span>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h4 class="font-bold text-lg">Automated Feedback Collection Flow</h4>
+                        <p class="text-brand-white/60 text-sm">GoHighLevel sequence routing verified consumers into an automated review filtering pipeline.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition">
+                    <div class="bg-brand-gray/20 aspect-square w-full flex flex-col justify-between p-6 relative">
+                        <span class="text-brand-gray/40 text-xs font-mono">[GHL Email Design Template]</span>
+                        <i data-lucide="layers" class="w-12 h-12 text-brand-brown/40 self-center my-auto"></i>
+                        <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">GHL Pipeline</span>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h4 class="font-bold text-lg">Nurture Broadcast Template</h4>
+                        <p class="text-brand-white/60 text-sm">High-deliverability markdown-optimized layout explicitly designed inside GHL dashboard parameters.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-24 px-6 md:px-12 border-b border-brand-gray/10">
+        <div class="max-w-5xl mx-auto space-y-16">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Straightforward Pricing</h2>
+                <p class="text-brand-white/60 max-w-xl mx-auto font-light">No contracts. Clear scopes. Scalable options for distinct operational needs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-2xl p-8 relative space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold">Social Baseline + GHL Setup</h3>
+                        <p class="text-brand-white/50 text-xs uppercase tracking-wider font-semibold">Perfect for foundational scaling</p>
+                        <div class="text-3xl font-extrabold text-white">$1,500 <span class="text-sm font-normal text-brand-white/60">/ month</span></div>
+                        <hr class="border-brand-gray/20">
+                        <ul class="space-y-3 text-sm text-brand-white/70">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> 3 Static/Graphic Posts Per Week</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Complete GHL Email Setup & Templates</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Monthly Broadcast Deployments</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Simple Web Design (Foundational SEO)</li>
+                        </ul>
+                    </div>
+                    <a href="#book" class="block w-full text-center bg-brand-gray/20 hover:bg-brand-gray/30 border border-brand-gray/40 text-white font-bold py-3 rounded transition text-sm">Select Package</a>
+                </div>
+
+                <div class="bg-brand-gray/10 border-2 border-brand-brown rounded-2xl p-8 relative space-y-6 flex flex-col justify-between shadow-xl shadow-brand-brown/5">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-brown text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full">Most Demanded</span>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold">The Premium Omnichannel Growth</h3>
+                        <p class="text-brand-white/50 text-xs uppercase tracking-wider font-semibold">For aggressive local market dominance</p>
+                        <div class="text-3xl font-extrabold text-white">$2,800 <span class="text-sm font-normal text-brand-white/60">/ month</span></div>
+                        <hr class="border-brand-gray/20">
+                        <ul class="space-y-3 text-sm text-brand-white/70">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> All Assets from Baseline Package</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> 2 Branded Shorts / AI Videos Per Week</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Ongoing GHL Automated Email Marketing</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-brown"></i> Local Reputation Filter & Funnel Setup</li>
+                        </ul>
+                    </div>
+                    <a href="#book" class="block w-full text-center bg-brand-brown hover:bg-opacity-90 text-white font-bold py-3 rounded transition text-sm shadow-md">Get Started Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 md:px-12 bg-brand-gray/5 border-b border-brand-gray/10">
+        <div class="max-w-5xl mx-auto space-y-12">
+            <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-center">What My Clients Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-brand-dark p-6 border border-brand-gray/20 rounded-xl space-y-4">
+                    <div class="flex text-yellow-500 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                    <p class="text-brand-white/70 text-sm italic leading-relaxed">"Ian's automated GoHighLevel workflow wiped out our communication backlog in days. Simple layout and flawless execution without agency stress."</p>
+                    <div class="text-xs font-bold text-brand-white/50">— Local Business Owner, West Coast</div>
+                </div>
+                <div class="bg-brand-dark p-6 border border-brand-gray/20 rounded-xl space-y-4">
+                    <div class="flex text-yellow-500 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                    <p class="text-brand-white/70 text-sm italic leading-relaxed">"Our organic social feed looks cohesive for the first time in years. The combination of branded assets and optimized AI short-form videos hit exactly what our audience wanted."</p>
+                    <div class="text-xs font-bold text-brand-white/50">— E-Commerce Founder</div>
+                </div>
+                <div class="bg-brand-dark p-6 border border-brand-gray/20 rounded-xl space-y-4">
+                    <div class="flex text-yellow-500 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                    <p class="text-brand-white/70 text-sm italic leading-relaxed">"The reputation management pipeline Ian built helped us filter out frustration and capture solid, verified reviews during the first month alone."</p>
+                    <div class="text-xs font-bold text-brand-white/50">— Franchise Operator, CA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="book" class="py-24 px-6 md:px-12 max-w-4xl mx-auto space-y-12">
+        <div class="text-center space-y-4">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Let's Talk Strategy</h2>
+            <p class="text-brand-white/60 max-w-md mx-auto font-light">Select a time below to lock in a direct discovery session via Google Calendar.</p>
+        </div>
+
+        <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-2xl p-4 md:p-8 min-h-[500px] flex flex-col justify-between items-center relative overflow-hidden">
+            <div class="w-full flex justify-between items-center text-xs font-mono text-brand-white/40 pb-4 border-b border-brand-gray/20">
+                <span>[Google Calendar Embed Window]</span>
+                <span>ID: custom-scheduler-iframe</span>
+            </div>
+            
+            <div class="my-auto space-y-4 text-center max-w-sm">
+                <i data-lucide="calendar" class="w-12 h-12 text-brand-brown mx-auto opacity-80"></i>
+                <h4 class="font-bold text-lg text-white">Your Calendar Layout Renders Here</h4>
+                <p class="text-xs text-brand-white/50 leading-relaxed">
+                    Once deployed on GitHub, swap this block out for your responsive Google Calendar booking page link or standard public scheduling iframe code.
+                </p>
+            </div>
+
+            <div class="w-full grid grid-cols-7 gap-2 pt-6 border-t border-brand-gray/10 text-[10px] font-mono text-brand-white/30 text-center">
+                <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+                <span class="bg-brand-gray/20 py-2 rounded text-brand-white/50">10:00</span>
+                <span class="bg-brand-gray/20 py-2 rounded text-brand-white/50">11:30</span>
+                <span class="bg-brand-brown text-white py-2 rounded font-bold">14:00</span>
+                <span class="bg-brand-gray/20 py-2 rounded text-brand-white/50">15:30</span>
+                <span class="bg-brand-gray/5 py-2 rounded line-through">--:--</span>
+                <span class="bg-brand-gray/5 py-2 rounded line-through">--:--</span>
+                <span class="bg-brand-gray/5 py-2 rounded line-through">--:--</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark border-t border-brand-gray/20 py-8 px-6 md:px-12 text-center text-xs text-brand-white/40 space-y-2">
+        <p>&copy; 2026 The Fluffy Beanie. All rights reserved.</p>
+        <p class="font-mono text-[10px]">Built Clean. Hosted securely via GitHub Pages.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
