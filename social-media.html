@@ -28,6 +28,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom pure CSS infinite marquee keyframes */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* Moves exactly half the track width (one full set of cards) */
+        }
+        .animate-marquee {
+            animation: marquee 25s linear infinite;
+        }
+    </style>
 </head>
 <body class="bg-brand-dark text-brand-white font-sans antialiased selection:bg-brand-brown selection:text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
 
@@ -52,77 +62,126 @@
     <!-- Main Section Header -->
     <section class="max-w-5xl mx-auto text-center space-y-4 pt-16 px-6">
         <div class="inline-flex items-center gap-2 bg-brand-gray/10 border border-brand-gray/30 rounded-full py-1 px-4 text-xs font-semibold uppercase tracking-wider text-brand-white/70">
-            <span class="w-2 h-2 bg-brand-brown rounded-full animate-pulse"></span> Auto-Advancing Work Samples
+            <span class="w-2 h-2 bg-brand-brown rounded-full animate-pulse"></span> Continuous Showcase Loop
         </div>
         <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">Social Media Static Posts</h1>
+        <p class="text-brand-white/60 max-w-xl mx-auto font-light text-sm md:text-base">
+            Hover over any post to temporarily freeze the scroll and read the details.
+        </p>
     </section>
 
-    <!-- Main Automated Viewport Window -->
-    <main class="flex-grow flex items-center justify-center px-6 md:px-12 py-12">
-        <div class="max-w-4xl w-full mx-auto overflow-hidden relative rounded-2xl border border-brand-gray/20 bg-brand-gray/5 p-4 md:p-8">
+    <!-- Infinite Scrolling Theatre Window -->
+    <main class="flex-grow flex items-center justify-center py-12">
+        <!-- Wrapper masks the scroll area to fit nicely inside the page viewports -->
+        <div class="w-full overflow-hidden relative bg-brand-gray/5 border-y border-brand-gray/10 py-10 group/window">
             
-            <!-- Horizontal Sliding Window Track -->
-            <!-- The Javascript adjusts the translateX properties here to glide left/right smoothly -->
-            <div id="slideshow-track" class="flex transition-transform duration-[1000ms] ease-[cubic-bezier(0.25,1,0.5,1)] w-full">
-
-                <!-- Slide 1 -->
-                <div class="min-w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-12 gap-8 items-center px-2">
-                    <div class="md:col-span-6 order-2 md:order-1 space-y-4">
-                        <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">01 / PROMOTIONAL MASTER</span>
-                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-white">Client Offer Campaign</h2>
-                        <p class="text-brand-white/60 font-light leading-relaxed text-sm md:text-base">
-                            Clean visual alignment balancing structured promotional text hierarchies with localized service details. Engineered specifically to reduce user feed fatigue while maximizing active clicks.
-                        </p>
-                        <span class="inline-block bg-brand-gray/10 border border-brand-gray/30 text-brand-white/70 text-[11px] font-semibold tracking-wider uppercase py-1 px-3 rounded-full">Ad Layout Asset</span>
+            <!-- Moving Track: Holds TWO identical sets of cards back-to-back to create a seamless looping illusion. -->
+            <!-- group-hover/window:paused drops the animation speed to zero when cursor enters anywhere in the ribbon -->
+            <div class="flex w-max animate-marquee group-hover/window:animation-play-state-paused">
+                
+                <!-- ================= SET 1 ================= -->
+                <div class="flex gap-8 px-4">
+                    <!-- Post Card 1 -->
+                    <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition-colors duration-300 flex-shrink-0">
+                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
+                            <img src="https://picsum.photos/600/600?random=1" alt="Post Layout" class="w-full h-full object-cover">
+                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Promotional</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h4 class="font-bold text-lg">Social Media Post Layout</h4>
+                            <p class="text-brand-white/60 text-sm">Clean image design using clear typography to display specific client information and updates.</p>
+                        </div>
                     </div>
-                    <div class="md:col-span-6 order-1 md:order-2 flex justify-center">
-                        <div class="w-full max-w-[340px] aspect-square bg-brand-dark rounded-xl overflow-hidden border border-brand-gray/30 shadow-xl group">
-                            <img src="https://picsum.photos/600/600?random=1" alt="Post Layout 1" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700">
+
+                    <!-- Post Card 2 -->
+                    <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition-colors duration-300 flex-shrink-0">
+                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
+                            <img src="https://picsum.photos/600/600?random=2" alt="Flyer Layout" class="w-full h-full object-cover">
+                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Flyer Design</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h4 class="font-bold text-lg">Promotional Marketing Flyer</h4>
+                            <p class="text-brand-white/60 text-sm">A balanced digital layout created for printing or digital distribution to present services.</p>
+                        </div>
+                    </div>
+
+                    <!-- Post Card 3 -->
+                    <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition-colors duration-300 flex-shrink-0">
+                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
+                            <img src="https://picsum.photos/600/600?random=3" alt="Brand Updates" class="w-full h-full object-cover">
+                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Operational</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h4 class="font-bold text-lg">Brand Launch Frameworks</h4>
+                            <p class="text-brand-white/60 text-sm">Clean architectural update posts matching specialized niche requirements with zero filler elements.</p>
+                        </div>
+                    </div>
+
+                    <!-- Post Card 4 -->
+                    <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition-colors duration-300 flex-shrink-0">
+                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
+                            <img src="https://picsum.photos/600/600?random=4" alt="Carousel Asset" class="w-full h-full object-cover">
+                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Infographics</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h4 class="font-bold text-lg">Value Carousel Layouts</h4>
+                            <p class="text-brand-white/60 text-sm">Multi-slide asset structures engineered for rapid readability and straightforward data value.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 2 -->
-                <div class="min-w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-12 gap-8 items-center px-2">
-                    <div class="md:col-span-6 order-2 md:order-1 space-y-4">
-                        <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">02 / EDUCATION SECTOR</span>
-                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-white">Value Carousel Designs</h2>
-                        <p class="text-brand-white/60 font-light leading-relaxed text-sm md:text-base">
-                            Multi-slide layout components designed for rapid customer retention. Controlled grid whitespace rules isolate specific operational data sets cleanly with maximum text balance.
-                        </p>
-                        <span class="inline-block bg-brand-gray/10 border border-brand-gray/30 text-brand-white/70 text-[11px] font-semibold tracking-wider uppercase py-1 px-3 rounded-full">Educational Content</span>
-                    </div>
-                    <div class="md:col-span-6 order-1 md:order-2 flex justify-center">
-                        <div class="w-full max-w-[340px] aspect-square bg-brand-dark rounded-xl overflow-hidden border border-brand-gray/30 shadow-xl group">
-                            <img src="https://picsum.photos/600/600?random=2" alt="Post Layout 2" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700">
+                <!-- ================= SET 2 (EXACT DUPLICATE FOR SEAMLESS LOOP) ================= -->
+                <div class="flex gap-8 px-4">
+                    <!-- Post Card 1 -->
+                    <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition-colors duration-300 flex-shrink-0">
+                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
+                            <img src="https://picsum.photos/600/600?random=1" alt="Post Layout" class="w-full h-full object-cover">
+                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Promotional</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h4 class="font-bold text-lg">Social Media Post Layout</h4>
+                            <p class="text-brand-white/60 text-sm">Clean image design using clear typography to display specific client information and updates.</p>
                         </div>
                     </div>
-                </div>
 
-                <!-- Slide 3 -->
-                <div class="min-w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-12 gap-8 items-center px-2">
-                    <div class="md:col-span-6 order-2 md:order-1 space-y-4">
-                        <span class="text-xs font-mono tracking-widest text-brand-brown uppercase font-semibold">03 / SOCIAL PROOF STRATEGY</span>
-                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-brand-white">Verified Feedback Layouts</h2>
-                        <p class="text-brand-white/60 font-light leading-relaxed text-sm md:text-base">
-                            Polished testimonial design matrices optimized for business trust generation. Removes unneeded design elements to anchor background visual emphasis on verified metrics.
-                        </p>
-                        <span class="inline-block bg-brand-gray/10 border border-brand-gray/30 text-brand-white/70 text-[11px] font-semibold tracking-wider uppercase py-1 px-3 rounded-full">Reputation Graphics</span>
+                    <!-- Post Card 2 -->
+                    <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition-colors duration-300 flex-shrink-0">
+                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
+                            <img src="https://picsum.photos/600/600?random=2" alt="Flyer Layout" class="w-full h-full object-cover">
+                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Flyer Design</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h4 class="font-bold text-lg">Promotional Marketing Flyer</h4>
+                            <p class="text-brand-white/60 text-sm">A balanced digital layout created for printing or digital distribution to present services.</p>
+                        </div>
                     </div>
-                    <div class="md:col-span-6 order-1 md:order-2 flex justify-center">
-                        <div class="w-full max-w-[340px] aspect-square bg-brand-dark rounded-xl overflow-hidden border border-brand-gray/30 shadow-xl group">
-                            <img src="https://picsum.photos/600/600?random=3" alt="Post Layout 3" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700">
+
+                    <!-- Post Card 3 -->
+                    <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition-colors duration-300 flex-shrink-0">
+                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
+                            <img src="https://picsum.photos/600/600?random=3" alt="Brand Updates" class="w-full h-full object-cover">
+                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Operational</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h4 class="font-bold text-lg">Brand Launch Frameworks</h4>
+                            <p class="text-brand-white/60 text-sm">Clean architectural update posts matching specialized niche requirements with zero filler elements.</p>
+                        </div>
+                    </div>
+
+                    <!-- Post Card 4 -->
+                    <div class="w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden group hover:border-brand-brown/40 transition-colors duration-300 flex-shrink-0">
+                        <div class="bg-brand-gray/20 aspect-square w-full overflow-hidden relative">
+                            <img src="https://picsum.photos/600/600?random=4" alt="Carousel Asset" class="w-full h-full object-cover">
+                            <span class="absolute bottom-4 left-4 bg-brand-dark/80 px-2.5 py-1 rounded text-xs text-brand-white/80">Infographics</span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h4 class="font-bold text-lg">Value Carousel Layouts</h4>
+                            <p class="text-brand-white/60 text-sm">Multi-slide asset structures engineered for rapid readability and straightforward data value.</p>
                         </div>
                     </div>
                 </div>
 
             </div>
-
-            <!-- Visual Progress Dots Track -->
-            <div id="dot-indicator-track" class="flex justify-center gap-2 mt-8">
-                <!-- Built automatically via script framework -->
-            </div>
-
         </div>
     </main>
 
@@ -132,55 +191,9 @@
         <p class="font-mono text-[10px]">Built Clean. Hosted securely via GitHub Pages.</p>
     </footer>
 
-    <!-- Completely Automated Control Logic -->
     <script>
+        // Mount icon library parameters
         lucide.createIcons();
-
-        const sliderTrack = document.getElementById('slideshow-track');
-        const totalSlides = sliderTrack.children.length;
-        const dotIndicatorTrack = document.getElementById('dot-indicator-track');
-        let slideIndexPointer = 0;
-
-        // 1. Build pagination indicators dynamically
-        function initializeTrackDots() {
-            dotIndicatorTrack.innerHTML = '';
-            for (let i = 0; i < totalSlides; i++) {
-                const dotElement = document.createElement('div');
-                // Active slide dot starts wider
-                dotElement.className = `h-1.5 rounded-full transition-all duration-500 ease-out ${i === 0 ? 'w-8 bg-brand-brown' : 'w-2 bg-brand-gray/40'}`;
-                dotIndicatorTrack.appendChild(dotElement);
-            }
-        }
-
-        // 2. Perform the automated sliding action
-        function slideAutomatedTick() {
-            slideIndexPointer++;
-            
-            // Loop back to the first post seamlessly if it reaches the end
-            if (slideIndexPointer >= totalSlides) {
-                slideIndexPointer = 0;
-            }
-
-            // Slide track horizontally based on current percentage index
-            let displacement = slideIndexPointer * 100;
-            sliderTrack.style.transform = `translateX(-${displacement}%)`;
-
-            // Update dot indicator styles
-            const dots = dotIndicatorTrack.children;
-            for (let i = 0; i < dots.length; i++) {
-                if (i === slideIndexPointer) {
-                    dots[i].className = "h-1.5 w-8 bg-brand-brown rounded-full transition-all duration-500 ease-out";
-                } else {
-                    dots[i].className = "h-1.5 w-2 bg-brand-gray/40 rounded-full transition-all duration-500 ease-out";
-                }
-            }
-        }
-
-        // 3. Mount Systems
-        initializeTrackDots();
-        
-        // Starts the motion cycle on page load. Rotates to a new slide every 3500 milliseconds (3.5 seconds) completely on its own.
-        setInterval(slideAutomatedTick, 3500);
     </script>
 </body>
 </html>
