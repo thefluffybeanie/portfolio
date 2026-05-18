@@ -29,29 +29,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        /* Custom scrollbar styling for a cleaner premium feel */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
         }
-        .animate-marquee-fast {
-            animation: marquee 35s linear infinite;
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(93, 92, 95, 0.1);
+            border-radius: 10px;
         }
-        .animate-marquee-video {
-            animation: marquee 30s linear infinite;
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(125, 66, 30, 0.4);
+            border-radius: 10px;
         }
-        .animate-marquee-logos {
-            animation: marquee 25s linear infinite;
-        }
-        @media (min-width: 768px) {
-            .animate-marquee-fast {
-                animation-duration: 45s;
-            }
-            .animate-marquee-video {
-                animation-duration: 40s;
-            }
-            .animate-marquee-logos {
-                animation-duration: 30s;
-            }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(125, 66, 30, 0.7);
         }
         .no-scrollbar::-webkit-scrollbar {
             display: none;
@@ -222,38 +213,23 @@
         </div>
     </section>
 
-    <section class="py-10 bg-brand-dark border-b border-brand-gray/10 overflow-hidden relative w-full">
+    <section class="py-10 bg-brand-dark border-b border-brand-gray/10 relative w-full">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 mb-6">
             <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-brand-white/40">/ TOOLS OF THE TRADE</h3>
         </div>
-        <div class="w-full relative flex items-center py-6 bg-brand-gray/5 border-y border-brand-gray/10 group/logos">
-            <div class="flex w-max flex-row flex-nowrap items-center gap-8 sm:gap-12 animate-marquee-logos group-hover/logos:animation-play-state-paused">
+        <div class="w-full relative px-4 sm:px-6 md:px-12">
+            <div class="flex flex-row flex-nowrap items-center gap-4 sm:gap-6 overflow-x-auto pb-4 pt-2 snap-x scroll-smooth custom-scrollbar">
                 
-                <div class="flex gap-8 sm:gap-12 items-center flex-row flex-nowrap">
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/t3jO55E.png" alt="Adobe" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/biLZM3r.png" alt="Canva" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/frC7okb.png" alt="Capcut" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/nfms8j4.png" alt="ChatGPT" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/6TNr3Qk.png" alt="Claude" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/5D9yqR3.png" alt="Google Gemini" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/NtnhgyP.png" alt="GoHighLevel" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/mxbAUtU.png" alt="Mailchimp" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/9c8OP76.png" alt="Zapier" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/4XBuElY.png" alt="n8n" class="max-w-full max-h-full object-contain"></div>
-                </div>
-
-                <div class="flex gap-8 sm:gap-12 items-center flex-row flex-nowrap" aria-hidden="true">
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/t3jO55E.png" alt="" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/biLZM3r.png" alt="" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/frC7okb.png" alt="" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/nfms8j4.png" alt="" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/6TNr3Qk.png" alt="" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/5D9yqR3.png" alt="" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/NtnhgyP.png" alt="" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/mxbAUtU.png" alt="" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/9c8OP76.png" alt="" class="max-w-full max-h-full object-contain"></div>
-                    <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0"><img src="https://i.imgur.com/4XBuElY.png" alt="" class="max-w-full max-h-full object-contain"></div>
-                </div>
+                <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0 snap-start"><img src="https://i.imgur.com/t3jO55E.png" alt="Adobe" class="max-w-full max-h-full object-contain"></div>
+                <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0 snap-start"><img src="https://i.imgur.com/biLZM3r.png" alt="Canva" class="max-w-full max-h-full object-contain"></div>
+                <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0 snap-start"><img src="https://i.imgur.com/frC7okb.png" alt="Capcut" class="max-w-full max-h-full object-contain"></div>
+                <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0 snap-start"><img src="https://i.imgur.com/nfms8j4.png" alt="ChatGPT" class="max-w-full max-h-full object-contain"></div>
+                <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0 snap-start"><img src="https://i.imgur.com/6TNr3Qk.png" alt="Claude" class="max-w-full max-h-full object-contain"></div>
+                <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0 snap-start"><img src="https://i.imgur.com/5D9yqR3.png" alt="Google Gemini" class="max-w-full max-h-full object-contain"></div>
+                <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0 snap-start"><img src="https://i.imgur.com/NtnhgyP.png" alt="GoHighLevel" class="max-w-full max-h-full object-contain"></div>
+                <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0 snap-start"><img src="https://i.imgur.com/mxbAUtU.png" alt="Mailchimp" class="max-w-full max-h-full object-contain"></div>
+                <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0 snap-start"><img src="https://i.imgur.com/9c8OP76.png" alt="Zapier" class="max-w-full max-h-full object-contain"></div>
+                <div class="bg-white rounded-xl shadow-md w-44 h-16 flex items-center justify-center px-4 py-2 flex-shrink-0 snap-start"><img src="https://i.imgur.com/4XBuElY.png" alt="n8n" class="max-w-full max-h-full object-contain"></div>
 
             </div>
         </div>
@@ -266,198 +242,199 @@
             <p class="text-brand-white/60 max-w-xl mx-auto font-light text-sm sm:text-base">Practical design execution, short-form video layouts, and digital content formats built for active channels.</p>
         </div>
 
-        <div class="space-y-12 sm:space-y-16 w-full">
+        <div class="space-y-16 w-full">
             
-            <div class="space-y-3 sm:space-y-4 w-full">
+            <div class="space-y-4 w-full">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
                     <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-white font-mono">/ 01. SOCIAL MEDIA STATIC POSTS</h3>
                 </div>
-                <div class="w-full overflow-hidden relative bg-brand-gray/5 border-y border-brand-gray/10 py-6 sm:py-10 group/window">
-                    <div class="flex w-max flex-row flex-nowrap items-stretch animate-marquee-fast group-hover/window:animation-play-state-paused">
+                <div class="w-full relative px-4 sm:px-6 md:px-12">
+                    <div class="flex flex-row flex-nowrap items-stretch gap-6 overflow-x-auto pb-6 snap-x scroll-smooth custom-scrollbar">
                         
-                        <div class="flex gap-4 sm:gap-8 px-2 sm:px-4 flex-row flex-nowrap">
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/n7iVDzg.png" alt="Healing Music Seeds Raffle Entry" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Nonprofit Drive</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Raffle Entry Campaign Post</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Custom social graphic driving donation awareness and raffle entries for a nonprofit's core fundraising drive.</p>
-                                </div>
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/n7iVDzg.png" alt="Healing Music Seeds Raffle Entry" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Nonprofit Drive</span>
                             </div>
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/zwrpT6n.png" alt="Doo Doo Squad Customer Review" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Social Proof</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Verified Clean Review Card</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Reputation management review visual optimized to anchor authority and customer reliability metrics.</p>
-                                </div>
-                            </div>
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/9irPcOm.png" alt="Benefits of Hiring Doo Doo Squad" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Value Stack</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Service Parameters Benefits</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean value stack breakdown detailing convenience and sanitation highlights for local property lines.</p>
-                                </div>
-                            </div>
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/gVa06Ui.png" alt="Healing Music Seeds Donation Drive" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Nonprofit Promo</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Donation Drive Announcement</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Visual layout framework highlighting community metrics to support local resource acquisition goals.</p>
-                                </div>
-                            </div>
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/7gns4X2.png" alt="Doo Doo Squad Trivia Post" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Educational</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Fun Pet Trivia Infographic</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Engaging and educational trivia asset optimized to build active platform audience interaction.</p>
-                                </div>
-                            </div>
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/MmvD1aM.png" alt="New Life Naturopathic Health Preview" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Product Feature</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Naturopathic Product Preview</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean e-commerce asset layout emphasizing ingredient quality structures and brand visibility.</p>
-                                </div>
-                            </div>
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/gStqbGf.png" alt="Doo Doo Squad Initial Cleanup Promo" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Promotional</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Free Initial Cleanup Campaign</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">High-conversion promotional offer built explicitly to reactivate returning subscriber lists.</p>
-                                </div>
-                            </div>
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/hEBfoRy.png" alt="Healing Music Seeds Blog Preview" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Content Promo</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Editorial Blog Card Preview</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean graphic layout directing channel metrics to active website content and resource feeds.</p>
-                                </div>
-                            </div>
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/6RDQZ95.png" alt="Natomas Discount Lesson Promo" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Promotional</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Private Lessons Special Offer</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Community-focused advertising banner built to scale introductory youth lesson sign-ups.</p>
-                                </div>
-                            </div>
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/3IsfKfc.png" alt="Natomas Customer Review" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Social Proof</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Music Square Feedback Card</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Reputation management post framing local trust factors for parents and young adults.</p>
-                                </div>
-                            </div>
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/KDFSs2g.png" alt="Doo Doo Squad Meme" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Entertainment</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Relatable Pet Owner Humor</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Witty, highly shareable meme concept matching the universal struggles of canine parenting.</p>
-                                </div>
-                            </div>
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/1pYNvuJ.png" alt="Doo Doo Squad Promotional Ad" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Promotional</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Branded Service Campaign</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Structured display layout defining local routes, cleaning slots, and business features.</p>
-                                </div>
-                            </div>
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/W2koanZ.png" alt="Natomas Event Post" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Community Event</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Music School Recital Update</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Fun community post coordinating student parameters, scheduling info, and performance details.</p>
-                                </div>
-                            </div>
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/bflHK5r.png" alt="Doo Doo Squad Review Post" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Social Proof</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Customer Reputation Management</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean user testimonial card validating brand authority and backyard sanitization standards.</p>
-                                </div>
-                            </div>
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/wSL072s.png" alt="Natomas Promotional Ad" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Promotional</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Music School Enrolment Push</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">High-conversion promotional layout built to scale class blocks and new quarter registrations.</p>
-                                </div>
-                            </div>
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/9fmYzv9.png" alt="Libra Occupational Therapy Feature" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Service Feature</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">OT Clinical Solution Feature</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean informational display presenting medical practice metrics and user care support plans.</p>
-                                </div>
-                            </div>
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/daS3W54.png" alt="E-rehab Meme Asset" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Entertainment</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">B2B Digital Marketing Meme</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Conversational, witty industry humor tailored for physical therapy (PT) clinic owners.</p>
-                                </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Raffle Entry Campaign Post</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Custom social graphic driving donation awareness and raffle entries for a nonprofit's core fundraising drive.</p>
                             </div>
                         </div>
 
-                        <div class="flex gap-4 sm:gap-8 px-2 sm:px-4 flex-row flex-nowrap" aria-hidden="true">
-                            <div class="w-[240px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://i.imgur.com/n7iVDzg.png" alt="" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Nonprofit Drive</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Raffle Entry Campaign Post</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Custom social graphic driving donation awareness and raffle entries for a nonprofit's core fundraising drive.</p>
-                                </div>
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/zwrpT6n.png" alt="Doo Doo Squad Customer Review" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Social Proof</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Verified Clean Review Card</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Reputation management review visual optimized to anchor authority and customer reliability metrics.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/9irPcOm.png" alt="Benefits of Hiring Doo Doo Squad" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Value Stack</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Service Parameters Benefits</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean value stack breakdown detailing convenience and sanitation highlights for local property lines.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/gVa06Ui.png" alt="Healing Music Seeds Donation Drive" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Nonprofit Promo</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Donation Drive Announcement</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Visual layout framework highlighting community metrics to support local resource acquisition goals.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/7gns4X2.png" alt="Doo Doo Squad Trivia Post" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Educational</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Fun Pet Trivia Infographic</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Engaging and educational trivia asset optimized to build active platform audience interaction.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/MmvD1aM.png" alt="New Life Naturopathic Health Preview" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Product Feature</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Naturopathic Product Preview</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean e-commerce asset layout emphasizing ingredient quality structures and brand visibility.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/gStqbGf.png" alt="Doo Doo Squad Initial Cleanup Promo" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Promotional</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Free Initial Cleanup Campaign</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">High-conversion promotional offer built explicitly to reactivate returning subscriber lists.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/hEBfoRy.png" alt="Healing Music Seeds Blog Preview" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Content Promo</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Editorial Blog Card Preview</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean graphic layout directing channel metrics to active website content and resource feeds.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/6RDQZ95.png" alt="Natomas Discount Lesson Promo" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Promotional</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Private Lessons Special Offer</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Community-focused advertising banner built to scale introductory youth lesson sign-ups.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/3IsfKfc.png" alt="Natomas Customer Review" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Social Proof</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Music Square Feedback Card</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Reputation management post framing local trust factors for parents and young adults.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/KDFSs2g.png" alt="Doo Doo Squad Meme" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Entertainment</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Relatable Pet Owner Humor</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Witty, highly shareable meme concept matching the universal struggles of canine parenting.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/1pYNvuJ.png" alt="Doo Doo Squad Promotional Ad" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Promotional</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Branded Service Campaign</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Structured display layout defining local routes, cleaning slots, and business features.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/W2koanZ.png" alt="Natomas Event Post" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Community Event</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Music School Recital Update</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Fun community post coordinating student parameters, scheduling info, and performance details.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/bflHK5r.png" alt="Doo Doo Squad Review Post" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Social Proof</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Customer Reputation Management</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean user testimonial card validating brand authority and backyard sanitization standards.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/wSL072s.png" alt="Natomas Promotional Ad" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Promotional</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Music School Enrolment Push</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">High-conversion promotional layout built to scale class blocks and new quarter registrations.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/9fmYzv9.png" alt="Libra Occupational Therapy Feature" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Service Feature</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">OT Clinical Solution Feature</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean informational display presenting medical practice metrics and user care support plans.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[260px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://i.imgur.com/daS3W54.png" alt="E-rehab Meme Asset" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Entertainment</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">B2B Digital Marketing Meme</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Conversational, witty industry humor tailored for physical therapy (PT) clinic owners.</p>
                             </div>
                         </div>
 
@@ -465,198 +442,108 @@
                 </div>
             </div>
 
-            <div class="space-y-3 sm:space-y-4 w-full">
+            <div class="space-y-4 w-full">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
                     <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-white font-mono">/ 02. BRANDED VIDEO ASSETS (REELS & SHORTS)</h3>
                 </div>
-                <div class="w-full overflow-hidden relative bg-brand-gray/5 border-y border-brand-gray/10 py-10 group/window">
-                    <div class="flex w-max flex-row flex-nowrap items-stretch animate-marquee-video group-hover/window:animation-play-state-paused" style="animation-direction: reverse;">
+                <div class="w-full relative px-4 sm:px-6 md:px-12">
+                    <div class="flex flex-row flex-nowrap items-stretch gap-6 overflow-x-auto pb-6 snap-x scroll-smooth custom-scrollbar">
                         
-                        <div class="flex gap-4 sm:gap-8 px-2 sm:px-4 flex-row flex-nowrap">
-                            
-                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://i.imgur.com/aNWU4KO.png" alt="Podcast Style Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
-                                    <a href="https://www.tiktok.com/@doo.doo.squad/video/7604215575224536334" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
-                                        <i class="fa-solid fa-play text-base ml-0.5"></i>
-                                    </a>
-                                    <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Doo Doo Squad</span>
-                                </div>
-                                <div class="p-4 sm:p-5 space-y-1 flex-grow">
-                                    <h4 class="font-bold text-xs sm:text-sm text-white">Podcast Style Video Meme</h4>
-                                    <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Witty engagement layout built to leverage trending relational pet-owner voice tracks.</p>
-                                </div>
+                        <div class="w-[210px] sm:w-[270px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
+                                <img src="https://i.imgur.com/aNWU4KO.png" alt="Podcast Style Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
+                                <a href="https://www.tiktok.com/@doo.doo.squad/video/7604215575224536334" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
+                                    <i class="fa-solid fa-play text-base ml-0.5"></i>
+                                </a>
+                                <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Doo Doo Squad</span>
                             </div>
-
-                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://i.imgur.com/NKy6B4n.png" alt="Instructor Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
-                                    <a href="https://www.youtube.com/shorts/Rn3M_QqUMOc" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
-                                        <i class="fa-solid fa-play text-base ml-0.5"></i>
-                                    </a>
-                                    <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Natomas Music</span>
-                                </div>
-                                <div class="p-4 sm:p-5 space-y-1 flex-grow">
-                                    <h4 class="font-bold text-xs sm:text-sm text-white">Instructor Showcase Short</h4>
-                                    <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Fun, engaging studio clip designed to highlight structural teacher competency fields.</p>
-                                </div>
+                            <div class="p-4 sm:p-5 space-y-1 flex-grow">
+                                <h4 class="font-bold text-xs sm:text-sm text-white">Podcast Style Video Meme</h4>
+                                <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Witty engagement layout built to leverage trending relational pet-owner voice tracks.</p>
                             </div>
-
-                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://i.imgur.com/yjKoSs9.png" alt="Customers Love Us Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
-                                    <a href="https://www.tiktok.com/@doo.doo.squad/video/7478757871933508907" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
-                                        <i class="fa-solid fa-play text-base ml-0.5"></i>
-                                    </a>
-                                    <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Doo Doo Squad</span>
-                                </div>
-                                <div class="p-4 sm:p-5 space-y-1 flex-grow">
-                                    <h4 class="font-bold text-xs sm:text-sm text-white">Social Proof Testimonial</h4>
-                                    <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Clean alignment track utilizing authentic organic reviews to generate service authority.</p>
-                                </div>
-                            </div>
-
-                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://i.imgur.com/QpSqxIQ.png" alt="Featured Teacher Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
-                                    <a href="https://www.instagram.com/reel/DXzQ8tsE99B/" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
-                                        <i class="fa-solid fa-play text-base ml-0.5"></i>
-                                    </a>
-                                    <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Natomas Music</span>
-                                </div>
-                                <div class="p-4 sm:p-5 space-y-1 flex-grow">
-                                    <h4 class="font-bold text-xs sm:text-sm text-white">Teacher of the Month Reel</h4>
-                                    <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Community-oriented short-form feature built to celebrate local musical instruction wins.</p>
-                                </div>
-                            </div>
-
-                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://i.imgur.com/OYV6A9z.png" alt="What We Do Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
-                                    <a href="https://www.tiktok.com/@doo.doo.squad/video/7473299760670133547" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
-                                        <i class="fa-solid fa-play text-base ml-0.5"></i>
-                                    </a>
-                                    <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Doo Doo Squad</span>
-                                </div>
-                                <div class="p-4 sm:p-5 space-y-1 flex-grow">
-                                    <h4 class="font-bold text-xs sm:text-sm text-white">Operational Explainer Clip</h4>
-                                    <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Action-first short showing explicit walkthrough paths to communicate peace of mind.</p>
-                                </div>
-                            </div>
-
-                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://i.imgur.com/ApfH6OB.png" alt="Interactive Methods Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
-                                    <a href="https://www.youtube.com/shorts/V4OcWqwTROw" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
-                                        <i class="fa-solid fa-play text-base ml-0.5"></i>
-                                    </a>
-                                    <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Natomas Music</span>
-                                </div>
-                                <div class="p-4 sm:p-5 space-y-1 flex-grow">
-                                    <h4 class="font-bold text-xs sm:text-sm text-white">Interactive Methods Short</h4>
-                                    <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Upbeat studio documentation tracking rhythmic scale execution and instrumental metrics.</p>
-                                </div>
-                            </div>
-
-                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://i.imgur.com/oxZg4FZ.png" alt="Hate Scooping Poop Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
-                                    <a href="https://www.tiktok.com/@doo.doo.squad/video/7470680384888687918" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
-                                        <i class="fa-solid fa-play text-base ml-0.5"></i>
-                                    </a>
-                                    <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Doo Doo Squad</span>
-                                </div>
-                                <div class="p-4 sm:p-5 space-y-1 flex-grow">
-                                    <h4 class="font-bold text-xs sm:text-sm text-white">Direct Pain Point Promo</h4>
-                                    <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Witty, hook-driven creative focusing on convenience factors for busy California dog parents.</p>
-                                </div>
-                            </div>
-
-                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://i.imgur.com/u5GQFTV.png" alt="Customer Review Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
-                                    <a href="https://www.instagram.com/reel/C9fVEexpa8b/" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
-                                        <i class="fa-solid fa-play text-base ml-0.5"></i>
-                                    </a>
-                                    <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Natomas Music</span>
-                                </div>
-                                <div class="p-4 sm:p-5 space-y-1 flex-grow">
-                                    <h4 class="font-bold text-xs sm:text-sm text-white">Customer Review Social Proof</h4>
-                                    <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Video review asset designed to feature student wins and recital success proof.</p>
-                                </div>
-                            </div>
-
-                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://i.imgur.com/VkErPgL.png" alt="Safety Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
-                                    <a href="https://www.tiktok.com/@doo.doo.squad/video/7469155862616182062" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
-                                        <i class="fa-solid fa-play text-base ml-0.5"></i>
-                                    </a>
-                                    <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Doo Doo Squad</span>
-                                </div>
-                                <div class="p-4 sm:p-5 space-y-1 flex-grow">
-                                    <h4 class="font-bold text-xs sm:text-sm text-white">Pet Safety Protocols Track</h4>
-                                    <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Educational content asset layout structuring gate checks and sanitation safety guidelines.</p>
-                                </div>
-                            </div>
-
-                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://i.imgur.com/INTe95i.png" alt="Promotional Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
-                                    <a href="https://www.instagram.com/reel/C1sOV_nNEjy/" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
-                                        <i class="fa-solid fa-play text-base ml-0.5"></i>
-                                    </a>
-                                    <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Natomas Music</span>
-                                </div>
-                                <div class="p-4 sm:p-5 space-y-1 flex-grow">
-                                    <h4 class="font-bold text-xs sm:text-sm text-white">Promotional Course Ad</h4>
-                                    <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Direct promotional asset optimized to boost class enrollments and performance block signups.</p>
-                                </div>
-                            </div>
-
-                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://i.imgur.com/465NfXf.png" alt="Meme Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
-                                    <a href="https://www.tiktok.com/@doo.doo.squad/video/7634562227395235086" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
-                                        <i class="fa-solid fa-play text-base ml-0.5"></i>
-                                    </a>
-                                    <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Doo Doo Squad</span>
-                                </div>
-                                <div class="p-4 sm:p-5 space-y-1 flex-grow">
-                                    <h4 class="font-bold text-xs sm:text-sm text-white">Shareable Pet Culture Meme</h4>
-                                    <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Witty, context-appropriate short editor cut leveraging local backyard maintenance dynamics.</p>
-                                </div>
-                            </div>
-
-                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://i.imgur.com/sEngOGE.png" alt="Event Promotion Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
-                                    <a href="https://www.instagram.com/reel/CtXDP5GxJrm/" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
-                                        <i class="fa-solid fa-play text-base ml-0.5"></i>
-                                    </a>
-                                    <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Natomas Music</span>
-                                </div>
-                                <div class="p-4 sm:p-5 space-y-1 flex-grow">
-                                    <h4 class="font-bold text-xs sm:text-sm text-white">Studio Recital Event Promo</h4>
-                                    <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Community-oriented event reel designed to drive engagement for seasonal student performances.</p>
-                                </div>
-                            </div>
-
                         </div>
 
-                        <div class="flex gap-4 sm:gap-8 px-2 sm:px-4 flex-row flex-nowrap" aria-hidden="true">
-                            <div class="w-[200px] sm:w-[260px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
-                                    <img src="https://i.imgur.com/aNWU4KO.png" alt="" class="w-full h-full object-cover opacity-70" loading="lazy">
-                                    <a href="https://www.tiktok.com/@doo.doo.squad/video/7604215575224536334" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-lg">
-                                        <i class="fa-solid fa-play text-base ml-0.5"></i>
-                                    </a>
-                                    <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Doo Doo Squad</span>
-                                </div>
-                                <div class="p-4 sm:p-5 space-y-1 flex-grow">
-                                    <h4 class="font-bold text-xs sm:text-sm text-white">Podcast Style Video Meme</h4>
-                                    <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Witty engagement layout built to leverage trending relational pet-owner voice tracks.</p>
-                                </div>
+                        <div class="w-[210px] sm:w-[270px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
+                                <img src="https://i.imgur.com/NKy6B4n.png" alt="Instructor Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
+                                <a href="https://www.youtube.com/shorts/Rn3M_QqUMOc" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
+                                    <i class="fa-solid fa-play text-base ml-0.5"></i>
+                                </a>
+                                <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Natomas Music</span>
+                            </div>
+                            <div class="p-4 sm:p-5 space-y-1 flex-grow">
+                                <h4 class="font-bold text-xs sm:text-sm text-white">Instructor Showcase Short</h4>
+                                <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Fun, engaging studio clip designed to highlight structural teacher competency fields.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[210px] sm:w-[270px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
+                                <img src="https://i.imgur.com/yjKoSs9.png" alt="Customers Love Us Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
+                                <a href="https://www.tiktok.com/@doo.doo.squad/video/7478757871933508907" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
+                                    <i class="fa-solid fa-play text-base ml-0.5"></i>
+                                </a>
+                                <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Doo Doo Squad</span>
+                            </div>
+                            <div class="p-4 sm:p-5 space-y-1 flex-grow">
+                                <h4 class="font-bold text-xs sm:text-sm text-white">Social Proof Testimonial</h4>
+                                <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Clean alignment track utilizing authentic organic reviews to generate service authority.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[210px] sm:w-[270px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
+                                <img src="https://i.imgur.com/QpSqxIQ.png" alt="Featured Teacher Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
+                                <a href="https://www.instagram.com/reel/DXzQ8tsE99B/" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
+                                    <i class="fa-solid fa-play text-base ml-0.5"></i>
+                                </a>
+                                <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Natomas Music</span>
+                            </div>
+                            <div class="p-4 sm:p-5 space-y-1 flex-grow">
+                                <h4 class="font-bold text-xs sm:text-sm text-white">Teacher of the Month Reel</h4>
+                                <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Community-oriented short-form feature built to celebrate local musical instruction wins.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[210px] sm:w-[270px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
+                                <img src="https://i.imgur.com/OYV6A9z.png" alt="What We Do Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
+                                <a href="https://www.tiktok.com/@doo.doo.squad/video/7473299760670133547" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
+                                    <i class="fa-solid fa-play text-base ml-0.5"></i>
+                                </a>
+                                <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Doo Doo Squad</span>
+                            </div>
+                            <div class="p-4 sm:p-5 space-y-1 flex-grow">
+                                <h4 class="font-bold text-xs sm:text-sm text-white">Operational Explainer Clip</h4>
+                                <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Action-first short showing explicit walkthrough paths to communicate peace of mind.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[210px] sm:w-[270px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
+                                <img src="https://i.imgur.com/ApfH6OB.png" alt="Interactive Methods Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
+                                <a href="https://www.youtube.com/shorts/V4OcWqwTROw" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
+                                    <i class="fa-solid fa-play text-base ml-0.5"></i>
+                                </a>
+                                <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Natomas Music</span>
+                            </div>
+                            <div class="p-4 sm:p-5 space-y-1 flex-grow">
+                                <h4 class="font-bold text-xs sm:text-sm text-white">Interactive Methods Short</h4>
+                                <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Upbeat studio documentation tracking rhythmic scale execution and instrumental metrics.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[210px] sm:w-[270px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[9/16] w-full relative flex items-center justify-center">
+                                <img src="https://i.imgur.com/oxZg4FZ.png" alt="Hate Scooping Poop Video Preview" class="w-full h-full object-cover opacity-70" loading="lazy">
+                                <a href="https://www.tiktok.com/@doo.doo.squad/video/7470680384888687918" target="_blank" rel="noopener noreferrer" class="absolute w-12 h-12 text-white bg-brand-brown rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 z-10">
+                                    <i class="fa-solid fa-play text-base ml-0.5"></i>
+                                </a>
+                                <span class="absolute top-3 left-3 bg-brand-dark/90 border border-brand-gray/20 px-2 py-0.5 rounded text-[8px] uppercase font-bold tracking-wider">Doo Doo Squad</span>
+                            </div>
+                            <div class="p-4 sm:p-5 space-y-1 flex-grow">
+                                <h4 class="font-bold text-xs sm:text-sm text-white">Direct Pain Point Promo</h4>
+                                <p class="text-brand-white/60 text-[10px] sm:text-xs font-light leading-snug">Witty, hook-driven creative focusing on convenience factors for busy California dog parents.</p>
                             </div>
                         </div>
 
@@ -664,33 +551,32 @@
                 </div>
             </div>
 
-            <div class="space-y-3 sm:space-y-4 w-full">
+            <div class="space-y-4 w-full">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
                     <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-white font-mono">/ 03. GRAPHIC DESIGN</h3>
                 </div>
-                <div class="w-full overflow-hidden relative bg-brand-gray/5 border-y border-brand-gray/10 py-10 group/window">
-                    <div class="flex w-max flex-row flex-nowrap items-stretch animate-marquee-fast group-hover/window:animation-play-state-paused">
+                <div class="w-full relative px-4 sm:px-6 md:px-12">
+                    <div class="flex flex-row flex-nowrap items-stretch gap-6 overflow-x-auto pb-6 snap-x scroll-smooth custom-scrollbar">
                         
-                        <div class="flex gap-4 sm:gap-8 px-2 sm:px-4 flex-row flex-nowrap">
-                            <div class="w-[220px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://picsum.photos/600/750?random=31" alt="Flyer Layout" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Flyer Design</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Promotional Flyer</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Structural layout design formatted to display client updates cleanly for printing or messaging.</p>
-                                </div>
+                        <div class="w-[240px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://picsum.photos/600/750?random=31" alt="Flyer Layout" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Flyer Design</span>
                             </div>
-                            <div class="w-[220px] sm:w-[300px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between">
-                                <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
-                                    <img src="https://picsum.photos/600/750?random=32" alt="Flyer Layout" class="w-full h-full object-cover" loading="lazy">
-                                    <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Print Asset</span>
-                                </div>
-                                <div class="p-4 sm:p-6 space-y-1.5 flex-grow">
-                                    <h4 class="font-bold text-sm sm:text-base text-white">Resource Guide</h4>
-                                    <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean vector layout architecture highlighting standard business metrics and specific location details.</p>
-                                </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Promotional Flyer</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Structural layout design formatted to display client updates cleanly for printing or messaging.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-[240px] sm:w-[310px] bg-brand-dark border border-brand-gray/20 rounded-xl overflow-hidden flex-shrink-0 flex flex-col justify-between snap-start">
+                            <div class="bg-brand-gray/20 aspect-[4/5] w-full relative">
+                                <img src="https://picsum.photos/600/750?random=32" alt="Flyer Layout" class="w-full h-full object-cover" loading="lazy">
+                                <span class="absolute bottom-3 left-3 bg-brand-dark/80 px-2 py-0.5 rounded text-[9px] uppercase font-bold tracking-wider text-brand-white/80">Print Asset</span>
+                            </div>
+                            <div class="p-5 sm:p-6 space-y-1.5 flex-grow">
+                                <h4 class="font-bold text-sm sm:text-base text-white">Resource Guide</h4>
+                                <p class="text-brand-white/60 text-[11px] sm:text-xs leading-relaxed font-light">Clean vector layout architecture highlighting standard business metrics and specific location details.</p>
                             </div>
                         </div>
 
