@@ -29,6 +29,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+    
     <style>
         /* Custom scrollbar styling for a cleaner premium feel */
         .custom-scrollbar::-webkit-scrollbar {
@@ -73,7 +77,7 @@
             </div>
 
             <div class="flex items-center gap-3">
-                <a href="https://calendar.app.google/4pM1sUCV4nvt7tSUA" target="_blank" rel="noopener noreferrer" class="bg-brand-brown hover:bg-opacity-90 text-white font-bold py-2 px-3 sm:py-2.5 sm:px-5 rounded text-xs sm:text-sm tracking-wide transition shadow-lg shadow-brand-brown/20 whitespace-nowrap">Book a Call</a>
+                <button onclick="launchGoogleCalendar(event)" class="bg-brand-brown hover:bg-opacity-90 text-white font-bold py-2 px-3 sm:py-2.5 sm:px-5 rounded text-xs sm:text-sm tracking-wide transition shadow-lg shadow-brand-brown/20 whitespace-nowrap">Book a Call</button>
                 <button id="menu-toggle" class="md:hidden text-brand-white hover:text-brand-brown p-1 transition" aria-label="Toggle Menu">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
@@ -724,7 +728,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="https://calendar.app.google/4pM1sUCV4nvt7tSUA" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-brand-gray/20 hover:bg-brand-gray/30 border border-brand-gray/40 text-white font-bold py-3.5 rounded-xl transition text-xs sm:text-sm mt-8">Select Package <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></a>
+                    <button onclick="launchGoogleCalendar(event)" class="block w-full text-center bg-brand-gray/20 hover:bg-brand-gray/30 border border-brand-gray/40 text-white font-bold py-3.5 rounded-xl transition text-xs sm:text-sm mt-8">Select Package <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></button>
                 </div>
 
                 <div class="bg-brand-gray/10 border-2 border-brand-green rounded-2xl p-6 sm:p-8 flex flex-col justify-between h-full relative shadow-2xl shadow-brand-green/5">
@@ -767,7 +771,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="https://calendar.app.google/4pM1sUCV4nvt7tSUA" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-brand-green hover:bg-opacity-90 text-brand-dark font-extrabold py-3.5 rounded-xl transition text-xs sm:text-sm mt-8 shadow-lg shadow-brand-green/20">Select Package <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></a>
+                    <button onclick="launchGoogleCalendar(event)" class="block w-full text-center bg-brand-green hover:bg-opacity-90 text-brand-dark font-extrabold py-3.5 rounded-xl transition text-xs sm:text-sm mt-8 shadow-lg shadow-brand-green/20">Select Package <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></button>
                 </div>
 
                 <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-2xl p-6 sm:p-8 flex flex-col justify-between h-full relative">
@@ -806,38 +810,9 @@
                             </div>
                         </div>
                     </div>
-                    <a href="https://calendar.app.google/4pM1sUCV4nvt7tSUA" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-brand-gray/20 hover:bg-brand-gray/30 border border-brand-gray/40 text-white font-bold py-3.5 rounded-xl transition text-xs sm:text-sm mt-8">Select Package <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></a>
+                    <button onclick="launchGoogleCalendar(event)" class="block w-full text-center bg-brand-gray/20 hover:bg-brand-gray/30 border border-brand-gray/40 text-white font-bold py-3.5 rounded-xl transition text-xs sm:text-sm mt-8">Select Package <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></button>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-brand-gray/5 border-b border-brand-gray/10">
-        <div class="max-w-5xl mx-auto space-y-10 sm:space-y-12">
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-center">Client Feedback</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-brand-dark p-5 sm:p-6 border border-brand-gray/20 rounded-xl space-y-4 flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="flex text-yellow-500 gap-1"><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i></div>
-                        <p class="text-brand-white/70 text-xs sm:text-sm italic leading-relaxed font-light">"Ian builds out our monthly newsletter updates exactly as requested and organizes our list layouts cleanly."</p>
-                    </div>
-                    <div class="text-[11px] font-bold text-brand-white/50 pt-2 border-t border-brand-gray/10">— Local Business Owner, West Coast</div>
-                </div>
-                <div class="bg-brand-dark p-5 sm:p-6 border border-brand-gray/20 rounded-xl space-y-4 flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="flex text-yellow-500 gap-1"><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i></div>
-                        <p class="text-brand-white/70 text-xs sm:text-sm italic leading-relaxed font-light">"Our social graphics and promotional flyers look clean, consistent, and match our branding details perfectly every week."</p>
-                    </div>
-                    <div class="text-[11px] font-bold text-brand-white/50 pt-2 border-t border-brand-gray/10">— E-Commerce Founder</div>
-                </div>
-                <div class="bg-brand-dark p-5 sm:p-6 border border-brand-gray/20 rounded-xl space-y-4 flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="flex text-yellow-500 gap-1"><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i></div>
-                        <p class="text-brand-white/70 text-xs sm:text-sm italic leading-relaxed font-light">"The short branded video adjustments and single informational web page layout were structured exactly how we asked."</p>
-                    </div>
-                    <div class="text-[11px] font-bold text-brand-white/50 pt-2 border-t border-brand-gray/10">— Franchise Operator, CA</div>
-                </div>
             </div>
         </div>
     </section>
@@ -845,17 +820,41 @@
     <section id="book" class="py-16 sm:py-24 px-4 sm:px-6 md:px-12 max-w-5xl mx-auto space-y-10 sm:space-y-12">
         <div class="text-center space-y-3 sm:space-y-4">
             <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight">Let's Connect</h2>
-            <p class="text-brand-white/60 max-w-md mx-auto font-light text-sm sm:text-base">Select an open implementation window from the live scheduler box below to sync directly with my calendar.</p>
+            <p class="text-brand-white/60 max-w-md mx-auto font-light text-sm sm:text-base">Click below to open my official Google scheduling window, select an implementation layout, and sync directly with my calendar.</p>
         </div>
 
-        <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-2xl relative overflow-hidden p-2 sm:p-4 shadow-xl">
-            <div class="w-full flex justify-between items-center text-[10px] font-mono text-brand-white/40 pb-3 px-2 border-b border-brand-gray/20 mb-3">
-                <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-brand-green rounded-full animate-ping"></span> Live Google Appointment Scheduler Hub</span>
-                <a href="https://calendar.app.google/4pM1sUCV4nvt7tSUA" target="_blank" rel="noopener noreferrer" class="hover:text-white transition hidden sm:inline">Open in external tab <i class="fa-solid fa-arrow-trend-up text-[8px] ml-0.5"></i></a>
+        <div class="bg-brand-gray/10 border border-brand-gray/20 rounded-2xl relative overflow-hidden p-8 sm:p-12 shadow-xl text-center max-w-3xl mx-auto">
+            <div class="w-full flex justify-between items-center text-[10px] font-mono text-brand-white/30 border-b border-brand-gray/20 pb-4 mb-8">
+                <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-brand-green rounded-full animate-pulse"></span> Google Appointment Hub Pipeline</span>
+                <span>Active Link Configured</span>
             </div>
             
-            <div class="w-full bg-white rounded-xl min-h-[580px] relative">
-                <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0W6WqI1_U67b3-2K_eG_5y87lR8mY2A0Xn4w9P_vSZLAwV7M3Z_L3W_vS-LA_?gv=true" class="absolute inset-0 w-full h-full border-0 rounded-xl" style="background-color: #ffffff;"></iframe>
+            <div class="space-y-6 max-w-md mx-auto py-4">
+                <div class="w-16 h-16 bg-brand-brown/10 border border-brand-brown/40 rounded-full flex items-center justify-center mx-auto shadow-xl">
+                    <i class="fa-regular fa-calendar-check text-brand-brown text-3xl"></i>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Secure Your Strategy Window</h3>
+                    <p class="text-xs sm:text-sm text-brand-white/60 leading-relaxed font-light">
+                        Select an available strategy slot inside the secure script layout overlay to verify alignment, walk through infrastructure builds, and review package parameters.
+                    </p>
+                </div>
+                <div class="pt-2">
+                    <button onclick="launchGoogleCalendar(event)" class="inline-flex items-center gap-2.5 bg-brand-brown hover:bg-opacity-90 text-white font-bold py-3.5 px-8 rounded-xl transition text-xs sm:text-sm tracking-wider uppercase font-mono shadow-xl shadow-brand-brown/20">
+                        Open Booking Overlay <i class="fa-solid fa-arrow-pointer text-xs"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="w-full grid grid-cols-7 gap-1 sm:gap-2 pt-8 mt-8 border-t border-brand-gray/10 text-[9px] font-mono text-brand-white/10 text-center">
+                <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+                <span class="bg-brand-gray/5 py-1 rounded">10:00</span>
+                <span class="bg-brand-gray/5 py-1 rounded">11:30</span>
+                <span class="bg-brand-brown/30 text-brand-white/40 py-1 rounded font-bold">14:00</span>
+                <span class="bg-brand-gray/5 py-1 rounded">15:30</span>
+                <span class="opacity-10 line-through">--:--</span>
+                <span class="opacity-10 line-through">--:--</span>
+                <span class="opacity-10 line-through">--:--</span>
             </div>
         </div>
     </section>
@@ -899,6 +898,23 @@
                 menuToggle.innerHTML = '<i class="fa-solid fa-bars text-xl"></i>';
             });
         });
+
+        /**
+         * Launches the official responsive Google Calendar overlay layout.
+         */
+        function launchGoogleCalendar(event) {
+            if (event) event.preventDefault();
+            if (typeof calendar !== 'undefined' && calendar.schedulingButton && typeof calendar.schedulingButton.load === 'function') {
+                calendar.schedulingButton.load({
+                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0os60Xp_5nnRWWYstfS1atr57epC7KhMMEc1uD1yGoQdN8q9MbY26xeC7DI0PL7r6WyMYS-zPQ?gv=true',
+                    color: '#7d421e',
+                    label: 'Book an appointment'
+                });
+            } else {
+                // Fallback graceful anchor routing paths if script fails to track
+                window.open('https://calendar.app.google/qqyf78csbL4jU3Xf6', '_blank', 'noopener,noreferrer');
+            }
+        }
     </script>
 </body>
 </html>
